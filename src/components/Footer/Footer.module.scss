@@ -4,7 +4,7 @@
 
 .mainFooter {
   background-color: colors.$black-05;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -47,6 +47,10 @@
           content: "";
         }
       }
+    }
+
+    .copyright {
+      @include text-styles.small-text;
     }
   }
 }

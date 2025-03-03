@@ -1,0 +1,6 @@
+@use "../../styles/colors";
+
+.fallbackImage {
+  aspect-ratio: 1 / 1;
+  background-color: colors.$black-05;
+}

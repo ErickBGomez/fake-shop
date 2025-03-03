@@ -2,12 +2,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 const Home = () => {
-  return (
-    <>
-      <Header />
-      <Footer />
-    </>
-  );
+  return <>home</>;
 };
 
 export default Home;

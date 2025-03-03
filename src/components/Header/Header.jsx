@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { UserRound, ShoppingCart, Search } from "lucide-react";
 import styles from "./Header.module.scss";
 
@@ -12,11 +13,13 @@ const Header = () => {
     <header className={styles.mainHeader}>
       <div className={styles.content}>
         <nav className={styles.headerNav}>
-          <div className={styles.brand}>BRAND</div>
+          <div className={styles.brand}>
+            <Link to="/">BRAND</Link>
+          </div>
           <ul className={styles.navLinks}>
             {navLinks.map((element, index) => (
               <li key={index} className={styles.navLink}>
-                <a href={element.link}>{element.label}</a>
+                <Link to={element.link}>{element.label}</Link>
               </li>
             ))}
           </ul>

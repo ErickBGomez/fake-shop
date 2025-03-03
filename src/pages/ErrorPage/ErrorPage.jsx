@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import styles from "./ErrorPage.module.scss";
 
 const setVariant = (variant) => {
@@ -32,7 +33,9 @@ const ErrorPage = ({ variant }) => {
       <div className={styles.content}>
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>
-        <Button colorPalette="brand">RETURN TO HOME</Button>
+        <Link to="/">
+          <Button colorPalette="brand">RETURN TO HOME</Button>
+        </Link>
       </div>
     </div>
   );

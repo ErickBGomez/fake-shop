@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
 
 const socials = [
@@ -22,14 +23,16 @@ const Footer = () => {
         <ul className={styles.socials}>
           {socials.map((element, index) => (
             <li key={index}>
-              <a href={element.link}>{element.icon}</a>
+              <a href={element.link} target="_blank">
+                {element.icon}
+              </a>
             </li>
           ))}
         </ul>
         <ul className={styles.importantLinks}>
           {importantLinks.map((element, index) => (
             <li key={index}>
-              <a href={element.link}>{element.label}</a>
+              <Link to={element.link}>{element.label}</Link>
             </li>
           ))}
         </ul>

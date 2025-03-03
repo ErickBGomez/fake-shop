@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import styles from "./ErrorPage.module.scss";
 
 const setVariant = (variant) => {
@@ -31,7 +32,7 @@ const ErrorPage = ({ variant }) => {
       <div className={styles.content}>
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>
-        <button>RETURN TO HOME</button>
+        <Button colorPalette="brand">RETURN TO HOME</Button>
       </div>
     </div>
   );

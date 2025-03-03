@@ -1,0 +1,15 @@
+@use "../../styles/colors";
+@use "../../styles/text-styles";
+
+.searchContainer {
+  .titleContainer {
+    background-color: colors.$primary;
+    color: colors.$white;
+    padding: 5.38rem 0;
+    text-align: center;
+
+    .title {
+      @include text-styles.heading-1;
+    }
+  }
+}

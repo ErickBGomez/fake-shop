@@ -3,4 +3,14 @@
 .fallbackImage {
   aspect-ratio: 1 / 1;
   background-color: colors.$black-05;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+
+  svg {
+    width: 50%;
+    height: 50%;
+    stroke: colors.$white;
+  }
 }

@@ -1,2 +1,37 @@
+@use "../../styles/text-styles";
+@use "../../styles/variables" as *;
+
 .mainHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+
+  .content {
+    display: flex;
+    flex: 1;
+    max-width: $content-max-width;
+    justify-content: space-between;
+
+    .headerNav {
+      display: flex;
+      align-items: center;
+      gap: 5.735rem;
+
+      .brand {
+        @include text-styles.brand-text;
+      }
+
+      .navLinks {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 3rem;
+    }
+  }
 }

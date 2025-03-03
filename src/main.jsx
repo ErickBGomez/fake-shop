@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import { system } from "@chakra-ui/react/preset";
 import { RouterProvider } from "react-router-dom";
 import routes from "./routes/routes.jsx";
+import "./styles/main.scss";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

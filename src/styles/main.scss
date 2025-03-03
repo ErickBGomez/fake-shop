@@ -1,0 +1,16 @@
+@use "./colors.scss";
+@use "./text-styles";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  @include text-styles.body-text;
+}
+
+body {
+  background-color: colors.$white;
+}

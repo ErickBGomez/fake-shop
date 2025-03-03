@@ -1,0 +1,72 @@
+@mixin body-text() {
+  font-size: 1rem;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin small-text() {
+  font-size: 0.833rem;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-1() {
+  font-size: 2.986rem;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-2() {
+  font-size: 2.488rem;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-3() {
+  font-size: 2.074rem;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin brand-text() {
+  font-size: 1.25rem;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin product-title() {
+  font-size: 1.75rem;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin price-text() {
+  font-size: 1.5rem;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin error-title() {
+  font-size: 1.5rem;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}

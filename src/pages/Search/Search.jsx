@@ -6,7 +6,7 @@ const Search = ({ query = "", result = [] }) => {
     <div className={styles.searchContainer}>
       <div className={styles.titleContainer}>
         <h1 className={styles.title}>Search results</h1>
-        <p className={styles.subtitle}>
+        <p>
           {result.length} articles found for "{query}"
         </p>
       </div>

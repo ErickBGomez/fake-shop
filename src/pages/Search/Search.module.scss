@@ -2,6 +2,9 @@
 @use "../../styles/text-styles";
 
 .searchContainer {
+  display: flex;
+  flex-direction: column;
+
   .titleContainer {
     background-color: colors.$primary;
     color: colors.$white;
@@ -10,6 +13,16 @@
 
     .title {
       @include text-styles.heading-1;
+    }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      flex: 1;
     }
   }
 }

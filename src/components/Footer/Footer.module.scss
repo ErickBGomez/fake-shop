@@ -5,9 +5,13 @@
 .mainFooter {
   background-color: colors.$white;
   padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
   .content {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 2rem;
     max-width: $content-max-width;

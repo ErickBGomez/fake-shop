@@ -4,7 +4,7 @@ import styles from "./Header.module.scss";
 const navLinks = [
   { label: "Categories", link: "/categories" },
   { label: "Sales", link: "/sales" },
-  { label: "Stores", link: "/stores" },
+  { label: "New", link: "/new-products" },
 ];
 
 const Header = () => {

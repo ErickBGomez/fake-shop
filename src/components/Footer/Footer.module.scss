@@ -1,0 +1,48 @@
+@use "../../styles/colors";
+@use "../../styles/text-styles";
+@use "../../styles/variables" as *;
+
+.mainFooter {
+  background-color: colors.$white;
+  padding: 4rem 2rem;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: $content-max-width;
+    align-items: center;
+
+    .brand {
+      @include text-styles.brand-text;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .importantLinks {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+
+      & > * {
+        position: relative;
+        padding-left: 1.25rem;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: colors.$black-50;
+        }
+
+        &:first-child::before {
+          content: "";
+        }
+      }
+    }
+  }
+}

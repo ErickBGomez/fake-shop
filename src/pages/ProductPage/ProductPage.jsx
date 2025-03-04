@@ -3,6 +3,7 @@ import { ShoppingCart, Weight, Box, Heart, Flag } from "lucide-react";
 import Rating from "../../components/Rating/Rating";
 import ProductSpecs from "../../components/ProductSpecs/ProductSpecs";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
+import ImagesPreview from "../../components/ImagesPreview/ImagesPreview";
 import styles from "./ProductPage.module.scss";
 
 // TODO: Temporal data, remove later when the API is integrated
@@ -12,7 +13,11 @@ const product = {
   price: 9.99,
   discount: 99,
   rating: 4,
-  images: [],
+  images: [
+    { src: null, alt: "Product image" },
+    { src: null, alt: "Product image" },
+    { src: null, alt: "Product image" },
+  ],
   stock: 5,
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. ",
@@ -95,8 +100,7 @@ const ProductPage = () => {
           </span>
         </div>
         <div className={styles.images}>
-          {/* TODO: Pending to create image preview component */}
-          <p>Images will go here...</p>
+          <ImagesPreview images={product.images} />
         </div>
         <div className={styles.details}>
           <div className={styles.priceContainer}>

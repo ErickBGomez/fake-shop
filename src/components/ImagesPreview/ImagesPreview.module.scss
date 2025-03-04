@@ -1,0 +1,16 @@
+.imagesPreview {
+  display: flex;
+  gap: 2.75rem;
+
+  .selectList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.88rem;
+    max-width: 5.56rem;
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+  }
+}

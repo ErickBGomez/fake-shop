@@ -1,5 +1,6 @@
 import Product from "../../components/Product/Product";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import { Button } from "@chakra-ui/react";
 import styles from "./Search.module.scss";
 
 const Search = ({ query = "" }) => {
@@ -22,6 +23,60 @@ const Search = ({ query = "" }) => {
       price: 9.99,
       discount: 99,
     },
+    {
+      id: 2,
+      image:
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      title: "Article 2",
+      rating: 4,
+      price: 9.99,
+      discount: 99,
+    },
+    {
+      id: 3,
+      image:
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      title: "Article 2",
+      rating: 4,
+      price: 9.99,
+      discount: 99,
+    },
+    {
+      id: 4,
+      image:
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      title: "Article 2",
+      rating: 4,
+      price: 9.99,
+      discount: 99,
+    },
+    {
+      id: 5,
+      image:
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      title: "Article 2",
+      rating: 4,
+      price: 9.99,
+      discount: 99,
+    },
+    {
+      id: 6,
+      image:
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      title: "Article 2",
+      rating: 4,
+      price: 9.99,
+      discount: 99,
+    },
+    {
+      id: 7,
+      image:
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      title: "Article 2",
+      rating: 4,
+      price: 9.99,
+      discount: 99,
+    },
   ];
 
   return (
@@ -34,16 +89,21 @@ const Search = ({ query = "" }) => {
       </div>
       <div className={styles.content}>
         {result.length > 0 ? (
-          result.map((product) => (
-            <Product
-              key={product.id}
-              image={product.image}
-              title={product.title}
-              rating={product.rating}
-              price={product.price}
-              discount={product.discount}
-            />
-          ))
+          <div className={styles.resultsContainer}>
+            <div className={styles.results}>
+              {result.map((product) => (
+                <Product
+                  key={product.id}
+                  image={product.image}
+                  title={product.title}
+                  rating={product.rating}
+                  price={product.price}
+                  discount={product.discount}
+                />
+              ))}
+            </div>
+            <Button colorPalette="brand">SHOW MORE</Button>
+          </div>
         ) : (
           <ErrorPage variant="search-no-results" />
         )}

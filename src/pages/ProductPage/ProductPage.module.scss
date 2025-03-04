@@ -89,12 +89,27 @@
 
       .actions {
         display: flex;
+        justify-content: space-evenly;
         gap: 1rem;
       }
     }
 
     .suggestions {
       grid-area: suggestions;
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .suggestionsHeader {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        .title {
+          @include text-styles.heading-2;
+        }
+      }
     }
   }
 }

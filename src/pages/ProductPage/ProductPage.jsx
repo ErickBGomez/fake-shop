@@ -139,8 +139,10 @@ const ProductPage = () => {
           </div>
         </div>
         <div className={styles.suggestions}>
-          {/* TODO: Pending to add suggestion container */}
-          <p>Suggestions will go here...</p>
+          <div className={styles.suggestionsHeader}>
+            <h2 className={styles.title}>Suggestions</h2>
+            <p>Checkout these similar products your might like</p>
+          </div>
         </div>
       </div>
     </div>

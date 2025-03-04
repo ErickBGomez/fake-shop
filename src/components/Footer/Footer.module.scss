@@ -54,3 +54,17 @@
     }
   }
 }
+
+@media (max-width: 504px) {
+  .mainFooter .content .importantLinks {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .mainFooter .content .socials {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

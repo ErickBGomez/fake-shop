@@ -3,37 +3,48 @@
 @use "../../styles/variables" as *;
 
 .home {
-  .hero {
-    padding: 7.62rem 0.62rem;
+  .hero,
+  .newsletter {
     background-color: colors.$black-75;
     color: colors.$white;
+  }
 
-    .content {
-      max-width: $content-max-width;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
+  .hero .content,
+  .newsletter .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 
-      .title {
-        @include text-styles.heading-1;
-      }
+  .hero .content,
+  .products .content,
+  .categories .content,
+  .newsletter .content {
+    max-width: $content-max-width;
+    margin: 0 auto;
+  }
+
+  .products .content .title,
+  .categories .content .title,
+  .newsletter .content .title {
+    @include text-styles.heading-2;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 7.62rem 0.62rem;
+
+    .content .title {
+      @include text-styles.heading-1;
     }
   }
 
   .products {
     padding: 4rem 0;
 
-    .content {
-      max-width: $content-max-width;
-      margin: 0 auto;
-
-      .title {
-        @include text-styles.heading-2;
-        text-align: center;
-        margin-bottom: 2rem;
-      }
+    .content .title {
+      margin-bottom: 2rem;
     }
   }
 
@@ -41,12 +52,7 @@
     padding: 4rem 0;
 
     .content {
-      max-width: $content-max-width;
-      margin: 0 auto;
-
       .title {
-        @include text-styles.heading-2;
-        text-align: center;
         margin-bottom: 2rem;
       }
 
@@ -60,36 +66,20 @@
 
   .newsletter {
     padding: 4rem 0;
-    background-color: colors.$black-75;
-    color: colors.$white;
 
-    .content {
-      max-width: $content-max-width;
-      margin: 0 auto;
+    .content .form {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
+      gap: 1rem;
+      max-width: 30rem;
+      width: 100%;
 
-      .title {
-        @include text-styles.heading-2;
-        text-align: center;
-      }
-
-      .form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        max-width: 30rem;
-        width: 100%;
-
-        input {
-          flex: 1;
-          padding: 0.62rem;
-          border: 1px solid colors.$black-50;
-          border-radius: 0.62rem;
-        }
+      input {
+        flex: 1;
+        padding: 0.62rem;
+        border: 1px solid colors.$black-50;
+        border-radius: 0.62rem;
       }
     }
   }

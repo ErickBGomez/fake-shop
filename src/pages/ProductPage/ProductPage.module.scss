@@ -1,3 +1,5 @@
+@use "../../styles/colors";
+@use "../../styles/text-styles";
 @use "../../styles/variables" as *;
 
 .productPage {
@@ -18,6 +20,26 @@
 
     .title {
       grid-area: title;
+      display: grid;
+
+      .brand {
+        @include text-styles.small-text;
+      }
+
+      .productTitle {
+        @include text-styles.product-title;
+      }
+
+      .rating {
+        display: flex;
+        gap: 0.62rem;
+        align-items: center;
+
+        .ratingText {
+          @include text-styles.small-text;
+          color: colors.$black-50;
+        }
+      }
     }
 
     .images {
@@ -26,6 +48,49 @@
 
     .details {
       grid-area: details;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+
+      .priceContainer {
+        .prices {
+          display: flex;
+          gap: 0.62rem;
+          align-items: center;
+
+          .finalPrice {
+            @include text-styles.product-title;
+          }
+
+          .originalPrice {
+            @include text-styles.small-text;
+            color: colors.$black-50;
+            text-decoration: line-through;
+          }
+        }
+
+        .discount {
+          display: inline-block;
+          @include text-styles.small-text;
+          margin-top: 0.25rem;
+          color: colors.$white;
+          background-color: colors.$primary;
+          padding: 0.25rem 0.62rem;
+          border-radius: 6.25rem;
+        }
+      }
+
+      .specs {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+      }
+
+      .actions {
+        display: flex;
+        gap: 1rem;
+      }
     }
 
     .suggestions {

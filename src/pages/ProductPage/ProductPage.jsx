@@ -87,9 +87,11 @@ const ProductPage = () => {
       <div className={styles.content}>
         <div className={styles.title}>
           <p className={styles.brand}>{product.brand}</p>
-          <h1>{product.title}</h1>
-          <Rating defaultValue={product.rating} readOnly />
-          <p className={styles.ratingText}>{product.rating} out of 5</p>
+          <h1 className={styles.productTitle}>{product.title}</h1>
+          <span className={styles.rating}>
+            <Rating defaultValue={product.rating} readOnly />
+            <p className={styles.ratingText}>{product.rating} out of 5</p>
+          </span>
         </div>
         <div className={styles.images}>
           {/* TODO: Pending to create image preview component */}
@@ -97,12 +99,14 @@ const ProductPage = () => {
         </div>
         <div className={styles.details}>
           <div className={styles.priceContainer}>
-            <p className={styles.finalPrice}>
-              {/* Calculate price with discount, and round up to 2 decimals */}$
-              {(product.price * (1 - product.discount / 100)).toFixed(2)}
-            </p>
-            <p className={styles.originalPrice}>${product.price}</p>
-            <p className={styles.discount}>{product.discount}% OFF</p>
+            <span className={styles.prices}>
+              <p className={styles.finalPrice}>
+                {/* Calculate price with discount, and round up to 2 decimals */}
+                ${(product.price * (1 - product.discount / 100)).toFixed(2)}
+              </p>
+              <p className={styles.originalPrice}>${product.price}</p>
+            </span>
+            <span className={styles.discount}>{product.discount}% OFF</span>
           </div>
           <p className={styles.stock}>Stock: {product.stock}</p>
           <Button colorPalette="brand">
@@ -118,7 +122,7 @@ const ProductPage = () => {
               units="kg"
             />
             <ProductSpecs
-              icons={<Box />}
+              icon={<Box />}
               label="Dimensions"
               value={`${product.dimensions.length} x ${product.dimensions.width} x ${product.dimensions.height}`}
               units="cm"
@@ -126,10 +130,10 @@ const ProductPage = () => {
           </div>
           <hr />
           <div className={styles.actions}>
-            <Button variant="plain">
+            <Button variant="ghost">
               <Heart /> Add to favorites
             </Button>
-            <Button variant="plain">
+            <Button variant="ghost">
               <Flag /> Report product
             </Button>
           </div>

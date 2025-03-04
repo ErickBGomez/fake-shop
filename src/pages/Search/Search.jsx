@@ -16,8 +16,7 @@ const Search = ({ query = "" }) => {
     },
     {
       id: 1,
-      image:
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      image: null,
       title: "Article 2",
       rating: 4,
       price: 9.99,
@@ -25,8 +24,7 @@ const Search = ({ query = "" }) => {
     },
     {
       id: 2,
-      image:
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      image: null,
       title: "Article 2",
       rating: 4,
       price: 9.99,
@@ -34,8 +32,7 @@ const Search = ({ query = "" }) => {
     },
     {
       id: 3,
-      image:
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      image: null,
       title: "Article 2",
       rating: 4,
       price: 9.99,
@@ -43,8 +40,7 @@ const Search = ({ query = "" }) => {
     },
     {
       id: 4,
-      image:
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      image: null,
       title: "Article 2",
       rating: 4,
       price: 9.99,
@@ -52,8 +48,7 @@ const Search = ({ query = "" }) => {
     },
     {
       id: 5,
-      image:
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      image: null,
       title: "Article 2",
       rating: 4,
       price: 9.99,
@@ -61,8 +56,7 @@ const Search = ({ query = "" }) => {
     },
     {
       id: 6,
-      image:
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      image: null,
       title: "Article 2",
       rating: 4,
       price: 9.99,
@@ -70,8 +64,7 @@ const Search = ({ query = "" }) => {
     },
     {
       id: 7,
-      image:
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+      image: null,
       title: "Article 2",
       rating: 4,
       price: 9.99,

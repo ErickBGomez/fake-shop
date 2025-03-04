@@ -40,10 +40,12 @@
 
       // Pending: Define columns
       .results {
+        max-width: 61.749rem;
         width: 100%;
         display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        gap: 4rem;
+        grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
+        padding: 0 1rem;
       }
     }
   }

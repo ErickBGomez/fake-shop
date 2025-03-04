@@ -77,7 +77,7 @@ const Search = ({ query = "" }) => {
       <div className={styles.titleContainer}>
         <h1 className={styles.title}>Search results</h1>
         <p>
-          {result.length} articles found for "{query}"
+          {result.length} articles found for "{query}".
         </p>
       </div>
       <div className={styles.content}>

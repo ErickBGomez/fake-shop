@@ -2,6 +2,7 @@ import { Button } from "@chakra-ui/react";
 import { ShoppingCart, Weight, Box, Heart, Flag } from "lucide-react";
 import Rating from "../../components/Rating/Rating";
 import ProductSpecs from "../../components/ProductSpecs/ProductSpecs";
+import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import styles from "./ProductPage.module.scss";
 
 // TODO: Temporal data, remove later when the API is integrated
@@ -141,8 +142,9 @@ const ProductPage = () => {
         <div className={styles.suggestions}>
           <div className={styles.suggestionsHeader}>
             <h2 className={styles.title}>Suggestions</h2>
-            <p>Checkout these similar products your might like</p>
+            <p>Checkout these similar products you might like</p>
           </div>
+          <ProductCarousel products={product.suggestions} />
         </div>
       </div>
     </div>

@@ -1,0 +1,48 @@
+@use "../../styles/variables" as *;
+
+.productPage {
+  padding: 5.38rem 1rem;
+
+  .content {
+    max-width: $content-max-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, min-content);
+    grid-template-areas:
+      "images title"
+      "images price"
+      "images details"
+      "suggestions suggestions";
+    column-gap: 7.25rem;
+
+    .title {
+      grid-area: title;
+    }
+
+    .images {
+      grid-area: images;
+    }
+
+    .details {
+      grid-area: details;
+    }
+
+    .suggestions {
+      grid-area: suggestions;
+    }
+  }
+}
+
+// TODO: Change width later
+@media (max-width: 700px) {
+  .productPage .content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "images"
+      "details"
+      "suggestions";
+    row-gap: 2rem;
+  }
+}

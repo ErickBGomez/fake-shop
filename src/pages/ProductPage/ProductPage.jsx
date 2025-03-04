@@ -84,56 +84,60 @@ const product = {
 const ProductPage = () => {
   return (
     <div className={styles.productPage}>
-      <div className={styles.title}>
-        <p className={styles.brand}>{product.brand}</p>
-        <h1>{product.title}</h1>
-        <Rating defaultValue={product.rating} readOnly />
-        <p className={styles.ratingText}>{product.rating} out of 5</p>
-      </div>
-      <div className={styles.images}>
-        {/* TODO: Pending to create image preview component */}
-      </div>
-      <div className={styles.details}>
-        <div className={styles.priceContainer}>
-          <p className={styles.finalPrice}>
-            {/* Calculate price with discount, and round up to 2 decimals */}$
-            {(product.price * (1 - product.discount / 100)).toFixed(2)}
-          </p>
-          <p className={styles.originalPrice}>${product.price}</p>
-          <p className={styles.discount}>{product.discount}% OFF</p>
+      <div className={styles.content}>
+        <div className={styles.title}>
+          <p className={styles.brand}>{product.brand}</p>
+          <h1>{product.title}</h1>
+          <Rating defaultValue={product.rating} readOnly />
+          <p className={styles.ratingText}>{product.rating} out of 5</p>
         </div>
-        <p className={styles.stock}>Stock: {product.stock}</p>
-        <Button colorPalette="brand">
-          <ShoppingCart /> ADD TO CART
-        </Button>
-        <hr />
-        <p className={styles.description}>{product.description}</p>
-        <div className={styles.specs}>
-          <ProductSpecs
-            icon={<Weight />}
-            label="Weight"
-            value={product.weight}
-            units="kg"
-          />
-          <ProductSpecs
-            icons={<Box />}
-            label="Dimensions"
-            value={`${product.dimensions.length} x ${product.dimensions.width} x ${product.dimensions.height}`}
-            units="cm"
-          />
+        <div className={styles.images}>
+          {/* TODO: Pending to create image preview component */}
+          <p>Images will go here...</p>
         </div>
-        <hr />
-        <div className={styles.actions}>
-          <Button variant="plain">
-            <Heart /> Add to favorites
+        <div className={styles.details}>
+          <div className={styles.priceContainer}>
+            <p className={styles.finalPrice}>
+              {/* Calculate price with discount, and round up to 2 decimals */}$
+              {(product.price * (1 - product.discount / 100)).toFixed(2)}
+            </p>
+            <p className={styles.originalPrice}>${product.price}</p>
+            <p className={styles.discount}>{product.discount}% OFF</p>
+          </div>
+          <p className={styles.stock}>Stock: {product.stock}</p>
+          <Button colorPalette="brand">
+            <ShoppingCart /> ADD TO CART
           </Button>
-          <Button variant="plain">
-            <Flag /> Report product
-          </Button>
+          <hr />
+          <p className={styles.description}>{product.description}</p>
+          <div className={styles.specs}>
+            <ProductSpecs
+              icon={<Weight />}
+              label="Weight"
+              value={product.weight}
+              units="kg"
+            />
+            <ProductSpecs
+              icons={<Box />}
+              label="Dimensions"
+              value={`${product.dimensions.length} x ${product.dimensions.width} x ${product.dimensions.height}`}
+              units="cm"
+            />
+          </div>
+          <hr />
+          <div className={styles.actions}>
+            <Button variant="plain">
+              <Heart /> Add to favorites
+            </Button>
+            <Button variant="plain">
+              <Flag /> Report product
+            </Button>
+          </div>
         </div>
-      </div>
-      <div className={styles.suggestions}>
-        {/* TODO: Pending to add suggestion container */}
+        <div className={styles.suggestions}>
+          {/* TODO: Pending to add suggestion container */}
+          <p>Suggestions will go here...</p>
+        </div>
       </div>
     </div>
   );

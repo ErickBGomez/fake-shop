@@ -2,13 +2,14 @@
 @use "../../styles/variables" as *;
 
 .error {
+  flex: 1;
   padding: 5.38rem 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 
   .content {
-    flex: 1;
+    margin: 0 auto;
     max-width: $content-max-width;
     display: flex;
     flex-direction: column;

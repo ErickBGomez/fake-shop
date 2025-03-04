@@ -1,3 +1,21 @@
+@use "../../styles/colors";
+@use "../../styles/text-styles";
+
 .product {
   max-width: 8.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.38rem;
+
+  .priceContainer {
+    display: flex;
+    gap: 0.62rem;
+
+    .discount {
+      @include text-styles.small-text;
+      color: colors.$primary;
+    }
+  }
 }

@@ -7,9 +7,11 @@ const ProductCarousel = ({ products }) => {
     <div className={styles.productsCarousel}>
       <ChevronLeft />
       <div className={styles.products}>
-        {products.map((product) => (
-          <Product key={product.id} {...product} />
-        ))}
+        {products ? (
+          products.map((product) => <Product key={product.id} {...product} />)
+        ) : (
+          <p>No products...</p>
+        )}
       </div>
       <ChevronRight />
     </div>

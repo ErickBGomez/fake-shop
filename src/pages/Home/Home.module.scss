@@ -56,10 +56,29 @@
         margin-bottom: 2rem;
       }
 
-      .categoriesList {
+      .grid {
         display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        height: 44rem;
+
+        & > * {
+          background-color: colors.$primary-50;
+          border-radius: 0.25rem;
+
+          &:nth-child(1) {
+            grid-area: 1 / 1 / span 2 / span 2;
+          }
+
+          &:nth-child(4) {
+            grid-area: 1 / 4 / span 2 / span 1;
+          }
+
+          &:nth-child(7) {
+            grid-area: 3 / 3 / span 1 / span 2;
+          }
+        }
       }
     }
   }

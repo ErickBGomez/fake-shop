@@ -2,6 +2,103 @@ import { Button } from "@chakra-ui/react";
 import styles from "./Home.module.scss";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 
+const products = [
+  {
+    id: 0,
+    image: null,
+    title: "Article 1",
+    rating: 4,
+    price: 9.99,
+    discount: 99,
+  },
+  {
+    id: 1,
+    image: null,
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discount: 99,
+  },
+  {
+    id: 2,
+    image: null,
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discount: 99,
+  },
+  {
+    id: 3,
+    image: null,
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discount: 99,
+  },
+  {
+    id: 4,
+    image: null,
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discount: 99,
+  },
+  {
+    id: 5,
+    image: null,
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discount: 99,
+  },
+  {
+    id: 6,
+    image: null,
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discount: 99,
+  },
+];
+
+const categories = [
+  {
+    id: 0,
+    image: null,
+    title: "Category 1",
+  },
+  {
+    id: 1,
+    image: null,
+    title: "Category 2",
+  },
+  {
+    id: 2,
+    image: null,
+    title: "Category 3",
+  },
+  {
+    id: 3,
+    image: null,
+    title: "Category 4",
+  },
+  {
+    id: 4,
+    image: null,
+    title: "Category 5",
+  },
+  {
+    id: 5,
+    image: null,
+    title: "Category 6",
+  },
+  {
+    id: 6,
+    image: null,
+    title: "Category 7",
+  },
+];
+
 const Home = () => {
   return (
     <div className={styles.home}>
@@ -20,12 +117,17 @@ const Home = () => {
       <div className={styles.products}>
         <div className={styles.content}>
           <h2 className={styles.title}>Best selling of the week</h2>
-          <ProductCarousel />
+          <ProductCarousel products={products} />
         </div>
       </div>
       <div className={styles.categories}>
         <div className={styles.content}>
           <h2 className={styles.title}>Categories</h2>
+          <div className={styles.grid}>
+            {categories.map((category, index) => (
+              <div key={index} className={styles.category}></div>
+            ))}
+          </div>
         </div>
       </div>
       <div className={styles.newsletter}>

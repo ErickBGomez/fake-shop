@@ -1,6 +1,7 @@
 import Layout from "../pages/Layout/Layout";
 import Home from "../pages/Home";
 import Search from "../pages/Search/Search";
+import ProductPage from "../pages/ProductPage/ProductPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -16,6 +17,10 @@ const routes = createBrowserRouter([
       {
         path: "/search",
         element: <Search />,
+      },
+      {
+        path: "/product",
+        element: <ProductPage />,
       },
       {
         path: "*",

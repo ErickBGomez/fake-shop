@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { UserRound, ShoppingCart, Search } from "lucide-react";
+import CartContext from "../../context/CartContext";
 import styles from "./Header.module.scss";
 
 const navLinks = [
@@ -10,6 +12,8 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const { setOpen } = useContext(CartContext);
+
   return (
     <header className={styles.mainHeader}>
       <div className={styles.content}>
@@ -37,7 +41,7 @@ const Header = () => {
             </Button>
           </div>
           <div className={styles.cart}>
-            <Button variant="plain">
+            <Button variant="plain" onClick={() => setOpen(true)}>
               <ShoppingCart />
             </Button>
           </div>

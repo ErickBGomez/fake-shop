@@ -5,12 +5,15 @@ import { createRoot } from "react-dom/client";
 import { system } from "./theme";
 import { RouterProvider } from "react-router-dom";
 import routes from "./routes/routes.jsx";
+import CartContextProvider from "./context/CartContextProvider";
 import "./styles/main.scss";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ChakraProvider value={system}>
-      <RouterProvider router={routes} />
+      <CartContextProvider>
+        <RouterProvider router={routes} />
+      </CartContextProvider>
     </ChakraProvider>
   </StrictMode>
 );

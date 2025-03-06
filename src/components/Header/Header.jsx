@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { UserRound, ShoppingCart, Search } from "lucide-react";
 import styles from "./Header.module.scss";
@@ -26,13 +27,19 @@ const Header = () => {
         </nav>
         <div className={styles.actions}>
           <div className={styles.search}>
-            <Search />
+            <Button variant="plain">
+              <Search />
+            </Button>
           </div>
           <div className={styles.user}>
-            <UserRound />
+            <Button variant="plain">
+              <UserRound />
+            </Button>
           </div>
           <div className={styles.cart}>
-            <ShoppingCart />
+            <Button variant="plain">
+              <ShoppingCart />
+            </Button>
           </div>
         </div>
       </div>

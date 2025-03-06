@@ -8,7 +8,7 @@ const CartSidebar = () => {
   return (
     <>
       {open && (
-        <div>
+        <div className={styles.sidebarCart}>
           CartSidebar
           {console.log("cart mounted")}
         </div>

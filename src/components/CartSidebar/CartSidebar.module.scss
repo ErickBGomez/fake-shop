@@ -1,0 +1,12 @@
+@use "../../styles/colors";
+@use "../../styles/effects";
+
+.sidebarCart {
+  @include effects.shadow;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: colors.$white;
+  padding: 2rem;
+}

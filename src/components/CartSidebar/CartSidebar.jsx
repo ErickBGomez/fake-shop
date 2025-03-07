@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 import CartContext from "../../context/CartContext";
+import CartSidebarProduct from "../CartSidebarProduct/CartSidebarProduct";
 import styles from "./CartSidebar.module.scss";
 
 const CartSidebar = () => {
@@ -25,7 +26,11 @@ const CartSidebar = () => {
               <Link to="/cart">View Cart</Link>
             </div>
             <hr />
-            <div className={styles.products}></div>
+            <div className={styles.products}>
+              {state?.products.map((product) => (
+                <CartSidebarProduct key={product.id} product={product} />
+              ))}
+            </div>
           </div>
         </>
       )}

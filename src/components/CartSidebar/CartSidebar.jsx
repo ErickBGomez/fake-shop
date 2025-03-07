@@ -29,7 +29,9 @@ const CartSidebar = () => {
                   {/* TODO: Calculate subtotal here */}
                   <p className={styles.total}>$9.99</p>
                   <Link to="/cart">
-                    <Button colorPalette="brand">View Cart</Button>
+                    <Button colorPalette="brand" onClick={handleCloseSidebar}>
+                      View Cart
+                    </Button>
                   </Link>
                 </div>
                 <hr />

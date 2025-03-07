@@ -9,7 +9,7 @@
     max-width: $content-max-width;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 4fr 3fr;
     grid-template-rows: repeat(4, min-content);
     grid-template-areas:
       "images title"

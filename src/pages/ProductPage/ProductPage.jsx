@@ -1,10 +1,12 @@
 import { Button } from "@chakra-ui/react";
 import { ShoppingCart, Weight, Box, Heart, Flag } from "lucide-react";
+import { useParams } from "react-router-dom";
 import Rating from "../../components/Rating/Rating";
 import ProductSpecs from "../../components/ProductSpecs/ProductSpecs";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import ImagesPreview from "../../components/ImagesPreview/ImagesPreview";
 import styles from "./ProductPage.module.scss";
+import useFetchProduct from "@/hooks/useFetch";
 
 // TODO: Temporal data, remove later when the API is integrated
 const product = {
@@ -88,6 +90,12 @@ const product = {
 };
 
 const ProductPage = () => {
+  const { id } = useParams();
+  const { product, loading, error } = useFetchProduct(id);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className={styles.productPage}>
       <div className={styles.content}>
@@ -96,7 +104,9 @@ const ProductPage = () => {
           <h1 className={styles.productTitle}>{product.title}</h1>
           <span className={styles.rating}>
             <Rating defaultValue={product.rating} readOnly />
-            <p className={styles.ratingText}>{product.rating} out of 5</p>
+            <p className={styles.ratingText}>
+              {product.rating.toFixed(1)} out of 5
+            </p>
           </span>
         </div>
         <div className={styles.images}>
@@ -107,11 +117,17 @@ const ProductPage = () => {
             <span className={styles.prices}>
               <p className={styles.finalPrice}>
                 {/* Calculate price with discount, and round up to 2 decimals */}
-                ${(product.price * (1 - product.discount / 100)).toFixed(2)}
+                $
+                {(
+                  product.price *
+                  (1 - product.discountPercentage / 100)
+                ).toFixed(2)}
               </p>
               <p className={styles.originalPrice}>${product.price}</p>
             </span>
-            <span className={styles.discount}>{product.discount}% OFF</span>
+            <span className={styles.discount}>
+              {product.discountPercentage.toFixed(0)}% OFF
+            </span>
           </div>
           <p className={styles.stock}>Stock: {product.stock}</p>
           <Button colorPalette="brand">

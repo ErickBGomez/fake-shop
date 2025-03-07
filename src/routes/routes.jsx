@@ -19,7 +19,7 @@ const routes = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "/product",
+        path: "/product/:id",
         element: <ProductPage />,
       },
       {

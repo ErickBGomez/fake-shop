@@ -5,15 +5,15 @@ import CartContext from "../../context/CartContext";
 import styles from "./CartSidebar.module.scss";
 
 const CartSidebar = () => {
-  const { open, setOpen } = useContext(CartContext);
+  const { state, dispatch } = useContext(CartContext);
 
   const handleCloseSidebar = () => {
-    setOpen(false);
+    dispatch({ type: "closeCart" });
   };
 
   return (
     <>
-      {open && (
+      {state?.isOpen && (
         <>
           <div className={styles.backdrop} onClick={handleCloseSidebar}></div>
           <div className={styles.sidebarCart}>

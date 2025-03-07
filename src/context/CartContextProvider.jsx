@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import CartContext from "./CartContext";
+import cartReducer from "../reducer/CartReducer";
 
 const CartContextProvider = ({ children }) => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
+  const [state, dispatch] = useReducer(cartReducer, { isOpen: false });
 
   return (
-    <CartContext.Provider value={{ open, setOpen }}>
+    <CartContext.Provider value={{ state, dispatch }}>
       {children}
     </CartContext.Provider>
   );

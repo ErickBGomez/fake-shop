@@ -12,7 +12,7 @@ const navLinks = [
 ];
 
 const Header = () => {
-  const { setOpen } = useContext(CartContext);
+  const { dispatch } = useContext(CartContext);
 
   return (
     <header className={styles.mainHeader}>
@@ -41,7 +41,10 @@ const Header = () => {
             </Button>
           </div>
           <div className={styles.cart}>
-            <Button variant="plain" onClick={() => setOpen(true)}>
+            <Button
+              variant="plain"
+              onClick={() => dispatch({ type: "openCart" })}
+            >
               <ShoppingCart />
             </Button>
           </div>

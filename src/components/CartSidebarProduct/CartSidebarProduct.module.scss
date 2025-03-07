@@ -7,9 +7,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 
   .close {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -19,6 +20,10 @@
     svg {
       stroke: colors.$danger;
     }
+  }
+
+  &:hover .close {
+    display: block;
   }
 
   .title {

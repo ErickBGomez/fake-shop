@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 import CartContext from "../../context/CartContext";
 import CartSidebarProduct from "../CartSidebarProduct/CartSidebarProduct";
 import styles from "./CartSidebar.module.scss";
+import { Button } from "@chakra-ui/react";
 
 const CartSidebar = () => {
   const { state, dispatch } = useContext(CartContext);
@@ -19,11 +20,15 @@ const CartSidebar = () => {
           <div className={styles.backdrop} onClick={handleCloseSidebar}></div>
           <div className={styles.sidebarCart}>
             <div className={styles.details}>
-              <X onClick={handleCloseSidebar} />
-              <p>Subtotal</p>
+              <div className={styles.close}>
+                <X onClick={handleCloseSidebar} />
+              </div>
+              <p className={styles.title}>Subtotal</p>
               {/* TODO: Calculate subtotal here */}
-              <p>$9.99</p>
-              <Link to="/cart">View Cart</Link>
+              <p className={styles.total}>$9.99</p>
+              <Link to="/cart">
+                <Button colorPalette="brand">View Cart</Button>
+              </Link>
             </div>
             <hr />
             <div className={styles.products}>

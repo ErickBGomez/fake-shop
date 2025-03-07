@@ -1,6 +1,14 @@
 @use "../../styles/colors";
 @use "../../styles/effects";
 
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: colors.$cart-backdrop;
+  z-index: 1;
+}
+
 .sidebarCart {
   @include effects.shadow;
   position: fixed;
@@ -9,4 +17,5 @@
   height: 100vh;
   background-color: colors.$white;
   padding: 2rem;
+  z-index: 2;
 }

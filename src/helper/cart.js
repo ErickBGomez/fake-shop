@@ -6,17 +6,29 @@ export const addProduct = (products = [], newProduct = {}) => {
   // Add new product at the end of array if it does not exists in allProducts
   if (!existingProduct) return [...products, newProduct];
 
-  const index = products.indexOf(existingProduct);
-
   // Add the previous quantity with the new one if the product already exists
   const updatedProduct = {
     ...existingProduct,
     quantity: existingProduct.quantity + newProduct.quantity,
   };
 
-  const updatedProducts = products.map((product) =>
+  return products.map((product) =>
     product.id === newProduct.id ? updatedProduct : product
   );
+};
 
-  return updatedProducts;
+export const updateProduct = (products = [], updatedProduct = {}) => {
+  const existingProduct = products.find(
+    (product) => product.id === updatedProduct.id
+  );
+
+  if (!existingProduct) return products;
+
+  return products.map((product) =>
+    product.id === updatedProduct.id ? updatedProduct : product
+  );
+};
+
+export const removeProduct = (products = [], productId) => {
+  return products.filter((product) => product.id !== productId);
 };

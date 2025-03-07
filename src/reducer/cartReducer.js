@@ -1,3 +1,5 @@
+import { addProduct } from "../helper/cart";
+
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "openCart": {
@@ -11,6 +13,13 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         isOpen: false,
+      };
+    }
+
+    case "addProduct": {
+      return {
+        ...state,
+        products: addProduct(state.products, action.product),
       };
     }
 

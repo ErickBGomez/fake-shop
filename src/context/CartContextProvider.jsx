@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import CartContext from "./CartContext";
-import cartReducer from "../reducer/CartReducer";
+import cartReducer from "../reducer/cartReducer";
 
 const CartContextProvider = ({ children }) => {
   // TODO: Remove these temporal products later

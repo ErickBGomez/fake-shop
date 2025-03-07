@@ -1,4 +1,4 @@
-import { addProduct } from "../helper/cart";
+import { addProduct, updateProduct, removeProduct } from "../helper/cart";
 
 const cartReducer = (state, action) => {
   switch (action.type) {
@@ -20,6 +20,20 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         products: addProduct(state.products, action.product),
+      };
+    }
+
+    case "updateProduct": {
+      return {
+        ...state,
+        products: updateProduct(state.products, action.product),
+      };
+    }
+
+    case "removeProduct": {
+      return {
+        ...state,
+        products: removeProduct(state.products, action.productId),
       };
     }
 

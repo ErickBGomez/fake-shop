@@ -10,6 +10,7 @@ const ImagesPreview = ({ images }) => {
       <div className={styles.selectList}>
         {images.map((image, index) => (
           <Image
+            src={image}
             key={index}
             {...image}
             rounded="md"
@@ -18,7 +19,7 @@ const ImagesPreview = ({ images }) => {
         ))}
       </div>
       <div className={styles.image}>
-        <Image {...images[selectedImage]} />
+        <Image src={images[selectedImage]} rounded="md" />
       </div>
     </div>
   );

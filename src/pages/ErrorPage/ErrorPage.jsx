@@ -17,6 +17,13 @@ const setVariant = (variant) => {
         description: "Please use another keywords and try again.",
       };
 
+    case "product-not-found":
+      return {
+        title: "Sorry, we couldn't find that product!",
+        description:
+          "You can try searching for another product or go back to home.",
+      };
+
     default:
       return {
         title: "An error occurred!",

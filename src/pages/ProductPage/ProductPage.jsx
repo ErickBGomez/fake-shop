@@ -7,94 +7,14 @@ import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import ImagesPreview from "../../components/ImagesPreview/ImagesPreview";
 import styles from "./ProductPage.module.scss";
 import useFetchProduct from "@/hooks/useFetch";
-
-// TODO: Temporal data, remove later when the API is integrated
-const product = {
-  title: "Title of the product",
-  brand: "Brand",
-  price: 9.99,
-  discount: 99,
-  rating: 4,
-  images: [
-    { src: null, alt: "Product image" },
-    { src: null, alt: "Product image" },
-    { src: null, alt: "Product image" },
-  ],
-  stock: 5,
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. ",
-  weight: 24,
-  dimensions: {
-    length: 10,
-    width: 10,
-    height: 10,
-  },
-  suggestions: [
-    {
-      id: 0,
-      image: null,
-      title: "Article 1",
-      rating: 4,
-      price: 9.99,
-      discount: 99,
-    },
-    {
-      id: 1,
-      image: null,
-      title: "Article 2",
-      rating: 4,
-      price: 9.99,
-      discount: 99,
-    },
-    {
-      id: 2,
-      image: null,
-      title: "Article 2",
-      rating: 4,
-      price: 9.99,
-      discount: 99,
-    },
-    {
-      id: 3,
-      image: null,
-      title: "Article 2",
-      rating: 4,
-      price: 9.99,
-      discount: 99,
-    },
-    {
-      id: 4,
-      image: null,
-      title: "Article 2",
-      rating: 4,
-      price: 9.99,
-      discount: 99,
-    },
-    {
-      id: 5,
-      image: null,
-      title: "Article 2",
-      rating: 4,
-      price: 9.99,
-      discount: 99,
-    },
-    {
-      id: 6,
-      image: null,
-      title: "Article 2",
-      rating: 4,
-      price: 9.99,
-      discount: 99,
-    },
-  ],
-};
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const ProductPage = () => {
   const { id } = useParams();
   const { product, loading, error } = useFetchProduct(id);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <ErrorPage variant="product-not-found" />;
 
   return (
     <div className={styles.productPage}>
@@ -145,7 +65,7 @@ const ProductPage = () => {
             <ProductSpecs
               icon={<Box />}
               label="Dimensions"
-              value={`${product.dimensions.length} x ${product.dimensions.width} x ${product.dimensions.height}`}
+              value={`${product.dimensions.width} x ${product.dimensions.height} x ${product.dimensions.depth}`}
               units="cm"
             />
           </div>

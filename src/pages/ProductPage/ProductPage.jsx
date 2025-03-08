@@ -12,13 +12,30 @@ import ImagesPreview from "../../components/ImagesPreview/ImagesPreview";
 import styles from "./ProductPage.module.scss";
 import useFetchProduct from "@/hooks/useFetch";
 import ErrorPage from "../ErrorPage/ErrorPage";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import CartContext from "@/context/CartContext";
 
 const ProductPage = () => {
-  const { id } = useParams();
   const [openCartDialog, setOpenCartDialog] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const { dispatch } = useContext(CartContext);
+  const { id } = useParams();
   const { product, loading, error } = useFetchProduct(id);
 
+  // Resets quantity and hides button and number input
+  const handleCloseCart = () => {
+    setOpenCartDialog(false);
+    setQuantity(1);
+  };
+
+  // Save product in cart context to display in the sidebar and cart page
+  const handleAddCart = () => {
+    dispatch({ type: "addProduct", product: { ...product, quantity } });
+
+    handleCloseCart();
+  };
+
+  // TODO: Change into a proper loading page
   if (loading) return <p>Loading...</p>;
   if (error) return <ErrorPage variant="product-not-found" />;
 
@@ -59,20 +76,19 @@ const ProductPage = () => {
           <div className={styles.addProductDialog}>
             {openCartDialog ? (
               <>
-                <NumberInputRoot defaultValue={1} min={1} max={product.stock}>
+                <NumberInputRoot
+                  defaultValue={1}
+                  min={1}
+                  max={product.stock}
+                  onValueChange={(e) => setQuantity(e.valueAsNumber)}
+                >
                   <NumberInputField />
                 </NumberInputRoot>
                 <div className={styles.buttons}>
-                  <Button
-                    colorPalette="brand"
-                    onClick={() => setOpenCartDialog(false)}
-                  >
+                  <Button colorPalette="brand" onClick={handleAddCart}>
                     CONFIRM
                   </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => setOpenCartDialog(false)}
-                  >
+                  <Button variant="outline" onClick={handleCloseCart}>
                     CANCEL
                   </Button>
                 </div>

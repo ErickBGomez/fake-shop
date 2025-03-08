@@ -7,12 +7,14 @@ import Image from "../Image/Image";
 import styles from "./CartSidebarProduct.module.scss";
 
 const CartSidebarProduct = ({ product }) => {
+  console.log(product);
+
   return (
     <div className={styles.product}>
       <div className={styles.close}>
         <Trash2 />
       </div>
-      <Image src={product.image} alt={product.name} />
+      <Image src={product.images[0]} alt={product.name} />
       <p className={styles.title}>{product.title}</p>
       <p className={styles.price}>${product.price}</p>
       <NumberInputRoot defaultValue={product.quantity} min={1} size="xs">

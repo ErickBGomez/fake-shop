@@ -22,7 +22,7 @@ const CartSidebar = () => {
             <div className={styles.close}>
               <X onClick={handleCloseSidebar} />
             </div>
-            {state.products ? (
+            {state?.products?.length ? (
               <>
                 <div className={styles.details}>
                   <p className={styles.title}>Subtotal</p>

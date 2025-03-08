@@ -29,7 +29,7 @@
       .products,
       .summary {
         border: 1px solid colors.$black-10;
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: 1rem;
       }
 
@@ -44,8 +44,12 @@
         gap: 1rem;
 
         .summaryItem {
+          display: flex;
+          align-items: center;
+
           .title {
             @include text-styles.small-text;
+            flex: 1;
           }
 
           .subtitle {

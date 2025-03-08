@@ -20,10 +20,16 @@
       grid-template-rows: auto;
       grid-template-areas: "title title" "product summary";
       gap: 0.5rem 1.5rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
 
       .title {
         grid-area: title;
         @include text-styles.heading-1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .products,
@@ -35,6 +41,10 @@
 
       .products {
         grid-area: product;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
       }
 
       .summary {

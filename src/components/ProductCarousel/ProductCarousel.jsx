@@ -13,6 +13,7 @@ const ProductCarousel = ({ products }) => {
           products.map((product) => (
             <Product
               key={product.id}
+              id={product.id}
               image={product.images[0]}
               title={product.title}
               rating={product.rating}

@@ -1,10 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import Image from "../Image/Image";
 import Rating from "../Rating/Rating";
+
 import styles from "./Product.module.scss";
 
-const Product = ({ image, title, rating, price, discount = 0 }) => {
+const Product = ({ id, image, title, rating, price, discount = 0 }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className={styles.product}>
+    <div className={styles.product} onClick={() => navigate(`/product/${id}`)}>
       <Image src={image} alt={title} />
       <div className={styles.titleContainer}>
         <div className={styles.title}>{title}</div>

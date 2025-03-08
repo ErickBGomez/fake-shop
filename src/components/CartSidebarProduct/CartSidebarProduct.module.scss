@@ -8,7 +8,7 @@
   align-items: center;
   gap: 0.25rem;
 
-  .close {
+  .remove {
     display: none;
     position: absolute;
     top: 0;
@@ -21,11 +21,12 @@
     }
   }
 
-  &:hover .close {
+  &:hover .remove {
     display: block;
   }
 
   .title {
     @include text-styles.small-text;
+    text-align: center;
   }
 }

@@ -5,13 +5,20 @@ import {
 import { Trash2 } from "lucide-react";
 import Image from "../Image/Image";
 import styles from "./CartSidebarProduct.module.scss";
+import CartContext from "@/context/CartContext";
+import { useContext } from "react";
 
 const CartSidebarProduct = ({ product }) => {
-  console.log(product);
+  const { dispatch } = useContext(CartContext);
 
   return (
     <div className={styles.product}>
-      <div className={styles.close}>
+      <div
+        className={styles.remove}
+        onClick={() => {
+          dispatch({ type: "removeProduct", productId: product.id });
+        }}
+      >
         <Trash2 />
       </div>
       <Image src={product.images[0]} alt={product.name} />

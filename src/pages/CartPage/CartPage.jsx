@@ -2,22 +2,24 @@ import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { ShoppingBag } from "lucide-react";
 import styles from "./CartPage.module.scss";
-import ErrorPage from "../ErrorPage/ErrorPage";
+import { useContext } from "react";
+import CartContext from "@/context/CartContext";
+import CartPageProduct from "@/components/CartPageProduct/CartPageProduct";
 
 const CartPage = () => {
-  const products = [];
+  const { state } = useContext(CartContext);
 
   const summary = [
     {
-      title: "Subtotal",
+      title: "SUBTOTAL",
       value: 0,
     },
     {
-      title: "Shipping",
+      title: "SHIPPING",
       value: 0,
     },
     {
-      title: "Total",
+      title: "TOTAL",
       value: 0,
     },
   ];
@@ -25,21 +27,24 @@ const CartPage = () => {
   return (
     <div className={styles.cart}>
       <div className={styles.content}>
-        {products.length > 0 ? (
-          <>
-            <h1>Your cart</h1>
-            <div className={styles.products}></div>
+        {state?.products?.length > 0 ? (
+          <div className={styles.cartContent}>
+            <h1 className={styles.title}>Your cart</h1>
+            <div className={styles.products}>
+              {state?.products?.map((product) => (
+                <CartPageProduct key={product.id} product={product} />
+              ))}
+            </div>
             <div className={styles.summary}>
-              <h2>Summary</h2>
               {summary.map((item) => (
                 <div className={styles.summaryItem}>
-                  <p>{item.title}</p>
-                  <p>${item.value}</p>
+                  <p className={styles.title}>{item.title}</p>
+                  <p className={styles.subtitle}>${item.value.toFixed(2)}</p>
                 </div>
               ))}
               <Button colorPalette="brand">CHECKOUT</Button>
             </div>
-          </>
+          </div>
         ) : (
           <div className={styles.empty}>
             <div className={styles.icon}>

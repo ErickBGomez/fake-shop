@@ -1,0 +1,38 @@
+@use "../../styles/colors";
+@use "../../styles/text-styles";
+@use "../../styles/variables" as *;
+
+.cart {
+  flex: 1;
+  padding: 5.38rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .content {
+    margin: 0 auto;
+    max-width: $content-max-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    .empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      color: colors.$black-50;
+
+      .icon svg {
+        width: 3rem;
+        height: 3rem;
+        stroke: colors.$black-50-solid;
+      }
+
+      .title {
+        @include text-styles.error-title;
+      }
+    }
+  }
+}

@@ -81,6 +81,21 @@
         }
       }
 
+      .addProductDialog {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .buttons {
+          display: flex;
+          gap: 1rem;
+
+          button {
+            flex: 1;
+          }
+        }
+      }
+
       .specs {
         display: grid;
         grid-template-columns: 1fr 2fr;

@@ -1,4 +1,8 @@
 import { Button } from "@chakra-ui/react";
+import {
+  NumberInputRoot,
+  NumberInputField,
+} from "@/components/ui/number-input";
 import { ShoppingCart, Weight, Box, Heart, Flag } from "lucide-react";
 import { useParams } from "react-router-dom";
 import Rating from "../../components/Rating/Rating";
@@ -8,9 +12,11 @@ import ImagesPreview from "../../components/ImagesPreview/ImagesPreview";
 import styles from "./ProductPage.module.scss";
 import useFetchProduct from "@/hooks/useFetch";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import { useState } from "react";
 
 const ProductPage = () => {
   const { id } = useParams();
+  const [openCartDialog, setOpenCartDialog] = useState(false);
   const { product, loading, error } = useFetchProduct(id);
 
   if (loading) return <p>Loading...</p>;
@@ -50,9 +56,36 @@ const ProductPage = () => {
             </span>
           </div>
           <p className={styles.stock}>Stock: {product.stock}</p>
-          <Button colorPalette="brand">
-            <ShoppingCart /> ADD TO CART
-          </Button>
+          <div className={styles.addProductDialog}>
+            {openCartDialog ? (
+              <>
+                <NumberInputRoot defaultValue={1} min={1} max={product.stock}>
+                  <NumberInputField />
+                </NumberInputRoot>
+                <div className={styles.buttons}>
+                  <Button
+                    colorPalette="brand"
+                    onClick={() => setOpenCartDialog(false)}
+                  >
+                    CONFIRM
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => setOpenCartDialog(false)}
+                  >
+                    CANCEL
+                  </Button>
+                </div>
+              </>
+            ) : (
+              <Button
+                colorPalette="brand"
+                onClick={() => setOpenCartDialog(true)}
+              >
+                <ShoppingCart /> ADD TO CART
+              </Button>
+            )}
+          </div>
           <hr />
           <p className={styles.description}>{product.description}</p>
           <div className={styles.specs}>

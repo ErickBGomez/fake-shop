@@ -12,7 +12,7 @@ const navLinks = [
 ];
 
 const Header = () => {
-  const { dispatch } = useContext(CartContext);
+  const { state, dispatch } = useContext(CartContext);
 
   return (
     <header className={styles.mainHeader}>
@@ -40,13 +40,16 @@ const Header = () => {
               <UserRound />
             </Button>
           </div>
-          <div className={styles.cart}>
-            <Button
-              variant="plain"
-              onClick={() => dispatch({ type: "openCart" })}
-            >
+          <div
+            className={styles.cart}
+            onClick={() => dispatch({ type: "openCart" })}
+          >
+            <Button variant="plain">
               <ShoppingCart />
             </Button>
+            {state?.products?.length > 0 && (
+              <span className={styles.size}>{state.products.length}</span>
+            )}
           </div>
         </div>
       </div>

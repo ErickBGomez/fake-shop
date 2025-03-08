@@ -34,6 +34,26 @@
     .actions {
       display: flex;
       gap: 1rem;
+
+      .cart {
+        position: relative;
+
+        .size {
+          @include text-styles.small-text;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 1.5rem;
+          height: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: colors.$primary;
+          border-radius: 100%;
+          color: colors.$white;
+          cursor: pointer;
+        }
+      }
     }
   }
 }

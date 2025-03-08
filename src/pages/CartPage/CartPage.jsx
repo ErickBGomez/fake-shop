@@ -19,21 +19,6 @@ const CartPage = () => {
   );
   const total = useMemo(() => subtotal + shipping, [subtotal, shipping]);
 
-  const summary = [
-    {
-      title: "SUBTOTAL",
-      value: subtotal,
-    },
-    {
-      title: "SHIPPING",
-      value: shipping,
-    },
-    {
-      title: "TOTAL",
-      value: total,
-    },
-  ];
-
   return (
     <div className={styles.cart}>
       <div className={styles.content}>
@@ -46,12 +31,21 @@ const CartPage = () => {
               ))}
             </div>
             <div className={styles.summary}>
-              {summary.map((item, index) => (
-                <div key={index} className={styles.summaryItem}>
-                  <p className={styles.title}>{item.title}</p>
-                  <p className={styles.subtitle}>${item.value.toFixed(2)}</p>
+              <div className={styles.summaryItems}>
+                <div className={styles.summaryItem}>
+                  <p className={styles.title}>Subtotal</p>
+                  <p className={styles.subtitle}>${subtotal.toFixed(2)}</p>
                 </div>
-              ))}
+                <div className={styles.summaryItem}>
+                  <p className={styles.title}>Shipping</p>
+                  <p className={styles.subtitle}>${shipping.toFixed(2)}</p>
+                </div>
+                <hr />
+                <div className={styles.totalItem}>
+                  <p className={styles.title}>Total</p>
+                  <p className={styles.subtitle}>${total.toFixed(2)}</p>
+                </div>
+              </div>
               <Button colorPalette="brand">CHECKOUT</Button>
             </div>
           </div>

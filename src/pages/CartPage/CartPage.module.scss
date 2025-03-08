@@ -41,19 +41,33 @@
         grid-area: summary;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         gap: 1rem;
 
-        .summaryItem {
+        .summaryItems {
           display: flex;
-          align-items: center;
+          flex-direction: column;
+          gap: 1rem;
 
-          .title {
-            @include text-styles.small-text;
-            flex: 1;
+          .summaryItem,
+          .totalItem {
+            display: flex;
+            align-items: center;
+
+            .title {
+              @include text-styles.small-text;
+              flex: 1;
+            }
+
+            .subtitle {
+              @include text-styles.body-text;
+            }
           }
 
-          .subtitle {
-            @include text-styles.price-text;
+          .totalItem {
+            .subtitle {
+              @include text-styles.price-text;
+            }
           }
         }
       }

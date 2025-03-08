@@ -1,0 +1,54 @@
+@use "../../styles/colors";
+@use "../../styles/text-styles";
+
+.product {
+  display: grid;
+  grid-template-columns: 25rem 1fr max-content;
+  align-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .details {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+    grid-template-areas: "img title" "img brand" "img price";
+    row-gap: 0.25rem;
+
+    img {
+      grid-area: img;
+      width: 8rem;
+    }
+
+    .title {
+      grid-area: title;
+      align-self: end;
+    }
+
+    .brand {
+      @include text-styles.small-text;
+      grid-area: brand;
+    }
+
+    .price {
+      @include text-styles.small-text;
+      grid-area: price;
+      align-self: start;
+    }
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .remove {
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        stroke: colors.$danger;
+      }
+    }
+  }
+}

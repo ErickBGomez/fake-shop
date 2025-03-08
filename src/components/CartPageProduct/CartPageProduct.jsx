@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import styles from "./CartPageProduct.module.scss";
 import CartContext from "@/context/CartContext";
 import { NumberInputField, NumberInputRoot } from "../ui/number-input";
 import { Trash2 } from "lucide-react";
 import Image from "../Image/Image";
+import styles from "./CartPageProduct.module.scss";
 
 const CartPageProduct = ({ product }) => {
   const { dispatch } = useContext(CartContext);

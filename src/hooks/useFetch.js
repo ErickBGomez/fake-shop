@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useFetchProduct = (productId) => {
-  const [product, setProduct] = useState(null);
+const useFetch = (endpoint, query = "") => {
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,8 +14,9 @@ const useFetchProduct = (productId) => {
         setLoading(true);
         setError(null);
 
-        const response = await axios.get(`${API_URL}/products/${productId}`);
-        setProduct(response.data);
+        const path = query ? `${endpoint}?${query}` : endpoint;
+        const response = await axios.get(`${API_URL}/${path}`);
+        setData(response.data);
       } catch (error) {
         setError(error);
       } finally {
@@ -24,13 +25,13 @@ const useFetchProduct = (productId) => {
     };
 
     fetchData();
-  }, [API_URL, productId]);
+  }, [API_URL, endpoint, query]);
 
   return {
-    product,
+    data,
     loading,
     error,
   };
 };
 
-export default useFetchProduct;
+export default useFetch;

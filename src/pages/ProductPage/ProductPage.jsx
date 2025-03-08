@@ -10,17 +10,18 @@ import ProductSpecs from "../../components/ProductSpecs/ProductSpecs";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import ImagesPreview from "../../components/ImagesPreview/ImagesPreview";
 import styles from "./ProductPage.module.scss";
-import useFetchProduct from "@/hooks/useFetch";
+import useFetch from "@/hooks/useFetch";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import { useContext, useState } from "react";
 import CartContext from "@/context/CartContext";
+import ProductSuggestions from "@/components/ProductSuggestions/ProductSuggestions";
 
 const ProductPage = () => {
   const [openCartDialog, setOpenCartDialog] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const { dispatch } = useContext(CartContext);
   const { id } = useParams();
-  const { product, loading, error } = useFetchProduct(id);
+  const { data: product, loading, error } = useFetch(`products/${id}`);
 
   // Resets quantity and hides button and number input
   const handleCloseCart = () => {
@@ -133,7 +134,7 @@ const ProductPage = () => {
             <h2 className={styles.title}>Suggestions</h2>
             <p>Checkout these similar products you might like</p>
           </div>
-          <ProductCarousel products={product.suggestions} />
+          <ProductSuggestions />
         </div>
       </div>
     </div>

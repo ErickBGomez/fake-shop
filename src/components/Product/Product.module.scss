@@ -2,12 +2,32 @@
 @use "../../styles/text-styles";
 
 .product {
-  // max-width: 8.75rem;
+  max-width: 8.75rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.38rem;
+
+  img {
+    height: 8.75rem;
+  }
+
+  .titleContainer {
+    max-width: 8.75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    .title {
+      @include text-styles.small-text;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
 
   .priceContainer {
     display: flex;

@@ -7,9 +7,16 @@ import Image from "../Image/Image";
 import styles from "./CartSidebarProduct.module.scss";
 import CartContext from "@/context/CartContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CartSidebarProduct = ({ product }) => {
   const { dispatch } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const handleNavigateProduct = () => {
+    navigate(`/product/${product.id}`);
+    dispatch({ type: "closeCart" });
+  };
 
   return (
     <div className={styles.product}>
@@ -21,9 +28,11 @@ const CartSidebarProduct = ({ product }) => {
       >
         <Trash2 />
       </div>
-      <Image src={product.images[0]} alt={product.name} />
-      <p className={styles.title}>{product.title}</p>
-      <p className={styles.price}>${product.price}</p>
+      <div className={styles.details} onClick={handleNavigateProduct}>
+        <Image src={product.images[0]} alt={product.name} />
+        <p className={styles.title}>{product.title}</p>
+        <p className={styles.price}>${product.price}</p>
+      </div>
       <NumberInputRoot
         defaultValue={product.quantity}
         min={1}

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { X, ShoppingBag } from "lucide-react";
 import CartContext from "../../context/CartContext";
@@ -8,6 +8,15 @@ import { Button } from "@chakra-ui/react";
 
 const CartSidebar = () => {
   const { state, dispatch } = useContext(CartContext);
+
+  const totalPrice = useMemo(
+    () =>
+      state?.products?.reduce(
+        (total, product) => total + product.price * product.quantity,
+        0
+      ),
+    [state?.products]
+  );
 
   const handleCloseSidebar = () => {
     dispatch({ type: "closeCart" });
@@ -25,9 +34,8 @@ const CartSidebar = () => {
             {state?.products?.length ? (
               <>
                 <div className={styles.details}>
-                  <p className={styles.title}>Subtotal</p>
-                  {/* TODO: Calculate subtotal here */}
-                  <p className={styles.total}>$9.99</p>
+                  <p className={styles.title}>Total</p>
+                  <p className={styles.total}>${totalPrice.toFixed(2)}</p>
                   <Link to="/cart">
                     <Button colorPalette="brand" onClick={handleCloseSidebar}>
                       View Cart

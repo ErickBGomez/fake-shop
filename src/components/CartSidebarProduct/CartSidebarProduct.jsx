@@ -24,7 +24,17 @@ const CartSidebarProduct = ({ product }) => {
       <Image src={product.images[0]} alt={product.name} />
       <p className={styles.title}>{product.title}</p>
       <p className={styles.price}>${product.price}</p>
-      <NumberInputRoot defaultValue={product.quantity} min={1} size="xs">
+      <NumberInputRoot
+        defaultValue={product.quantity}
+        min={1}
+        size="xs"
+        onValueChange={(value) =>
+          dispatch({
+            type: "updateProduct",
+            product: { ...product, quantity: value.valueAsNumber },
+          })
+        }
+      >
         <NumberInputField />
       </NumberInputRoot>
     </div>

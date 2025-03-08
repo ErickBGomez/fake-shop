@@ -9,7 +9,7 @@ import { Button } from "@chakra-ui/react";
 const CartSidebar = () => {
   const { state, dispatch } = useContext(CartContext);
 
-  const totalPrice = useMemo(
+  const subtotal = useMemo(
     () =>
       state?.products?.reduce(
         (total, product) => total + product.price * product.quantity,
@@ -34,8 +34,8 @@ const CartSidebar = () => {
             {state?.products?.length ? (
               <>
                 <div className={styles.details}>
-                  <p className={styles.title}>Total</p>
-                  <p className={styles.total}>${totalPrice.toFixed(2)}</p>
+                  <p className={styles.title}>Subtotal</p>
+                  <p className={styles.total}>${subtotal.toFixed(2)}</p>
                   <Link to="/cart">
                     <Button colorPalette="brand" onClick={handleCloseSidebar}>
                       View Cart

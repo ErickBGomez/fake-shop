@@ -2,25 +2,35 @@ import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { ShoppingBag } from "lucide-react";
 import styles from "./CartPage.module.scss";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import CartContext from "@/context/CartContext";
 import CartPageProduct from "@/components/CartPageProduct/CartPageProduct";
 
 const CartPage = () => {
   const { state } = useContext(CartContext);
+  const shipping = 12;
+  const subtotal = useMemo(
+    () =>
+      state?.products?.reduce(
+        (total, product) => total + product.price * product.quantity,
+        0
+      ),
+    [state?.products]
+  );
+  const total = useMemo(() => subtotal + shipping, [subtotal, shipping]);
 
   const summary = [
     {
       title: "SUBTOTAL",
-      value: 0,
+      value: subtotal,
     },
     {
       title: "SHIPPING",
-      value: 0,
+      value: shipping,
     },
     {
       title: "TOTAL",
-      value: 0,
+      value: total,
     },
   ];
 
@@ -36,8 +46,8 @@ const CartPage = () => {
               ))}
             </div>
             <div className={styles.summary}>
-              {summary.map((item) => (
-                <div className={styles.summaryItem}>
+              {summary.map((item, index) => (
+                <div key={index} className={styles.summaryItem}>
                   <p className={styles.title}>{item.title}</p>
                   <p className={styles.subtitle}>${item.value.toFixed(2)}</p>
                 </div>

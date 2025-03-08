@@ -48,7 +48,7 @@ const ProductPage = () => {
           <span className={styles.rating}>
             <Rating defaultValue={product.rating} readOnly />
             <p className={styles.ratingText}>
-              {product.rating.toFixed(1)} out of 5
+              {product.rating.toFixed(0)} out of 5
             </p>
           </span>
         </div>

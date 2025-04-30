@@ -5,11 +5,12 @@
 .mainHeader {
   position: fixed;
   width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem 1.5rem;
+  // Avoid header to be behind the content (for example, chakra buttons)
+  z-index: 1;
 
   .content {
     display: flex;
@@ -71,7 +72,8 @@
 
 // Set white header when is a normal header, or when is a landing header and the user hovers it
 .mainHeader,
-.mainHeader.landing:hover {
+.mainHeader.landing:hover,
+.mainHeader.landing.scrolled {
   background-color: colors.$white;
   color: colors.$black;
 
@@ -80,6 +82,11 @@
     stroke: colors.$black;
     transition: stroke 0.25s ease-in-out;
   }
+}
+
+// Show drop shadow only when header is scrolled
+.mainHeader.landing.scrolled {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

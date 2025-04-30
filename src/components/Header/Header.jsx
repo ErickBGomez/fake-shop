@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { UserRound, ShoppingCart, Search } from "lucide-react";
@@ -13,10 +13,26 @@ const navLinks = [
 
 const Header = ({ landingVariant = true }) => {
   const { state, dispatch } = useContext(CartContext);
+  const [scrollYPosition, setScrollYPosition] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollY = window.pageYOffset;
+    setScrollYPosition(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header
-      className={`${styles.mainHeader} ${landingVariant ? styles.landing : ""}`}
+      className={`${styles.mainHeader} ${
+        landingVariant ? styles.landing : ""
+      } ${scrollYPosition > 0 ? styles.scrolled : ""}`}
     >
       <div className={styles.content}>
         <nav className={styles.headerNav}>

@@ -11,11 +11,13 @@ const navLinks = [
   { label: "New", link: "/new-products" },
 ];
 
-const Header = () => {
+const Header = ({ landingVariant = true }) => {
   const { state, dispatch } = useContext(CartContext);
 
   return (
-    <header className={styles.mainHeader}>
+    <header
+      className={`${styles.mainHeader} ${landingVariant ? styles.landing : ""}`}
+    >
       <div className={styles.content}>
         <nav className={styles.headerNav}>
           <div className={styles.brand}>

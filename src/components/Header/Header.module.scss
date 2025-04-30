@@ -3,7 +3,9 @@
 @use "../../styles/variables" as *;
 
 .mainHeader {
-  background-color: colors.$white;
+  position: fixed;
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,6 +57,28 @@
         }
       }
     }
+  }
+}
+
+.mainHeader.landing {
+  color: colors.$white;
+  background: none;
+
+  svg {
+    stroke: colors.$white;
+  }
+}
+
+// Set white header when is a normal header, or when is a landing header and the user hovers it
+.mainHeader,
+.mainHeader.landing:hover {
+  background-color: colors.$white;
+  color: colors.$black;
+
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+  svg {
+    stroke: colors.$black;
+    transition: stroke 0.25s ease-in-out;
   }
 }
 

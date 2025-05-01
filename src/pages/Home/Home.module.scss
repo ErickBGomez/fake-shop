@@ -3,6 +3,22 @@
 @use "../../styles/variables" as *;
 
 .home {
+  .hero .content,
+  .features .content,
+  .products .content,
+  .categories .content,
+  .newsletter .content {
+    max-width: $content-max-width;
+    margin: 0 auto;
+  }
+
+  .features,
+  .products,
+  .categories,
+  .newsletter {
+    padding: $content-vertical-padding $content-horizontal-padding;
+  }
+
   .hero,
   .newsletter {
     background-color: colors.$black-75;
@@ -15,14 +31,6 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-  }
-
-  .hero .content,
-  .products .content,
-  .categories .content,
-  .newsletter .content {
-    max-width: $content-max-width;
-    margin: 0 auto;
   }
 
   .products .content .title,
@@ -52,16 +60,12 @@
   }
 
   .products {
-    padding: 4rem 0;
-
     .content .title {
       margin-bottom: 2rem;
     }
   }
 
   .categories {
-    padding: 4rem 0;
-
     .content {
       .title {
         margin-bottom: 2rem;
@@ -95,8 +99,6 @@
   }
 
   .newsletter {
-    padding: 4rem 0;
-
     .content .form {
       display: flex;
       flex-direction: column;

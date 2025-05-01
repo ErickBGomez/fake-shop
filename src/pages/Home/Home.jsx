@@ -147,12 +147,6 @@ const Home = () => {
           />
         </div>
       </div>
-      <div className={styles.products}>
-        <div className={styles.content}>
-          <h2 className={styles.title}>Best selling of the week</h2>
-          <ProductCarousel products={products} />
-        </div>
-      </div>
       <div className={styles.categories}>
         <div className={styles.content}>
           <h2 className={styles.title}>Categories</h2>
@@ -168,6 +162,14 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <div className={styles.products}>
+        <div className={styles.content}>
+          <h2 className={styles.title}>Best selling of the week</h2>
+          <ProductCarousel products={products} />
+        </div>
+      </div>
+
       <div className={styles.newsletter}>
         <div className={styles.content}>
           <h2 className={styles.title}>Never miss any offer</h2>

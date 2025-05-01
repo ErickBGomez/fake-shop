@@ -59,34 +59,34 @@
       }
     }
   }
-}
 
-.mainHeader.landing {
-  color: colors.$white;
-  background: none;
+  // Set white header when is a normal header, or when is a landing header and the user hovers it
+  &,
+  &.landing:hover,
+  &.landing.scrolled {
+    background-color: colors.$white;
+    color: colors.$black;
 
-  svg {
-    stroke: colors.$white;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    svg {
+      stroke: colors.$black;
+      transition: stroke 0.25s ease-in-out;
+    }
   }
-}
 
-// Set white header when is a normal header, or when is a landing header and the user hovers it
-.mainHeader,
-.mainHeader.landing:hover,
-.mainHeader.landing.scrolled {
-  background-color: colors.$white;
-  color: colors.$black;
+  &.landing {
+    color: colors.$white;
+    background: none;
 
-  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
-  svg {
-    stroke: colors.$black;
-    transition: stroke 0.25s ease-in-out;
+    svg {
+      stroke: colors.$white;
+    }
   }
-}
 
-// Show drop shadow only when header is scrolled
-.mainHeader.scrolled {
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  // Show drop shadow only when header is scrolled
+  &.scrolled {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media (max-width: 768px) {

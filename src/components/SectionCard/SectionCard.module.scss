@@ -21,6 +21,42 @@
     aspect-ratio: 1;
   }
 
+  // Variants
+  &.large {
+    .title {
+      @include text-styles.section-card-title-large;
+    }
+
+    .img {
+      width: 55%;
+    }
+  }
+
+  &.tall {
+    .title {
+      @include text-styles.section-card-title-medium;
+    }
+
+    .img {
+      width: 75%;
+      bottom: -10%;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+
+  &.wide {
+    .title {
+      @include text-styles.section-card-title-medium;
+    }
+
+    .img {
+      width: 40%;
+      bottom: -40%;
+    }
+  }
+
+  // Colors
   &.orange {
     background: colors.$section-card-background-orange;
   }

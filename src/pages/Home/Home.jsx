@@ -69,6 +69,7 @@ const categories = [
     id: 0,
     image: null,
     title: "Category 1",
+    variant: "large",
   },
   {
     id: 1,
@@ -84,6 +85,7 @@ const categories = [
     id: 3,
     image: null,
     title: "Category 4",
+    variant: "tall",
   },
   {
     id: 4,
@@ -99,6 +101,7 @@ const categories = [
     id: 6,
     image: null,
     title: "Category 7",
+    variant: "wide",
   },
 ];
 
@@ -147,7 +150,11 @@ const Home = () => {
           <h2 className={styles.title}>Categories</h2>
           <div className={styles.grid}>
             {categories.map((category) => (
-              <SectionCard key={category.id} title={category.title} />
+              <SectionCard
+                key={category.id}
+                title={category.title}
+                variant={category.variant}
+              />
             ))}
           </div>
         </div>

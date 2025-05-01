@@ -80,6 +80,20 @@
   font-weight: 700;
 }
 
+@mixin section-card-title-medium() {
+  @include common-styles();
+  font-size: 1.75rem;
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+@mixin section-card-title-large() {
+  @include common-styles();
+  font-size: 2.5rem;
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
 @mixin feature-title() {
   @include common-styles();
   font-size: 1.5rem;

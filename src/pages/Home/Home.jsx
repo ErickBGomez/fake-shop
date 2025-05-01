@@ -145,10 +145,9 @@ const Home = () => {
       <div className={styles.categories}>
         <div className={styles.content}>
           <h2 className={styles.title}>Categories</h2>
-          <SectionCard title="Title" />
           <div className={styles.grid}>
-            {categories.map((category, index) => (
-              <div key={index} className={styles.category}></div>
+            {categories.map((category) => (
+              <SectionCard key={category.id} title={category.title} />
             ))}
           </div>
         </div>

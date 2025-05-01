@@ -7,16 +7,16 @@
   border-radius: 16px;
   overflow: hidden;
   min-height: 200px;
-  width: 300px;
 
   .title {
     @include text-styles.section-card-title;
+    margin-bottom: 0.25rem;
   }
 
   .img {
     position: absolute;
     right: 5%;
-    bottom: -30%;
+    bottom: -15%;
     width: 50%;
     aspect-ratio: 1;
   }

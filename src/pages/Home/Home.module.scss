@@ -79,9 +79,6 @@
         height: 44rem;
 
         & > * {
-          background-color: colors.$primary-50;
-          border-radius: 0.25rem;
-
           &:nth-child(1) {
             grid-area: 1 / 1 / span 2 / span 2;
           }

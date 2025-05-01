@@ -33,7 +33,11 @@
   }
 
   .hero {
-    padding: 7.62rem 0.62rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .content .title {
       @include text-styles.heading-1;

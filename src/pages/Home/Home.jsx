@@ -4,6 +4,7 @@ import styles from "./Home.module.scss";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 import FeatureCard from "@/components/FeatureCard/FeatureCard";
 import SectionCard from "@/components/SectionCard/SectionCard";
+import { name } from "ejs";
 
 const products = [
   {
@@ -67,40 +68,47 @@ const products = [
 const categories = [
   {
     id: 0,
-    image: null,
     title: "Category 1",
+    image: null,
+    url: "candles",
     variant: "large",
   },
   {
     id: 1,
-    image: null,
     title: "Category 2",
+    image: null,
+    url: "candles",
   },
   {
     id: 2,
-    image: null,
     title: "Category 3",
+    image: null,
+    url: "candles",
   },
   {
     id: 3,
-    image: null,
     title: "Category 4",
+    image: null,
+    url: "candles",
     variant: "tall",
   },
   {
     id: 4,
-    image: null,
     title: "Category 5",
+    image: null,
+    url: "candles",
   },
   {
     id: 5,
-    image: null,
     title: "Category 6",
+    image: null,
+    url: "candles",
   },
   {
     id: 6,
-    image: null,
     title: "Category 7",
+    image: null,
+    url: "candles",
     variant: "wide",
   },
 ];
@@ -153,6 +161,7 @@ const Home = () => {
               <SectionCard
                 key={category.id}
                 title={category.title}
+                url={category.url}
                 variant={category.variant}
               />
             ))}

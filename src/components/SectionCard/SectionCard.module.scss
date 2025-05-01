@@ -7,6 +7,8 @@
   border-radius: 16px;
   overflow: hidden;
   min-height: 200px;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 
   .title {
     @include text-styles.section-card-title;
@@ -59,5 +61,11 @@
   // Colors
   &.orange {
     background: colors.$section-card-background-orange;
+  }
+
+  // States
+  // TODO: Replace later with framer motion
+  &:hover {
+    transform: scale(1.02);
   }
 }

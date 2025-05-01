@@ -14,23 +14,9 @@ const navLinks = [
 const Header = ({ landingVariant = true }) => {
   const { state, dispatch } = useContext(CartContext);
   const [scrollYPosition, setScrollYPosition] = useState(0);
-  const [hideOnScroll, setHideOnScroll] = useState(false);
 
-  // TODO: Get scroll direction from scrollYPosition
-  // Note: For a reason this does not log the change of scrollYPosition, it shows always as 0 (maybe could be something related with rerenders)
   const handleScroll = () => {
     const currentScrollY = window.pageYOffset;
-
-    // console.log("Current:", currentScrollY, "Previous:", scrollYPosition);
-
-    // if (currentScrollY - scrollYPosition > 0) {
-    //   console.log("Scrolling down");
-    // } else if (currentScrollY - scrollYPosition < 0) {
-    //   console.log("Scrolling up");
-    // } else {
-    //   console.log("No scroll");
-    // }
-
     setScrollYPosition(currentScrollY);
   };
 

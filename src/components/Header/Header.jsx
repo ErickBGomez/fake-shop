@@ -11,7 +11,7 @@ const navLinks = [
   { label: "New", link: "/new-products" },
 ];
 
-const Header = ({ landingVariant = true }) => {
+const Header = ({ landingVariant = false }) => {
   const { state, dispatch } = useContext(CartContext);
   const [scrollYPosition, setScrollYPosition] = useState(0);
 

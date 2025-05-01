@@ -7,14 +7,21 @@ import { createBrowserRouter } from "react-router-dom";
 import CartPage from "../pages/CartPage/CartPage";
 
 const routes = createBrowserRouter([
+  // Separate routes for landing and main pages
   {
     path: "/",
-    element: <Layout />,
+    element: <Layout landingVariant={true} />,
     children: [
       {
         path: "/",
         element: <Home />,
       },
+    ],
+  },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
       {
         path: "/search",
         element: <Search />,

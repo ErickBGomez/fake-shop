@@ -1,0 +1,14 @@
+@use "../../styles/text-styles";
+.featureCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  gap: 24px;
+  text-align: center;
+
+  .title {
+    @include text-styles.feature-title;
+  }
+}

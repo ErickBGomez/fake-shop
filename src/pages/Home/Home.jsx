@@ -1,6 +1,8 @@
 import { Button } from "@chakra-ui/react";
+import { SquareDashed } from "lucide-react";
 import styles from "./Home.module.scss";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
+import FeatureCard from "@/components/FeatureCard/FeatureCard";
 
 const products = [
   {
@@ -112,6 +114,25 @@ const Home = () => {
           <Button color="white" variant="outline">
             SHOP NOW
           </Button>
+        </div>
+      </div>
+      <div className={styles.features}>
+        <div className={styles.content}>
+          <FeatureCard
+            icon={<SquareDashed />}
+            title="Lorem ipsum"
+            description="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi."
+          />
+          <FeatureCard
+            icon={<SquareDashed />}
+            title="Lorem ipsum"
+            description="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi."
+          />
+          <FeatureCard
+            icon={<SquareDashed />}
+            title="Lorem ipsum"
+            description="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi."
+          />
         </div>
       </div>
       <div className={styles.products}>

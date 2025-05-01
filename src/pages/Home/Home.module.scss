@@ -44,6 +44,13 @@
     }
   }
 
+  .features {
+    .content {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
   .products {
     padding: 4rem 0;
 

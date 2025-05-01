@@ -72,3 +72,31 @@
   font-family: Montserrat;
   font-weight: 600;
 }
+
+@mixin section-card-title() {
+  @include common-styles();
+  font-size: 1.25rem;
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+@mixin feature-title() {
+  @include common-styles();
+  font-size: 1.5rem;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+@mixin input-and-feedback-error-title() {
+  @include common-styles();
+  font-size: 1.5rem;
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+@mixin input-and-feedback-button-text() {
+  @include common-styles();
+  font-size: 1rem;
+  font-family: Montserrat;
+  font-weight: 700;
+}

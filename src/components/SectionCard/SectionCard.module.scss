@@ -1,0 +1,27 @@
+@use "../../styles/colors";
+@use "../../styles/text-styles";
+
+.sectionCard {
+  position: relative;
+  padding: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 200px;
+  width: 300px;
+
+  .title {
+    @include text-styles.section-card-title;
+  }
+
+  .img {
+    position: absolute;
+    right: 5%;
+    bottom: -30%;
+    width: 50%;
+    aspect-ratio: 1;
+  }
+
+  &.orange {
+    background: colors.$section-card-background-orange;
+  }
+}

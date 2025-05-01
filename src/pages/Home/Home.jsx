@@ -3,6 +3,7 @@ import { SquareDashed } from "lucide-react";
 import styles from "./Home.module.scss";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 import FeatureCard from "@/components/FeatureCard/FeatureCard";
+import SectionCard from "@/components/SectionCard/SectionCard";
 
 const products = [
   {
@@ -144,6 +145,7 @@ const Home = () => {
       <div className={styles.categories}>
         <div className={styles.content}>
           <h2 className={styles.title}>Categories</h2>
+          <SectionCard title="Title" />
           <div className={styles.grid}>
             {categories.map((category, index) => (
               <div key={index} className={styles.category}></div>

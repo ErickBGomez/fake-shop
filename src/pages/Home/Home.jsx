@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Input } from "@chakra-ui/react";
 import { SquareDashed } from "lucide-react";
 import styles from "./Home.module.scss";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";

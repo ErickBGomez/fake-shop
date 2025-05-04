@@ -1,10 +1,10 @@
-import { Button, Input } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { SquareDashed } from "lucide-react";
 import styles from "./Home.module.scss";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 import FeatureCard from "@/components/FeatureCard/FeatureCard";
 import SectionCard from "@/components/SectionCard/SectionCard";
-import { name } from "ejs";
+import Input from "@/components/Input/Input";
 
 const products = [
   {
@@ -242,6 +242,7 @@ const Home = () => {
             your favorite products!
           </p>
           <div className={styles.form}>
+            <Input placeholder="Enter your email here" variant="dark" />
             <Button color="white" variant="outline">
               SUBSCRIBE
             </Button>

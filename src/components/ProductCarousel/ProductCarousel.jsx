@@ -22,19 +22,47 @@ const ProductCarousel = ({ products }) => {
 
   return (
     <div className={styles.productsCarousel}>
+      {products ? (
+        <>
+          <button className={styles.arrow} onClick={handleLeftButtonClick}>
+            <ChevronLeft />
+          </button>
+
+          <Swiper
+            slidesPerView={6}
+            spaceBetween={32}
+            slidesPerGroup={6}
+            onSlideChange={() => console.log("slided")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <SwiperButton direction="left" ref={leftButton} />
+            <SwiperButton direction="right" ref={rightButton} />
+
+            {products.map((product) => (
+              <SwiperSlide key={product.id}>
+                <Product
+                  id={product.id}
+                  image={product.images[0]}
+                  title={product.title}
+                  rating={product.rating}
+                  price={product.price}
+                  discount={product.discountPercentage}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <button className={styles.arrow} onClick={handleRightButtonClick}>
+            <ChevronRight />
+          </button>
+        </>
+      ) : (
+        <p>No products...</p>
+      )}
+
       {/* <div className={styles.products}>
         {products ? (
-          products.map((product) => (
-            <Product
-              key={product.id}
-              id={product.id}
-              image={product.images[0]}
-              title={product.title}
-              rating={product.rating}
-              price={product.price}
-              discount={product.discountPercentage}
-            />
-          ))
+          
         ) : (
           <p>No products...</p>
         )}
@@ -47,37 +75,6 @@ const ProductCarousel = ({ products }) => {
       
       Also, this helps me to handle better the padding and position of buttons.
       */}
-      <button className={styles.arrow} onClick={handleLeftButtonClick}>
-        <ChevronLeft />
-      </button>
-
-      <Swiper
-        slidesPerView={7}
-        onSlideChange={() => console.log("slided")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperButton direction="left" ref={leftButton} />
-        <SwiperButton direction="right" ref={rightButton} />
-
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-      </Swiper>
-
-      <button className={styles.arrow} onClick={handleRightButtonClick}>
-        <ChevronRight />
-      </button>
     </div>
   );
 };

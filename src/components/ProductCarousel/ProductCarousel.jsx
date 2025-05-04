@@ -1,33 +1,66 @@
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Product from "../Product/Product";
+import SwiperButton from "../SwiperButton/SwiperButton";
 import styles from "./ProductCarousel.module.scss";
+import "swiper/css";
 
 const ProductCarousel = ({ products }) => {
+  const leftButton = useRef(null);
+  const rightButton = useRef(null);
+
+  const handleLeftButtonClick = () => {
+    if (!leftButton.current) return;
+    leftButton.current.click();
+  };
+
+  const handleRightButtonClick = () => {
+    if (!rightButton.current) return;
+    rightButton.current.click();
+  };
+
   return (
     <div className={styles.productsCarousel}>
-      <div className={styles.arrow}>
-        <ChevronLeft />
-      </div>
-      <div className={styles.products}>
-        {products ? (
-          products.map((product) => (
-            <Product
-              key={product.id}
-              id={product.id}
-              image={product.images[0]}
-              title={product.title}
-              rating={product.rating}
-              price={product.price}
-              discount={product.discountPercentage}
-            />
-          ))
-        ) : (
-          <p>No products...</p>
-        )}
-      </div>
-      <div className={styles.arrow}>
-        <ChevronRight />
-      </div>
+      {products ? (
+        <>
+          {/*
+          These two buttons (left and right chevron) is because swiper handles the absolute position of the buttons
+          by themselves, and it does not let me to show the proper buttons.
+          So, I use a ref to make a element to click outside of Swiper.
+      
+          Also, this helps me to handle better the padding and position of buttons.
+          */}
+          <button className={styles.arrow} onClick={handleLeftButtonClick}>
+            <ChevronLeft />
+          </button>
+
+          {/* TODO: Find a way to make the elements responsive */}
+          <Swiper slidesPerView={6} spaceBetween={32}>
+            <SwiperButton direction="left" ref={leftButton} />
+            <SwiperButton direction="right" ref={rightButton} />
+
+            {products.map((product) => (
+              <SwiperSlide key={product.id}>
+                <Product
+                  id={product.id}
+                  image={product.images[0]}
+                  title={product.title}
+                  rating={product.rating}
+                  price={product.price}
+                  discount={product.discountPercentage}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <button className={styles.arrow} onClick={handleRightButtonClick}>
+            <ChevronRight />
+          </button>
+        </>
+      ) : (
+        <p>No products...</p>
+      )}
     </div>
   );
 };

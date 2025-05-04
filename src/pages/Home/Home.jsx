@@ -4,7 +4,7 @@ import styles from "./Home.module.scss";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 import FeatureCard from "@/components/FeatureCard/FeatureCard";
 import SectionCard from "@/components/SectionCard/SectionCard";
-import { name } from "ejs";
+import Input from "@/components/Input/Input";
 
 const products = [
   {
@@ -57,6 +57,70 @@ const products = [
   },
   {
     id: 6,
+    images: [],
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discountPercentage: 99,
+  },
+  {
+    id: 7,
+    images: [],
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discountPercentage: 99,
+  },
+  {
+    id: 8,
+    images: [],
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discountPercentage: 99,
+  },
+  {
+    id: 9,
+    images: [],
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discountPercentage: 99,
+  },
+  {
+    id: 10,
+    images: [],
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discountPercentage: 99,
+  },
+  {
+    id: 11,
+    images: [],
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discountPercentage: 99,
+  },
+  {
+    id: 12,
+    images: [],
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discountPercentage: 99,
+  },
+  {
+    id: 13,
+    images: [],
+    title: "Article 2",
+    rating: 4,
+    price: 9.99,
+    discountPercentage: 99,
+  },
+  {
+    id: 14,
     images: [],
     title: "Article 2",
     rating: 4,
@@ -178,6 +242,7 @@ const Home = () => {
             your favorite products!
           </p>
           <div className={styles.form}>
+            <Input placeholder="Enter your email here" variant="dark" />
             <Button color="white" variant="outline">
               SUBSCRIBE
             </Button>

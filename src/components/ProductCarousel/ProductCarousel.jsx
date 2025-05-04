@@ -24,17 +24,19 @@ const ProductCarousel = ({ products }) => {
     <div className={styles.productsCarousel}>
       {products ? (
         <>
+          {/*
+          These two buttons (left and right chevron) is because swiper handles the absolute position of the buttons
+          by themselves, and it does not let me to show the proper buttons.
+          So, I use a ref to make a element to click outside of Swiper.
+      
+          Also, this helps me to handle better the padding and position of buttons.
+          */}
           <button className={styles.arrow} onClick={handleLeftButtonClick}>
             <ChevronLeft />
           </button>
 
-          <Swiper
-            slidesPerView={6}
-            spaceBetween={32}
-            slidesPerGroup={6}
-            onSlideChange={() => console.log("slided")}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
+          {/* TODO: Find a way to make the elements responsive */}
+          <Swiper slidesPerView={6} spaceBetween={32}>
             <SwiperButton direction="left" ref={leftButton} />
             <SwiperButton direction="right" ref={rightButton} />
 
@@ -59,22 +61,6 @@ const ProductCarousel = ({ products }) => {
       ) : (
         <p>No products...</p>
       )}
-
-      {/* <div className={styles.products}>
-        {products ? (
-          
-        ) : (
-          <p>No products...</p>
-        )}
-      </div> */}
-
-      {/*
-      This is because swiper handles the absolute position of the buttons
-      by themselves, and it does not let me to show the proper buttons.
-      So, I use a ref to make a element to click outside of Swiper.
-      
-      Also, this helps me to handle better the padding and position of buttons.
-      */}
     </div>
   );
 };

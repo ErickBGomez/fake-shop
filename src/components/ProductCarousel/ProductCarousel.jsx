@@ -1,9 +1,10 @@
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ProductCarouselButton from "../ProductCarouselButton/ProductCarouselButton";
 import Product from "../Product/Product";
+import SwiperButton from "../SwiperButton/SwiperButton";
 import styles from "./ProductCarousel.module.scss";
 import "swiper/css";
-import { useRef } from "react";
 
 const ProductCarousel = ({ products }) => {
   const leftButton = useRef(null);
@@ -46,15 +47,18 @@ const ProductCarousel = ({ products }) => {
       
       Also, this helps me to handle better the padding and position of buttons.
       */}
-      <button onClick={handleLeftButtonClick}>Left</button>
-      <button onClick={handleRightButtonClick}>Right</button>
+      <button className={styles.arrow} onClick={handleLeftButtonClick}>
+        <ChevronLeft />
+      </button>
 
       <Swiper
         slidesPerView={7}
         onSlideChange={() => console.log("slided")}
         onSwiper={(swiper) => console.log(swiper)}
-        style={{ zIndex: 0 }}
       >
+        <SwiperButton direction="left" ref={leftButton} />
+        <SwiperButton direction="right" ref={rightButton} />
+
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
@@ -69,9 +73,11 @@ const ProductCarousel = ({ products }) => {
         <SwiperSlide>Slide 7</SwiperSlide>
         <SwiperSlide>Slide 7</SwiperSlide>
         <SwiperSlide>Slide 7</SwiperSlide>
-        <ProductCarouselButton direction="left" ref={leftButton} />
-        <ProductCarouselButton direction="right" ref={rightButton} />
       </Swiper>
+
+      <button className={styles.arrow} onClick={handleRightButtonClick}>
+        <ChevronRight />
+      </button>
     </div>
   );
 };

@@ -28,24 +28,5 @@
     & > * {
       flex: 1;
     }
-
-    .resultsContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 4rem;
-      margin: 4rem 0 5.38rem 0;
-
-      // Pending: Define columns
-      .results {
-        max-width: 61.749rem;
-        width: 100%;
-        display: grid;
-        gap: 4rem;
-        grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
-        padding: 0 1rem;
-      }
-    }
   }
 }

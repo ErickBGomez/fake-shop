@@ -1,6 +1,5 @@
-import Product from "../../components/Product/Product";
+import ResultContainer from "../../components/ResultContainer/ResultContainer";
 import ErrorPage from "../ErrorPage/ErrorPage";
-import { Button } from "@chakra-ui/react";
 import styles from "./Search.module.scss";
 
 const Search = ({ query = "" }) => {
@@ -82,21 +81,7 @@ const Search = ({ query = "" }) => {
       </div>
       <div className={styles.content}>
         {result.length > 0 ? (
-          <div className={styles.resultsContainer}>
-            <div className={styles.results}>
-              {result.map((product) => (
-                <Product
-                  key={product.id}
-                  image={product.image}
-                  title={product.title}
-                  rating={product.rating}
-                  price={product.price}
-                  discount={product.discount}
-                />
-              ))}
-            </div>
-            <Button colorPalette="brand">SHOW MORE</Button>
-          </div>
+          <ResultContainer result={result} />
         ) : (
           <ErrorPage variant="search-no-results" />
         )}

@@ -5,12 +5,13 @@ import ProductPage from "../pages/ProductPage/ProductPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import { createBrowserRouter } from "react-router-dom";
 import CartPage from "../pages/CartPage/CartPage";
+import CategoryPage from "@/pages/CategoryPage/CategoryPage";
 
 const routes = createBrowserRouter([
   // Separate routes for landing and main pages
   {
     path: "/",
-    element: <Layout landingVariant={true} />,
+    element: <Layout landingVariant />,
     children: [
       {
         path: "/",
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
       {
         path: "/search",
         element: <Search />,
+      },
+      {
+        path: "/categories/:category",
+        element: <CategoryPage />,
       },
       {
         path: "/product/:id",

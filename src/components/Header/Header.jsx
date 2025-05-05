@@ -6,7 +6,7 @@ import CartContext from "../../context/CartContext";
 import styles from "./Header.module.scss";
 
 const navLinks = [
-  { label: "Categories", link: "/categories" },
+  { label: "Categories", link: "/categories/test" },
   { label: "Sales", link: "/sales" },
   { label: "New", link: "/new-products" },
 ];

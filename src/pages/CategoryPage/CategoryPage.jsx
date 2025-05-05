@@ -2,7 +2,9 @@ import ResultContainer from "../../components/ResultContainer/ResultContainer";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import styles from "./CategoryPage.module.scss";
 
-const CategoryPage = ({ category = "Category title" }) => {
+const CategoryPage = () => {
+  // TODO: Replace with fetch from path params
+  const category = "Category";
   // const result = [];
   const result = [
     {

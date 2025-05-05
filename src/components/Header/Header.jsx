@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { UserRound, ShoppingCart, Search } from "lucide-react";
 import CartContext from "../../context/CartContext";
 import styles from "./Header.module.scss";
+import SearchBar from "../SearchBar/SearchBar";
 
 const navLinks = [
   { label: "Categories", link: "/categories/test" },
@@ -48,11 +49,7 @@ const Header = ({ landingVariant = false }) => {
           </ul>
         </nav>
         <div className={styles.actions}>
-          <div className={styles.search}>
-            <Button variant="plain">
-              <Search />
-            </Button>
-          </div>
+          <SearchBar />
           <div className={styles.user}>
             <Button variant="plain">
               <UserRound />

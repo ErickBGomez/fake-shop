@@ -64,8 +64,31 @@
   }
 
   // States
-  // TODO: Replace later with framer motion
   &:hover {
     transform: scale(1.02);
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionCard {
+    padding: 16px;
+
+    &.large,
+    &.tall,
+    &.wide,
+    & {
+      .title {
+        @include text-styles.section-card-title;
+        margin-bottom: 0.25rem;
+      }
+
+      .img {
+        position: absolute;
+        right: 5%;
+        bottom: -15%;
+        width: 50%;
+        transform: none;
+      }
+    }
   }
 }

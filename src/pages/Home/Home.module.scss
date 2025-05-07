@@ -49,6 +49,7 @@
 
     .content .title {
       @include text-styles.heading-1;
+      text-align: center;
     }
   }
 
@@ -126,6 +127,21 @@
       gap: 1rem;
       max-width: 30rem;
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    .features .content {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .categories .content .grid {
+      display: flex;
+      flex-direction: column;
+      height: auto;
     }
   }
 }

@@ -6,7 +6,7 @@ import SwiperButton from "../SwiperButton/SwiperButton";
 import styles from "./ProductCarousel.module.scss";
 import "swiper/css";
 
-const ProductCarousel = ({ products }) => {
+const ProductCarousel = ({ products, productsPerView = 7 }) => {
   const leftButton = useRef(null);
   const rightButton = useRef(null);
 
@@ -36,7 +36,7 @@ const ProductCarousel = ({ products }) => {
           </button>
 
           {/* TODO: Find a way to make the elements responsive */}
-          <Swiper slidesPerView={6} spaceBetween={32}>
+          <Swiper slidesPerView={productsPerView} spaceBetween={32}>
             <SwiperButton direction="left" ref={leftButton} />
             <SwiperButton direction="right" ref={rightButton} />
 

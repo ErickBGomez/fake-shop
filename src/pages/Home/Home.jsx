@@ -229,8 +229,27 @@ const Home = () => {
 
       <div className={styles.products}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Best selling of the week</h2>
-          <ProductCarousel products={products} />
+          <div className={styles.productsGroup}>
+            <h2 className={styles.title}>Best selling of the week</h2>
+            <div className={styles.sectionAndCarousel}>
+              <SectionCard title="Group" />
+              <ProductCarousel products={products} productsPerView={4} />
+            </div>
+          </div>
+          <div className={styles.productsGroup}>
+            <h2 className={styles.title}>Best selling of the week</h2>
+            <div className={`${styles.sectionAndCarousel} ${styles.inverted}`}>
+              <SectionCard title="Group" />
+              <ProductCarousel products={products} productsPerView={4} />
+            </div>
+          </div>
+          <div className={styles.productsGroup}>
+            <h2 className={styles.title}>Best selling of the week</h2>
+            <div className={styles.sectionAndCarousel}>
+              <SectionCard title="Group" />
+              <ProductCarousel products={products} productsPerView={4} />
+            </div>
+          </div>
         </div>
       </div>
 

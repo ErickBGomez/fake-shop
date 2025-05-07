@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1.5rem;
+  padding: 32px 24px;
   // Avoid header to be behind the content (for example, chakra buttons)
   z-index: 2;
 
@@ -17,6 +17,10 @@
     flex: 1;
     max-width: $content-max-width;
     justify-content: space-between;
+
+    .menu {
+      display: none;
+    }
 
     .headerNav {
       display: flex;
@@ -90,7 +94,42 @@
 }
 
 @media (max-width: 768px) {
-  .mainHeader .content .headerNav .navLinks {
-    display: none;
+  .mainHeader {
+    padding: 16px;
+
+    .content {
+      .headerNav {
+        gap: 16px;
+
+        .navLinks {
+          display: none;
+        }
+      }
+
+      .actions {
+        .user {
+          display: none;
+        }
+      }
+      .menu {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .mainHeader {
+    padding: 16px 4px;
+
+    .content {
+      .brand {
+        display: none;
+      }
+
+      .actions {
+        gap: 2px;
+      }
+    }
   }
 }

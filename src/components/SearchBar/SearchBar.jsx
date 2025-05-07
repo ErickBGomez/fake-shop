@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import styles from "./SearchBar.module.scss";
 import { Search } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Input from "../Input/Input";
 
 const SearchBar = () => {
@@ -27,7 +27,11 @@ const SearchBar = () => {
   return (
     <div className={styles.search}>
       {active ? (
-        <Input ref={inputRef} onBlur={handleUnfocus} />
+        <Input
+          ref={inputRef}
+          onBlur={handleUnfocus}
+          placeholder="Find a item..."
+        />
       ) : (
         <Button variant="plain" onClick={handleClickWhenInactive}>
           <Search />

@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { UserRound, ShoppingCart, Search } from "lucide-react";
+import { UserRound, ShoppingCart, Menu } from "lucide-react";
 import CartContext from "../../context/CartContext";
 import styles from "./Header.module.scss";
 import SearchBar from "../SearchBar/SearchBar";
@@ -25,6 +25,12 @@ const Header = ({ landingVariant = false }) => {
     >
       <div className={styles.content}>
         <nav className={styles.headerNav}>
+          {/* Appear only when screen width < 768px */}
+          <div className={styles.menu}>
+            <Button variant="plain">
+              <Menu />
+            </Button>
+          </div>
           <div className={styles.brand}>
             <Link to="/">BRAND</Link>
           </div>

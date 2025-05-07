@@ -3,16 +3,21 @@
 .input {
   background-color: colors.$black-05-solid;
   border-radius: 100rem;
+  border: none;
+
+  &::placeholder {
+    color: colors.$black-50;
+  }
 
   &.border {
-    border: 1px solid colors.$black-25;
+    border: 1px solid colors.$black-05;
   }
 
   &.dark {
     background-color: colors.$white-25;
 
     &::placeholder {
-      color: colors.$white-50;
+      color: colors.$white;
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Input as ChakraInput, Field } from "@chakra-ui/react";
 import styles from "./Input.module.scss";
 
-// Variant: default, with border, dark
+// Variant: default, border, dark
 const Input = ({ label = "", placeholder, variant, ref, onBlur }) => {
   return (
     <Field.Root>

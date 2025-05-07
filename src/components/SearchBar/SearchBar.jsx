@@ -29,6 +29,7 @@ const SearchBar = () => {
       {active ? (
         <Input
           ref={inputRef}
+          variant="border"
           onBlur={handleUnfocus}
           placeholder="Find a item..."
         />

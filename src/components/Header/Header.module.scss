@@ -17,6 +17,7 @@
     flex: 1;
     max-width: $content-max-width;
     justify-content: space-between;
+    gap: 32px;
 
     .menu {
       display: none;
@@ -41,6 +42,8 @@
     .actions {
       display: flex;
       gap: 1rem;
+      flex: 1;
+      justify-content: end;
 
       .cart {
         position: relative;
@@ -123,6 +126,8 @@
     padding: 16px 4px;
 
     .content {
+      gap: 0;
+
       .brand {
         display: none;
       }

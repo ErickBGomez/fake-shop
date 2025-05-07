@@ -5,6 +5,7 @@ import { UserRound, ShoppingCart, Search } from "lucide-react";
 import CartContext from "../../context/CartContext";
 import styles from "./Header.module.scss";
 import SearchBar from "../SearchBar/SearchBar";
+import useDisplayScroll from "@/hooks/useDisplayScroll";
 
 const navLinks = [
   { label: "Categories", link: "/categories/test" },
@@ -14,26 +15,13 @@ const navLinks = [
 
 const Header = ({ landingVariant = false }) => {
   const { state, dispatch } = useContext(CartContext);
-  const [scrollYPosition, setScrollYPosition] = useState(0);
-
-  const handleScroll = () => {
-    const currentScrollY = window.pageYOffset;
-    setScrollYPosition(currentScrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const displayScroll = useDisplayScroll();
 
   return (
     <header
       className={`${styles.mainHeader} ${
         landingVariant ? styles.landing : ""
-      } ${scrollYPosition > 0 ? styles.scrolled : ""}`}
+      } ${displayScroll.y > 0 ? styles.scrolled : ""}`}
     >
       <div className={styles.content}>
         <nav className={styles.headerNav}>

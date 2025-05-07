@@ -5,10 +5,13 @@ import Product from "../Product/Product";
 import SwiperButton from "../SwiperButton/SwiperButton";
 import styles from "./ProductCarousel.module.scss";
 import "swiper/css";
+import useDisplayDimensions from "@/hooks/useDisplayDimensions";
 
 const ProductCarousel = ({ products, productsPerView = 7 }) => {
   const leftButton = useRef(null);
   const rightButton = useRef(null);
+  // TODO: This is provoking performance issues
+  const displayDimensions = useDisplayDimensions();
 
   const handleLeftButtonClick = () => {
     if (!leftButton.current) return;
@@ -19,6 +22,15 @@ const ProductCarousel = ({ products, productsPerView = 7 }) => {
     if (!rightButton.current) return;
     rightButton.current.click();
   };
+
+  // const getProductsPerView = () => {
+  //   const productsPerViewByWidth = displayDimensions.width / 100; // 100 is the max width of each product
+
+  //   if (productsPerViewByWidth < productsPerView) {
+  //     return Math.floor(productsPerViewByWidth);
+  //   }
+  //   return productsPerView;
+  // };
 
   return (
     <div className={styles.productsCarousel}>

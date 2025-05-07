@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Product from "../Product/Product";
@@ -10,7 +10,7 @@ import useDisplayDimensions from "@/hooks/useDisplayDimensions";
 const ProductCarousel = ({ products, productsPerView = 7 }) => {
   const leftButton = useRef(null);
   const rightButton = useRef(null);
-  // TODO: This is provoking performance issues
+  // TODO: This is provoking performance issues... and even with useMemo
   const displayDimensions = useDisplayDimensions();
 
   const handleLeftButtonClick = () => {
@@ -23,14 +23,16 @@ const ProductCarousel = ({ products, productsPerView = 7 }) => {
     rightButton.current.click();
   };
 
-  // const getProductsPerView = () => {
-  //   const productsPerViewByWidth = displayDimensions.width / 100; // 100 is the max width of each product
+  // Calculate the number of products that can be displayed based on the screen width
+  // useMemo to avoid recalculating on every render
+  const productsPerViewMemoized = useMemo(() => {
+    const productsPerViewByWidth = Math.floor(displayDimensions.width / 100); // Assuming 100px is the max width of each product
+    return Math.min(productsPerViewByWidth, productsPerView);
+  }, [displayDimensions.width, productsPerView]);
 
-  //   if (productsPerViewByWidth < productsPerView) {
-  //     return Math.floor(productsPerViewByWidth);
-  //   }
-  //   return productsPerView;
-  // };
+  useEffect(() => {
+    console.log(productsPerViewMemoized);
+  }, [productsPerViewMemoized]);
 
   return (
     <div className={styles.productsCarousel}>

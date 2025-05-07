@@ -1,0 +1,51 @@
+@use "../../styles/colors";
+@use "../../styles/effects";
+
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: colors.$cart-backdrop;
+  z-index: 3;
+}
+
+.headerDialog {
+  @include effects.shadow;
+  background-color: colors.$white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: colors.$white;
+  padding: 32px;
+  padding-top: 40px;
+  z-index: 4;
+
+  .close {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .link {
+      text-align: center;
+
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+
+  .account {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

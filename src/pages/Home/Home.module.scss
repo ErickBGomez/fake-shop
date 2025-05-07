@@ -145,3 +145,22 @@
     }
   }
 }
+
+@media (max-width: 632px) {
+  .home {
+    .products .content {
+      .sectionAndCarousel,
+      .sectionAndCarousel.inverted {
+        flex-direction: column;
+
+        & > *:first-child {
+          width: 100%;
+        }
+
+        & > *:last-child {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

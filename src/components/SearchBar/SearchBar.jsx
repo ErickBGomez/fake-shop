@@ -16,23 +16,40 @@ const SearchBar = () => {
     }, 0);
   };
 
-  // TODO: Value is not present in current
-  const handleUnfocus = () => {
-    if (inputRef.current.value === 0) return;
+  const handleSearch = (e) => {
+    e.preventDefault();
 
-    setActive(false);
-    console.log("si");
+    console.log("sis");
+    const [searchInput] = e.target;
+    if (!searchInput.value) return;
+
+    console.log(`Searching for: ${searchInput.value}`);
+
+    searchInput.value = "";
+  };
+
+  const handleUnfocus = () => {
+    setTimeout(() => {
+      setActive(false);
+    }, 10);
   };
 
   return (
     <div className={styles.search}>
       {active ? (
-        <Input
-          ref={inputRef}
-          variant="border"
-          onBlur={handleUnfocus}
-          placeholder="Find a item..."
-        />
+        <form className={styles.searchForm} onSubmit={handleSearch}>
+          <Input
+            className={styles.input}
+            ref={inputRef}
+            variant="border"
+            onBlur={handleUnfocus}
+            placeholder="Find a item..."
+          />
+          {/* TODO: This button is not submitting the form */}
+          <button className={styles.activeSearchButton} type="submit">
+            <Search />
+          </button>
+        </form>
       ) : (
         <Button variant="plain" onClick={handleClickWhenInactive}>
           <Search />

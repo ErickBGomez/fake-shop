@@ -24,7 +24,7 @@ const SearchBar = ({ active, setActive }) => {
 
     if (!searchInput.value) return;
 
-    navigate(`/search/${searchInput.value}`);
+    navigate(`/search?query=${searchInput.value}`);
 
     setActive(false);
     searchInput.value = "";

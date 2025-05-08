@@ -1,10 +1,24 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import ResultContainer from "../../components/ResultContainer/ResultContainer";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import styles from "./Search.module.scss";
+import { useEffect } from "react";
 
 const Search = () => {
-  const { query } = useParams();
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const query = searchParams.get("query");
+
+  useEffect(() => {
+    if (!query) {
+      navigate("/");
+    }
+  }, [navigate, query]);
+
+  // Add loading state when redirecting to home
+  if (!query) {
+    return;
+  }
 
   // const result = [];
   const result = [

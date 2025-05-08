@@ -24,7 +24,7 @@ const routes = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/search/:query",
+        path: "/search",
         element: <Search />,
       },
       {

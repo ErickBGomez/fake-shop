@@ -70,7 +70,8 @@
   // Set white header when is a normal header, or when is a landing header and the user hovers it
   &,
   &.landing:hover,
-  &.landing.scrolled {
+  &.landing.scrolled,
+  &.landing.searchActive {
     background-color: colors.$white;
     color: colors.$black;
 

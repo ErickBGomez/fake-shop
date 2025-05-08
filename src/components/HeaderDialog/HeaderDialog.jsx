@@ -2,31 +2,27 @@ import { Button } from "@chakra-ui/react";
 import { X } from "lucide-react";
 import styles from "./HeaderDialog.module.scss";
 
-const HeaderDialog = ({ handleDialogState }) => {
-  const handleClose = () => {
-    handleDialogState(false);
-  };
-
+const HeaderDialog = ({ closeDialog }) => {
   return (
     <>
-      <div className={styles.backdrop} onClick={handleClose}></div>
+      <div className={styles.backdrop} onClick={closeDialog}></div>
       <div className={styles.headerDialog}>
         <div className={styles.close}>
-          <X onClick={handleClose} />
+          <X onClick={closeDialog} />
         </div>
         <div className={styles.links}>
           <div className={styles.link}>
-            <Button variant="plain" onClick={handleClose}>
+            <Button variant="plain" onClick={closeDialog}>
               Categories
             </Button>
           </div>
           <div className={styles.link}>
-            <Button variant="plain" onClick={handleClose}>
+            <Button variant="plain" onClick={closeDialog}>
               Sales
             </Button>
           </div>
           <div className={styles.link}>
-            <Button variant="plain" onClick={handleClose}>
+            <Button variant="plain" onClick={closeDialog}>
               New
             </Button>
           </div>

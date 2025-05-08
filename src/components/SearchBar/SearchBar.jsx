@@ -4,8 +4,7 @@ import { Search } from "lucide-react";
 import { useRef, useState } from "react";
 import Input from "../Input/Input";
 
-const SearchBar = () => {
-  const [active, setActive] = useState(false);
+const SearchBar = ({ active, setActive }) => {
   const inputRef = useRef(null);
 
   const handleClickWhenInactive = () => {

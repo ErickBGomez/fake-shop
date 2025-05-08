@@ -16,20 +16,31 @@ const navLinks = [
 
 const Header = ({ landingVariant = false }) => {
   const { state, dispatch } = useContext(CartContext);
-  const [dialogState, setDialogState] = useState(false);
+  const [dialogActive, setDialogActive] = useState(false);
+  const [searchBarActive, setSearchBarActive] = useState(false);
   const { scrollY } = useDisplayScroll();
 
   const handleOpenDialog = () => {
-    setDialogState(true);
+    setDialogActive(true);
+  };
+
+  const handleCloseDialog = () => {
+    setDialogActive(false);
+  };
+
+  const handleSearchBarState = (state) => {
+    setSearchBarActive(state);
   };
 
   return (
     <>
-      {dialogState && <HeaderDialog handleDialogState={setDialogState} />}
+      {dialogActive && <HeaderDialog closeDialog={handleCloseDialog} />}
       <header
         className={`${styles.mainHeader} ${
           landingVariant ? styles.landing : ""
-        } ${scrollY > 0 ? styles.scrolled : ""}`}
+        } ${scrollY > 0 ? styles.scrolled : ""} ${
+          searchBarActive ? styles.searchActive : ""
+        }`}
       >
         <div className={styles.content}>
           <nav className={styles.headerNav}>
@@ -51,7 +62,10 @@ const Header = ({ landingVariant = false }) => {
             </ul>
           </nav>
           <div className={styles.actions}>
-            <SearchBar />
+            <SearchBar
+              active={searchBarActive}
+              setActive={handleSearchBarState}
+            />
             <div className={styles.user}>
               <Button variant="plain">
                 <UserRound />

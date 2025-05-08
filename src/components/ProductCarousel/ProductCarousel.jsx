@@ -11,7 +11,7 @@ const ProductCarousel = ({ products, productsPerView = 7 }) => {
   const leftButton = useRef(null);
   const rightButton = useRef(null);
   // TODO: This is provoking performance issues... and even with useMemo
-  const displayDimensions = useDisplayDimensions();
+  const { displayWidth } = useDisplayDimensions();
 
   const handleLeftButtonClick = () => {
     if (!leftButton.current) return;
@@ -26,13 +26,17 @@ const ProductCarousel = ({ products, productsPerView = 7 }) => {
   // Calculate the number of products that can be displayed based on the screen width
   // useMemo to avoid recalculating on every render
   const productsPerViewMemoized = useMemo(() => {
-    const productsPerViewByWidth = Math.floor(displayDimensions.width / 100); // Assuming 100px is the max width of each product
+    const productsPerViewByWidth = Math.floor((displayWidth - 64) / 100); // Assuming 100px is the max width of each product
     return Math.min(productsPerViewByWidth, productsPerView);
-  }, [displayDimensions.width, productsPerView]);
+  }, [displayWidth, productsPerView]);
 
   useEffect(() => {
     console.log(productsPerViewMemoized);
   }, [productsPerViewMemoized]);
+
+  // useEffect(() => {
+  //   console.log(displayWidth);
+  // }, [displayWidth]);
 
   return (
     <div className={styles.productsCarousel}>
@@ -50,7 +54,7 @@ const ProductCarousel = ({ products, productsPerView = 7 }) => {
           </button>
 
           {/* TODO: Find a way to make the elements responsive */}
-          <Swiper slidesPerView={productsPerView} spaceBetween={32}>
+          <Swiper slidesPerView={productsPerViewMemoized} spaceBetween={32}>
             <SwiperButton direction="left" ref={leftButton} />
             <SwiperButton direction="right" ref={rightButton} />
 

@@ -1,19 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const useDisplayDimensions = () => {
-  const [displayDimensions, setDisplayDimensions] = useState({
-    width: 0,
-    height: 0,
+  const displayDimensions = useRef({
+    displayWidth: window.innerWidth,
+    displayHeight: window.innerHeight,
   });
 
-  const handleResize = () => {
-    const currentX = window.innerWidth;
-    const currentY = window.innerHeight;
-
-    setDisplayDimensions({ width: currentX, height: currentY });
+  const setDisplayDimensions = ({ displayWidth, displayHeight }) => {
+    displayDimensions.current = { displayWidth, displayHeight };
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      const currentX = window.innerWidth;
+      const currentY = window.innerHeight;
+
+      setDisplayDimensions({ displayWidth: currentX, displayHeight: currentY });
+    };
+
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -21,7 +25,7 @@ const useDisplayDimensions = () => {
     };
   }, []);
 
-  return displayDimensions;
+  return displayDimensions.current;
 };
 
 export default useDisplayDimensions;

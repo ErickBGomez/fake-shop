@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 
 const useDisplayScroll = () => {
-  const [displayScroll, setDisplayScroll] = useState({ x: 0, y: 0 });
+  const [displayScroll, setDisplayScroll] = useState({
+    scrollX: window.pageXOffset,
+    scrollY: window.pageYOffset,
+  });
 
   const handleScroll = () => {
     const currentScrollX = window.pageXOffset;
     const currentScrollY = window.pageYOffset;
 
-    setDisplayScroll({ x: currentScrollX, y: currentScrollY });
+    setDisplayScroll({ scrollX: currentScrollX, scrollY: currentScrollY });
   };
 
   useEffect(() => {

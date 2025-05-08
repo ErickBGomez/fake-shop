@@ -17,7 +17,7 @@ const navLinks = [
 const Header = ({ landingVariant = false }) => {
   const { state, dispatch } = useContext(CartContext);
   const [dialogState, setDialogState] = useState(false);
-  const displayScroll = useDisplayScroll();
+  const { scrollY } = useDisplayScroll();
 
   const handleOpenDialog = () => {
     setDialogState(true);
@@ -29,7 +29,7 @@ const Header = ({ landingVariant = false }) => {
       <header
         className={`${styles.mainHeader} ${
           landingVariant ? styles.landing : ""
-        } ${displayScroll.y > 0 ? styles.scrolled : ""}`}
+        } ${scrollY > 0 ? styles.scrolled : ""}`}
       >
         <div className={styles.content}>
           <nav className={styles.headerNav}>

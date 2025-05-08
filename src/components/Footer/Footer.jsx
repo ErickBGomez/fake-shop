@@ -1,11 +1,12 @@
+import { Instagram, Youtube, Facebook, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
 
 const socials = [
-  { icon: "twitter", link: "https://www.twitter.com" },
-  { icon: "instagram", link: "https://www.instagram.com" },
-  { icon: "youtube", link: "https://www.youtube.com" },
-  { icon: "facebook", link: "https://www.facebook.com" },
+  { icon: <Instagram />, link: "https://www.instagram.com/erickbgomez" },
+  { icon: <Youtube />, link: "https://www.youtube.com" },
+  { icon: <Facebook />, link: "https://www.facebook.com" },
+  { icon: <Linkedin />, link: "https://www.linkedin.com/in/erickbgomez" },
 ];
 
 const importantLinks = [

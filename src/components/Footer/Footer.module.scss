@@ -4,7 +4,7 @@
 
 .mainFooter {
   background-color: colors.$black-05;
-  padding: 3rem 2rem;
+  padding: 48px 32px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -13,7 +13,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 2rem;
+    gap: 32px;
     max-width: $content-max-width;
     align-items: center;
 
@@ -24,17 +24,17 @@
     .socials {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 24px;
     }
 
     .importantLinks {
       display: flex;
       justify-content: center;
-      gap: 1.25rem;
+      gap: 24px;
 
       & > * {
         position: relative;
-        padding-left: 1.25rem;
+        padding-left: 24px;
 
         &::before {
           content: "•";
@@ -58,13 +58,13 @@
 @media (max-width: 504px) {
   .mainFooter .content .importantLinks {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 12px;
   }
 }
 
 @media (max-width: 380px) {
   .mainFooter .content .socials {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 12px;
   }
 }

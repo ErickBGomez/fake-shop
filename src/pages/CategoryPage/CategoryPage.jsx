@@ -1,10 +1,10 @@
+import { useParams } from "react-router-dom";
 import ResultContainer from "../../components/ResultContainer/ResultContainer";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import styles from "./CategoryPage.module.scss";
 
 const CategoryPage = () => {
-  // TODO: Replace with fetch from path params
-  const category = "Category";
+  const { category } = useParams();
   // const result = [];
   const result = [
     {

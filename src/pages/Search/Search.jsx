@@ -1,8 +1,11 @@
+import { useParams } from "react-router-dom";
 import ResultContainer from "../../components/ResultContainer/ResultContainer";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import styles from "./Search.module.scss";
 
-const Search = ({ query = "" }) => {
+const Search = () => {
+  const { query } = useParams();
+
   // const result = [];
   const result = [
     {

@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
-import styles from "./SearchBar.module.scss";
 import { Search } from "lucide-react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Input from "../Input/Input";
+import styles from "./SearchBar.module.scss";
 
 const SearchBar = ({ active, setActive }) => {
+  const navigate = useNavigate();
   const inputRef = useRef(null);
 
   const handleClickWhenInactive = () => {
@@ -18,12 +20,13 @@ const SearchBar = ({ active, setActive }) => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    console.log("sis");
     const [searchInput] = e.target;
+
     if (!searchInput.value) return;
 
-    console.log(`Searching for: ${searchInput.value}`);
+    navigate(`/search/${searchInput.value}`);
 
+    setActive(false);
     searchInput.value = "";
   };
 

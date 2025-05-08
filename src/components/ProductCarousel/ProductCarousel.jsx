@@ -10,7 +10,6 @@ import useDisplayDimensions from "@/hooks/useDisplayDimensions";
 const ProductCarousel = ({ products, productsPerView = 7 }) => {
   const leftButton = useRef(null);
   const rightButton = useRef(null);
-  // TODO: This is provoking performance issues... and even with useMemo
   const { displayWidth } = useDisplayDimensions();
 
   const handleLeftButtonClick = () => {
@@ -25,6 +24,8 @@ const ProductCarousel = ({ products, productsPerView = 7 }) => {
 
   // Calculate the number of products that can be displayed based on the screen width
   // useMemo to avoid recalculating on every render
+  // This calculation only happens on first render because of useRef.
+  // TODO: Find a way to resize the Swiper when the window is resized and not provoking too many rerenders
   const productsPerViewMemoized = useMemo(() => {
     const productsPerViewByWidth = Math.floor((displayWidth - 64) / 100); // Assuming 100px is the max width of each product
     return Math.min(productsPerViewByWidth, productsPerView);
@@ -33,10 +34,6 @@ const ProductCarousel = ({ products, productsPerView = 7 }) => {
   useEffect(() => {
     console.log(productsPerViewMemoized);
   }, [productsPerViewMemoized]);
-
-  // useEffect(() => {
-  //   console.log(displayWidth);
-  // }, [displayWidth]);
 
   return (
     <div className={styles.productsCarousel}>

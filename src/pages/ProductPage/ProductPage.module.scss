@@ -83,18 +83,7 @@
       }
 
       .addProductDialog {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        .buttons {
-          display: flex;
-          gap: 1rem;
-
-          button {
-            flex: 1;
-          }
-        }
+        width: 100%;
       }
 
       .specs {

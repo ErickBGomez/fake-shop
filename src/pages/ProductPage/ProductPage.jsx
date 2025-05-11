@@ -1,40 +1,17 @@
 import { Button } from "@chakra-ui/react";
-import {
-  NumberInputRoot,
-  NumberInputField,
-} from "@/components/ui/number-input";
-import { ShoppingCart, Weight, Box, Heart, Flag } from "lucide-react";
+import { Weight, Box, Heart, Flag } from "lucide-react";
 import { useParams } from "react-router-dom";
 import Rating from "../../components/Rating/Rating";
 import ProductSpecs from "../../components/ProductSpecs/ProductSpecs";
-import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import styles from "./ProductPage.module.scss";
 import useFetch from "@/hooks/useFetch";
 import ErrorPage from "../ErrorPage/ErrorPage";
-import { useContext, useState } from "react";
-import CartContext from "@/context/CartContext";
 import Image from "../../components/Image/Image";
-import ProductSuggestions from "@/components/ProductSuggestions/ProductSuggestions";
+import AddCartButton from "@/components/AddCartButton/AddCartButton";
 
 const ProductPage = () => {
-  const [openCartDialog, setOpenCartDialog] = useState(false);
-  const [quantity, setQuantity] = useState(1);
-  const { dispatch } = useContext(CartContext);
   const { id } = useParams();
   const { data: product, loading, error } = useFetch(`products/${id}`);
-
-  // Resets quantity and hides button and number input
-  const handleCloseCart = () => {
-    setOpenCartDialog(false);
-    setQuantity(1);
-  };
-
-  // Save product in cart context to display in the sidebar and cart page
-  const handleAddCart = () => {
-    dispatch({ type: "addProduct", product: { ...product, quantity } });
-
-    handleCloseCart();
-  };
 
   // TODO: Change into a proper loading page
   if (loading) return <p>Loading...</p>;
@@ -75,33 +52,7 @@ const ProductPage = () => {
           </div>
           <p className={styles.stock}>Stock: {product.stock}</p>
           <div className={styles.addProductDialog}>
-            {openCartDialog ? (
-              <>
-                <NumberInputRoot
-                  defaultValue={1}
-                  min={1}
-                  max={product.stock}
-                  onValueChange={(e) => setQuantity(e.valueAsNumber)}
-                >
-                  <NumberInputField />
-                </NumberInputRoot>
-                <div className={styles.buttons}>
-                  <Button colorPalette="brand" onClick={handleAddCart}>
-                    CONFIRM
-                  </Button>
-                  <Button variant="outline" onClick={handleCloseCart}>
-                    CANCEL
-                  </Button>
-                </div>
-              </>
-            ) : (
-              <Button
-                colorPalette="brand"
-                onClick={() => setOpenCartDialog(true)}
-              >
-                <ShoppingCart /> ADD TO CART
-              </Button>
-            )}
+            <AddCartButton product={product} />
           </div>
           <hr />
           <p className={styles.description}>{product.description}</p>

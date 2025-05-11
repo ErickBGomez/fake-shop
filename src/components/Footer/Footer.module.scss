@@ -4,7 +4,7 @@
 
 .mainFooter {
   background-color: colors.$black-05;
-  padding: 48px 32px;
+  padding: 48px 8px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -23,6 +23,9 @@
 
     .socials {
       display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
       align-items: center;
       gap: 24px;
     }
@@ -59,12 +62,13 @@
   .mainFooter .content .importantLinks {
     flex-direction: column;
     gap: 12px;
-  }
-}
 
-@media (max-width: 380px) {
-  .mainFooter .content .socials {
-    flex-direction: column;
-    gap: 12px;
+    & > * {
+      padding-left: 0;
+
+      &::before {
+        content: "";
+      }
+    }
   }
 }

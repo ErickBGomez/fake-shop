@@ -54,7 +54,7 @@ const ProductPage = () => {
           </span>
         </div>
         <div className={styles.images}>
-          <ImagesPreview images={product.images} />
+          <ImagesPreview images={[null, null, null, null, null, null]} />
         </div>
         <div className={styles.details}>
           <div className={styles.priceContainer}>

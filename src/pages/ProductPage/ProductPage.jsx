@@ -8,12 +8,12 @@ import { useParams } from "react-router-dom";
 import Rating from "../../components/Rating/Rating";
 import ProductSpecs from "../../components/ProductSpecs/ProductSpecs";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
-import ImagesPreview from "../../components/ImagesPreview/ImagesPreview";
 import styles from "./ProductPage.module.scss";
 import useFetch from "@/hooks/useFetch";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import { useContext, useState } from "react";
 import CartContext from "@/context/CartContext";
+import Image from "../../components/Image/Image";
 import ProductSuggestions from "@/components/ProductSuggestions/ProductSuggestions";
 
 const ProductPage = () => {
@@ -54,7 +54,7 @@ const ProductPage = () => {
           </span>
         </div>
         <div className={styles.images}>
-          <ImagesPreview images={[null, null, null, null, null, null]} />
+          <Image src={product.images[0]} rounded="md" />
         </div>
         <div className={styles.details}>
           <div className={styles.priceContainer}>

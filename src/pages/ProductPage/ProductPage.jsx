@@ -134,7 +134,7 @@ const ProductPage = () => {
             <h2 className={styles.title}>Suggestions</h2>
             <p>Checkout these similar products you might like</p>
           </div>
-          <ProductSuggestions />
+          {/* <ProductSuggestions /> */}
         </div>
       </div>
     </div>

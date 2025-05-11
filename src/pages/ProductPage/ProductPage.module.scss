@@ -3,7 +3,7 @@
 @use "../../styles/variables" as *;
 
 .productPage {
-  padding: 5.38rem 1rem;
+  padding: 86px 16px;
 
   .content {
     max-width: $content-max-width;
@@ -131,13 +131,17 @@
 
 // TODO: Change width later
 @media (max-width: 700px) {
-  .productPage .content {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "images"
-      "details"
-      "suggestions";
-    row-gap: 2rem;
+  .productPage {
+    padding: 8px;
+
+    .content {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "images"
+        "details"
+        "suggestions";
+      row-gap: 2rem;
+    }
   }
 }

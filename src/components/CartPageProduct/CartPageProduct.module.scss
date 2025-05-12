@@ -4,12 +4,14 @@
 .product {
   display: grid;
   grid-template-columns: 1fr max-content min-content;
+  grid-template-areas: "details quantity total";
   align-content: center;
   align-items: center;
   gap: 16px;
   min-width: 440px;
 
   .details {
+    grid-area: details;
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: 1fr min-content 1fr;
@@ -42,6 +44,7 @@
   }
 
   .quantity {
+    grid-area: quantity;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,20 +62,38 @@
   }
 
   .total {
+    grid-area: total;
     min-width: 64px;
     width: 100%;
     text-align: right;
   }
 }
 
+// Remove min-width on mobile to avoid overflow
 @media (max-width: 768px) {
   .product {
     min-width: 0;
   }
 }
 
+// Stack product info vertically (product, quantity, total) on mobile
 @media (max-width: 550px) {
   .product {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr max-content;
+    justify-items: center;
+    grid-template-areas: "details details" "quantity total";
+  }
+}
+
+// Stack product details vertically (image, title, brand, price) on mobile
+@media (max-width: 350px) {
+  .product {
+    .details {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr min-content min-content;
+      grid-template-areas: "img" "title" "brand" "price";
+      justify-items: center;
+    }
   }
 }

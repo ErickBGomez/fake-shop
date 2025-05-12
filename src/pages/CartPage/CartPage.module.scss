@@ -102,3 +102,35 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .cart {
+    padding: 16px;
+
+    .content {
+      .cartContent {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "title"
+          "product"
+          "summary";
+        gap: 16px 0;
+
+        .products {
+          grid-area: product;
+        }
+
+        .summary {
+          grid-area: summary;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .cart .content .cartContent .products {
+    gap: 32px;
+  }
+}

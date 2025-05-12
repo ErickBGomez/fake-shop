@@ -64,3 +64,15 @@
     text-align: right;
   }
 }
+
+@media (max-width: 768px) {
+  .product {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
+}

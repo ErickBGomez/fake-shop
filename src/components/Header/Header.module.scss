@@ -26,7 +26,7 @@
     .headerNav {
       display: flex;
       align-items: center;
-      gap: 5.735rem;
+      gap: 91.76px;
 
       .brand {
         @include text-styles.brand-text;
@@ -35,13 +35,13 @@
       .navLinks {
         display: flex;
         align-items: center;
-        gap: 3rem;
+        gap: 48px;
       }
     }
 
     .actions {
       display: flex;
-      gap: 1rem;
+      gap: 16px;
       flex: 1;
       justify-content: end;
 
@@ -53,8 +53,8 @@
           position: absolute;
           top: 0;
           right: 0;
-          width: 1.5rem;
-          height: 1.5rem;
+          width: 24px;
+          height: 24px;
           display: flex;
           align-items: center;
           justify-content: center;

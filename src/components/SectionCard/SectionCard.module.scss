@@ -12,7 +12,7 @@
 
   .title {
     @include text-styles.section-card-title;
-    margin-bottom: 0.25rem;
+    margin-bottom: 4px;
   }
 
   .img {
@@ -79,7 +79,7 @@
     & {
       .title {
         @include text-styles.section-card-title;
-        margin-bottom: 0.25rem;
+        margin-bottom: 4px;
       }
 
       .img {

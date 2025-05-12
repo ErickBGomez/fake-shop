@@ -4,16 +4,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
-  margin: 4rem 0 5.38rem 0;
+  gap: 64px;
+  margin: 64px 0 86px 0;
 
   // Pending: Define columns
   .results {
-    max-width: 61.749rem;
+    max-width: 987.984px;
     width: 100%;
     display: grid;
-    gap: 4rem;
-    grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
-    padding: 0 1rem;
+    gap: 64px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    padding: 0 16px;
   }
 }

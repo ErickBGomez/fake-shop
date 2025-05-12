@@ -9,16 +9,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.38rem;
+  gap: 6.08px;
   cursor: pointer;
   user-select: none;
 
   img {
-    height: 8.75rem;
+    height: 140px;
   }
 
   .titleContainer {
-    max-width: 8.75rem;
+    max-width: 140px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -34,7 +34,7 @@
 
   .priceContainer {
     display: flex;
-    gap: 0.62rem;
+    gap: 9.92px;
 
     .discount {
       @include text-styles.small-text;

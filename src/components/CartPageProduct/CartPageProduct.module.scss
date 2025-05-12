@@ -6,7 +6,7 @@
   grid-template-columns: 1fr max-content min-content;
   align-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
   min-width: 440px;
 
   .details {
@@ -14,11 +14,11 @@
     grid-template-columns: max-content 1fr;
     grid-template-rows: 1fr min-content 1fr;
     grid-template-areas: "img title" "img brand" "img price";
-    row-gap: 0.25rem;
+    row-gap: 4px;
 
     img {
       grid-area: img;
-      width: 8rem;
+      width: 128px;
     }
 
     .title {
@@ -47,12 +47,12 @@
     justify-content: center;
     max-width: 120px;
     width: 100%;
-    gap: 1rem;
+    gap: 16px;
 
     .remove {
       svg {
-        width: 1.2rem;
-        height: 1.2rem;
+        width: 20px;
+        height: 20px;
         stroke: colors.$danger;
       }
     }

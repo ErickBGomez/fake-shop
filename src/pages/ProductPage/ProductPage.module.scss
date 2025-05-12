@@ -111,6 +111,7 @@
 
     .suggestions {
       grid-area: suggestions;
+      max-width: 90vw;
       margin-top: 4rem;
       display: flex;
       flex-direction: column;

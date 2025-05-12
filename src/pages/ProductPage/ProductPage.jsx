@@ -8,6 +8,7 @@ import useFetch from "@/hooks/useFetch";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Image from "../../components/Image/Image";
 import AddCartButton from "@/components/AddCartButton/AddCartButton";
+import ProductSuggestions from "@/components/ProductSuggestions/ProductSuggestions";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -85,7 +86,7 @@ const ProductPage = () => {
             <h2 className={styles.title}>Suggestions</h2>
             <p>Checkout these similar products you might like</p>
           </div>
-          {/* <ProductSuggestions /> */}
+          <ProductSuggestions />
         </div>
       </div>
     </div>

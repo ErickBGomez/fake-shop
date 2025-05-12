@@ -5,6 +5,7 @@ import styles from "./CartPage.module.scss";
 import { useContext, useMemo } from "react";
 import CartContext from "@/context/CartContext";
 import CartPageProduct from "@/components/CartPageProduct/CartPageProduct";
+import calculatePrice from "@/util/price";
 
 const CartPage = () => {
   const { state } = useContext(CartContext);
@@ -12,7 +13,10 @@ const CartPage = () => {
   const subtotal = useMemo(
     () =>
       state?.products?.reduce(
-        (total, product) => total + product.price * product.quantity,
+        (total, product) =>
+          total +
+          calculatePrice(product.price, product.discountPercentage) *
+            product.quantity,
         0
       ),
     [state?.products]
@@ -38,7 +42,7 @@ const CartPage = () => {
                 </div>
                 <div className={styles.summaryItem}>
                   <p className={styles.title}>Shipping</p>
-                  <p className={styles.subtitle}>${shipping.toFixed(2)}</p>
+                  <p className={styles.subtitle}>+${shipping.toFixed(2)}</p>
                 </div>
                 <hr />
                 <div className={styles.totalItem}>

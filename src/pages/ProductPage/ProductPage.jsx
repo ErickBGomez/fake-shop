@@ -9,6 +9,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import Image from "../../components/Image/Image";
 import AddCartButton from "@/components/AddCartButton/AddCartButton";
 import ProductSuggestions from "@/components/ProductSuggestions/ProductSuggestions";
+import calculatePrice from "@/util/price";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -39,11 +40,7 @@ const ProductPage = () => {
             <span className={styles.prices}>
               <p className={styles.finalPrice}>
                 {/* Calculate price with discount, and round up to 2 decimals */}
-                $
-                {(
-                  product.price *
-                  (1 - product.discountPercentage / 100)
-                ).toFixed(2)}
+                ${calculatePrice(product.price, product.discountPercentage)}
               </p>
               <p className={styles.originalPrice}>${product.price}</p>
             </span>

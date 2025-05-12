@@ -8,6 +8,7 @@ import styles from "./CartSidebarProduct.module.scss";
 import CartContext from "@/context/CartContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import calculatePrice from "@/util/price";
 
 const CartSidebarProduct = ({ product }) => {
   const { dispatch } = useContext(CartContext);
@@ -31,7 +32,9 @@ const CartSidebarProduct = ({ product }) => {
       <div className={styles.details} onClick={handleNavigateProduct}>
         <Image src={product.images[0]} alt={product.name} />
         <p className={styles.title}>{product.title}</p>
-        <p className={styles.price}>${product.price}</p>
+        <p className={styles.price}>
+          ${calculatePrice(product.price, product.discountPercentage)}
+        </p>
       </div>
       <NumberInputRoot
         defaultValue={product.quantity}

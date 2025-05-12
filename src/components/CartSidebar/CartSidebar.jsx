@@ -5,6 +5,7 @@ import CartContext from "../../context/CartContext";
 import CartSidebarProduct from "../CartSidebarProduct/CartSidebarProduct";
 import styles from "./CartSidebar.module.scss";
 import { Button } from "@chakra-ui/react";
+import calculatePrice from "@/util/price";
 
 const CartSidebar = () => {
   const { state, dispatch } = useContext(CartContext);
@@ -13,7 +14,10 @@ const CartSidebar = () => {
   const subtotal = useMemo(
     () =>
       state?.products?.reduce(
-        (total, product) => total + product.price * product.quantity,
+        (total, product) =>
+          total +
+          calculatePrice(product.price, product.discountPercentage) *
+            product.quantity,
         0
       ),
     [state?.products]

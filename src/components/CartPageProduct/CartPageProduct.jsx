@@ -4,6 +4,7 @@ import { NumberInputField, NumberInputRoot } from "../ui/number-input";
 import { Trash2 } from "lucide-react";
 import Image from "../Image/Image";
 import styles from "./CartPageProduct.module.scss";
+import calculatePrice from "@/util/price";
 
 const CartPageProduct = ({ product }) => {
   const { dispatch } = useContext(CartContext);
@@ -14,7 +15,9 @@ const CartPageProduct = ({ product }) => {
         <Image src={product.images[0]} alt={product.name} />
         <p className={styles.title}>{product.title}</p>
         <p className={styles.brand}>{product.brand}</p>
-        <p className={styles.price}>${product.price}</p>
+        <p className={styles.price}>
+          ${calculatePrice(product.price, product.discountPercentage)}
+        </p>
       </div>
       <div className={styles.quantity}>
         <NumberInputRoot
@@ -46,7 +49,13 @@ const CartPageProduct = ({ product }) => {
         </div>
       </div>
       <div className={styles.total}>
-        <p>${(product.price * product.quantity).toFixed(2)}</p>
+        <p>
+          $
+          {(
+            calculatePrice(product.price, product.discountPercentage) *
+            product.quantity
+          ).toFixed(2)}
+        </p>
       </div>
     </div>
   );

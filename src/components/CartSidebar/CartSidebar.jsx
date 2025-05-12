@@ -61,9 +61,9 @@ const CartSidebar = () => {
                 <p className={styles.subtitle}>
                   Keep shopping and find amazing deals!
                 </p>
-                <Link to="/search">
+                <Link to="/">
                   <Button colorPalette="brand" onClick={handleCloseSidebar}>
-                    Search products
+                    Explore products
                   </Button>
                 </Link>
               </div>

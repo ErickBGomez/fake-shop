@@ -62,8 +62,8 @@ const CartPage = () => {
             <p className={styles.subtitle}>
               Keep shopping and find amazing deals!
             </p>
-            <Link to="/search">
-              <Button colorPalette="brand">Search products</Button>
+            <Link to="/">
+              <Button colorPalette="brand">Explore products</Button>
             </Link>
           </div>
         )}

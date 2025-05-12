@@ -1,4 +1,4 @@
-import { addProduct, updateProduct, removeProduct } from "../src/helper/cart";
+import { addProduct, updateProduct, removeProduct } from "../src/util/cart";
 
 describe("Helper functions", () => {
   describe("addProduct", () => {

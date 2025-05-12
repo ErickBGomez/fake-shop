@@ -9,6 +9,7 @@ import { Button } from "@chakra-ui/react";
 const CartSidebar = () => {
   const { state, dispatch } = useContext(CartContext);
 
+  // Memoize subtotal calculation to avoid unnecessary re-renders
   const subtotal = useMemo(
     () =>
       state?.products?.reduce(

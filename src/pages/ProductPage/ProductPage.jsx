@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Spinner } from "@chakra-ui/react";
 import { Weight, Box, Heart, Flag } from "lucide-react";
 import { useParams } from "react-router-dom";
 import Rating from "../../components/Rating/Rating";
@@ -10,13 +10,15 @@ import Image from "../../components/Image/Image";
 import AddCartButton from "@/components/AddCartButton/AddCartButton";
 import ProductSuggestions from "@/components/ProductSuggestions/ProductSuggestions";
 import calculatePrice from "@/util/price";
+import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 
 const ProductPage = () => {
   const { id } = useParams();
   const { data: product, loading, error } = useFetch(`products/${id}`);
 
   // TODO: Change into a proper loading page
-  if (loading) return <p>Loading...</p>;
+
+  if (loading) return <LoadingSpinner />;
   if (error) return <ErrorPage variant="product-not-found" />;
 
   return (

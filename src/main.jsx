@@ -9,11 +9,17 @@ import CartContextProvider from "./context/CartContextProvider";
 import "./styles/main.scss";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <ChakraProvider value={system}>
-      <CartContextProvider>
-        <RouterProvider router={routes} />
-      </CartContextProvider>
-    </ChakraProvider>
-  </StrictMode>
+  // <StrictMode>
+  //   <ChakraProvider value={system}>
+  //     <CartContextProvider>
+  //       <RouterProvider router={routes} />
+  //     </CartContextProvider>
+  //   </ChakraProvider>
+  // </StrictMode>
+  // Removed StrictMode to avoid double rendering
+  <ChakraProvider value={system}>
+    <CartContextProvider>
+      <RouterProvider router={routes} />
+    </CartContextProvider>
+  </ChakraProvider>
 );

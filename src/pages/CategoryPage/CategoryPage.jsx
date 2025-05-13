@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import ResultContainer from "../../components/ResultContainer/ResultContainer";
+import ResultsContainer from "../../components/ResultsContainer/ResultsContainer";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import styles from "./CategoryPage.module.scss";
 
 const CategoryPage = () => {
   const { category } = useParams();
   // const result = [];
-  const result = [
+  const results = [
     {
       id: 0,
       image: null,
@@ -79,8 +79,8 @@ const CategoryPage = () => {
         <h1 className={styles.title}>{category}</h1>
       </div>
       <div className={styles.content}>
-        {result.length > 0 ? (
-          <ResultContainer result={result} />
+        {results.length > 0 ? (
+          <ResultsContainer results={results} />
         ) : (
           <ErrorPage variant="page-not-found" />
         )}

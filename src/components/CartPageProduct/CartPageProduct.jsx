@@ -15,9 +15,6 @@ const CartPageProduct = ({ product }) => {
         <Image src={product.images[0]} alt={product.name} />
         <p className={styles.title}>{product.title}</p>
         <p className={styles.brand}>{product.brand}</p>
-        <p className={styles.price}>
-          ${calculatePrice(product.price, product.discountPercentage)}
-        </p>
       </div>
       <div className={styles.quantity}>
         <NumberInputRoot

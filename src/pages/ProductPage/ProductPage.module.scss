@@ -86,6 +86,10 @@
         width: 100%;
       }
 
+      .description {
+        line-height: 1.5;
+      }
+
       .specs {
         display: flex;
         flex-wrap: wrap;
@@ -120,7 +124,7 @@
       .suggestionsHeader {
         display: flex;
         flex-direction: column;
-        gap: 0.32px;
+        gap: 8px;
 
         .title {
           @include text-styles.heading-2;

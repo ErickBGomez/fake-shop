@@ -1,10 +1,10 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import ResultsContainer from "../../components/ResultsContainer/ResultsContainer";
 import ErrorPage from "../ErrorPage/ErrorPage";
-import styles from "./Search.module.scss";
+import styles from "./SearchPage.module.scss";
 import { useEffect } from "react";
 
-const Search = () => {
+const SearchPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const query = searchParams.get("query");
@@ -107,4 +107,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchPage;

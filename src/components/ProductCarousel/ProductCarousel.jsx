@@ -31,10 +31,6 @@ const ProductCarousel = ({ products, productsPerView = 7 }) => {
     return Math.min(productsPerViewByWidth, productsPerView);
   }, [displayWidth, productsPerView]);
 
-  useEffect(() => {
-    console.log(productsPerViewMemoized);
-  }, [productsPerViewMemoized]);
-
   return (
     <div className={styles.productsCarousel}>
       {products ? (

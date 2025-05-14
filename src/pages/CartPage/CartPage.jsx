@@ -6,6 +6,7 @@ import { useContext, useMemo } from "react";
 import CartContext from "@/context/CartContext";
 import CartPageProduct from "@/components/CartPageProduct/CartPageProduct";
 import calculatePrice from "@/util/price";
+import { motion, AnimatePresence } from "motion/react";
 
 const CartPage = () => {
   const { state } = useContext(CartContext);
@@ -30,9 +31,20 @@ const CartPage = () => {
           <div className={styles.cartContent}>
             <h1 className={styles.title}>Your cart</h1>
             <div className={styles.products}>
-              {state?.products?.map((product) => (
-                <CartPageProduct key={product.id} product={product} />
-              ))}
+              <AnimatePresence mode="sync">
+                {state?.products?.map((product) => (
+                  <motion.div
+                    layout
+                    key={product.id}
+                    initial={{ x: -100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -100, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <CartPageProduct product={product} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </div>
             <div className={styles.summary}>
               <div className={styles.summaryItems}>

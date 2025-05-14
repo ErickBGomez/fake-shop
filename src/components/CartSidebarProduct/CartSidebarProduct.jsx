@@ -9,6 +9,7 @@ import CartContext from "@/context/CartContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import calculatePrice from "@/util/price";
+import { IconButton } from "@chakra-ui/react";
 
 const CartSidebarProduct = ({ product }) => {
   const { dispatch } = useContext(CartContext);
@@ -21,14 +22,16 @@ const CartSidebarProduct = ({ product }) => {
 
   return (
     <div className={styles.product}>
-      <div
+      <IconButton
+        variant="ghost"
+        size="md"
         className={styles.remove}
         onClick={() => {
           dispatch({ type: "removeProduct", productId: product.id });
         }}
       >
         <Trash2 />
-      </div>
+      </IconButton>
       <div className={styles.details} onClick={handleNavigateProduct}>
         <Image src={product.images[0]} alt={product.name} />
         <p className={styles.title}>{product.title}</p>

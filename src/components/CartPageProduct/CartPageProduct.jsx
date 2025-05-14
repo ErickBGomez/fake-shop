@@ -6,6 +6,7 @@ import Image from "../Image/Image";
 import styles from "./CartPageProduct.module.scss";
 import calculatePrice from "@/util/price";
 import { useNavigate } from "react-router-dom";
+import { IconButton } from "@chakra-ui/react";
 
 const CartPageProduct = ({ product }) => {
   const navigate = useNavigate();
@@ -40,7 +41,9 @@ const CartPageProduct = ({ product }) => {
         >
           <NumberInputField />
         </NumberInputRoot>
-        <div
+        <IconButton
+          variant="ghost"
+          size="sm"
           className={styles.remove}
           onClick={() => {
             dispatch({
@@ -50,7 +53,7 @@ const CartPageProduct = ({ product }) => {
           }}
         >
           <Trash2 />
-        </div>
+        </IconButton>
       </div>
       <div className={styles.total}>
         <p>

@@ -7,7 +7,7 @@
   width: 100vw;
   height: 100vh;
   background-color: colors.$cart-backdrop;
-  z-index: 1;
+  z-index: 3;
 }
 
 .sidebarCart {
@@ -18,7 +18,7 @@
   height: 100vh;
   background-color: colors.$white;
   padding: 32px;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   gap: 32px;

@@ -46,9 +46,14 @@ const ResultsContainer = ({ fetchPath, queries = "" }) => {
     setShowMoreEnabled(true);
   }, [fetchPath, queries]);
 
-  // TODO: Add loading state when redirecting to home
   if (loading && !data) return <LoadingSpinner forceCentered />;
-  if (error) return <ErrorPage variant="search-no-results" />;
+  // Show generic error page when there is an error with the fetch
+  if (error) return <ErrorPage />;
+
+  // If there are no products, show the error page
+  if (!data.products.length) {
+    return <ErrorPage variant="search-no-results" />;
+  }
 
   if (data)
     return (
@@ -63,7 +68,6 @@ const ResultsContainer = ({ fetchPath, queries = "" }) => {
                   title={product.title}
                   rating={product.rating}
                   price={product.price}
-                  d
                   discount={product.discount}
                 />
               ))}

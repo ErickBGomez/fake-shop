@@ -64,7 +64,8 @@ const ResultsContainer = ({ fetchPath, queries = "" }) => {
               {results.map((product) => (
                 <Product
                   key={product.id}
-                  image={product.image}
+                  id={product.id}
+                  image={product.images[0]}
                   title={product.title}
                   rating={product.rating}
                   price={product.price}

@@ -50,6 +50,7 @@ const CartSidebar = () => {
             <div className={styles.close}>
               <X onClick={handleCloseSidebar} />
             </div>
+            {/* Load total details */}
             {state?.products?.length ? (
               <>
                 <div className={styles.details}>
@@ -62,10 +63,23 @@ const CartSidebar = () => {
                   </Link>
                 </div>
                 <hr />
+                {/* Load products */}
                 <div className={styles.products}>
-                  {state?.products.map((product) => (
-                    <CartSidebarProduct key={product.id} product={product} />
-                  ))}
+                  {/* Animate when products are loaded or removed */}
+                  <AnimatePresence mode="popLayout">
+                    {state?.products.map((product) => (
+                      <motion.div
+                        layout
+                        key={product.id}
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 50, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <CartSidebarProduct product={product} />
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
                 </div>
               </>
             ) : (

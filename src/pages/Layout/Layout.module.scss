@@ -3,8 +3,14 @@
 
   display: flex;
   flex-direction: column;
+
+  &:not(.landing) {
+    margin-top: 104px;
+  }
 }
 
-.main:not(.landing) {
-  margin-top: 104px;
+@media (max-width: 768px) {
+  .main:not(.landing) {
+    margin-top: 72px;
+  }
 }

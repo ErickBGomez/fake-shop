@@ -13,8 +13,10 @@ const CartPageProduct = ({ product }) => {
     <div className={styles.product}>
       <div className={styles.details}>
         <Image src={product.images[0]} alt={product.name} />
-        <p className={styles.title}>{product.title}</p>
-        <p className={styles.brand}>{product.brand}</p>
+        <div className={styles.titleAndBrand}>
+          <p className={styles.title}>{product.title}</p>
+          <p className={styles.brand}>{product.brand}</p>
+        </div>
       </div>
       <div className={styles.quantity}>
         <NumberInputRoot

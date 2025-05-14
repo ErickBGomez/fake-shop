@@ -14,8 +14,8 @@
     grid-area: details;
     display: grid;
     grid-template-columns: max-content 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "img title" "img brand";
+    grid-template-areas: "img titleAndBrand";
+    align-items: center;
     row-gap: 4px;
 
     img {
@@ -23,17 +23,21 @@
       width: 128px;
     }
 
-    .title {
-      grid-area: title;
-      align-self: end;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+    .titleAndBrand {
+      grid-area: titleAndBrand;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
 
-    .brand {
-      @include text-styles.small-text;
-      grid-area: brand;
+      .title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .brand {
+        @include text-styles.small-text;
+      }
     }
   }
 
@@ -93,9 +97,13 @@
   .product {
     .details {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr min-content min-content;
-      grid-template-areas: "img" "title" "brand";
+      grid-template-rows: 1fr min-content;
+      grid-template-areas: "img" "titleAndBrand";
       justify-items: center;
+
+      .titleAndBrand {
+        align-items: center;
+      }
     }
   }
 }

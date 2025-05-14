@@ -5,20 +5,26 @@
   position: relative;
 
   .remove {
-    display: none;
+    opacity: 0;
     position: absolute;
     top: 0;
     right: 0;
-    padding: 8px;
+    padding: 6px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: opacity 0.1s ease-in-out, background-color 0.1s ease-in-out;
 
     svg {
       stroke: colors.$danger;
     }
+
+    &:hover {
+      background-color: colors.$black-10;
+    }
   }
 
   &:hover .remove {
-    display: block;
+    opacity: 1;
   }
 
   .details {

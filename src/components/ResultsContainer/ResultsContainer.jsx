@@ -13,7 +13,7 @@ const ResultsContainer = ({ fetchPath, queries = "" }) => {
   // Use join.(&) to append optional queries in the fetch
   const { data, loading, error } = useFetch(
     fetchPath,
-    [...queries, `limit=8&skip=${currentPage * 8}`].join("&")
+    [queries, `limit=8&skip=${currentPage * 8}`].join("&")
   );
   const [results, setResults] = useState([]);
 
@@ -38,6 +38,13 @@ const ResultsContainer = ({ fetchPath, queries = "" }) => {
       }
     }
   }, [data, results]);
+
+  // Reset the results when a new term is searched (specially for SearchPage)
+  useEffect(() => {
+    setResults([]);
+    setCurrentPage(0);
+    setShowMoreEnabled(true);
+  }, [fetchPath, queries]);
 
   // TODO: Add loading state when redirecting to home
   if (loading && !data) return <LoadingSpinner forceCentered />;

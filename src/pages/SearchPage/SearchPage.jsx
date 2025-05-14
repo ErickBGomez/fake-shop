@@ -1,10 +1,10 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import ResultContainer from "../../components/ResultContainer/ResultContainer";
+import ResultsContainer from "../../components/ResultsContainer/ResultsContainer";
 import ErrorPage from "../ErrorPage/ErrorPage";
-import styles from "./Search.module.scss";
+import styles from "./SearchPage.module.scss";
 import { useEffect } from "react";
 
-const Search = () => {
+const SearchPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const query = searchParams.get("query");
@@ -21,7 +21,7 @@ const Search = () => {
   }
 
   // const result = [];
-  const result = [
+  const results = [
     {
       id: 0,
       image: null,
@@ -93,12 +93,12 @@ const Search = () => {
       <div className={styles.titleContainer}>
         <h1 className={styles.title}>Search results</h1>
         <p>
-          {result.length} articles found for "{query}".
+          {results.length} articles found for "{query}".
         </p>
       </div>
       <div className={styles.content}>
-        {result.length > 0 ? (
-          <ResultContainer result={result} />
+        {results.length > 0 ? (
+          <ResultsContainer results={results} />
         ) : (
           <ErrorPage variant="search-no-results" />
         )}
@@ -107,4 +107,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchPage;

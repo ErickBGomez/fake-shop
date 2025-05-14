@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, IconButton } from "@chakra-ui/react";
 import { X } from "lucide-react";
 import styles from "./HeaderDialog.module.scss";
 
@@ -7,9 +7,14 @@ const HeaderDialog = ({ closeDialog }) => {
     <>
       <div className={styles.backdrop} onClick={closeDialog}></div>
       <div className={styles.headerDialog}>
-        <div className={styles.close}>
-          <X onClick={closeDialog} />
-        </div>
+        <IconButton
+          variant="ghost"
+          size="md"
+          className={styles.close}
+          onClick={closeDialog}
+        >
+          <X />
+        </IconButton>
         <div className={styles.links}>
           <div className={styles.link}>
             <Button variant="plain" onClick={closeDialog}>

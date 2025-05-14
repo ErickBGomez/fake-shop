@@ -33,10 +33,18 @@
 
   .close {
     position: absolute;
-    top: 0;
-    left: 0;
-    padding: 8px;
+    top: 4px;
+    left: 4px;
+    width: auto;
+    border-radius: 8px;
+    color: colors.$black-50-solid;
     cursor: pointer;
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      background-color: colors.$black-05;
+      color: colors.$black;
+    }
   }
 
   .empty {

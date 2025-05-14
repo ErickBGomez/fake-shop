@@ -4,7 +4,7 @@ import { X, ShoppingBag } from "lucide-react";
 import CartContext from "../../context/CartContext";
 import CartSidebarProduct from "../CartSidebarProduct/CartSidebarProduct";
 import styles from "./CartSidebar.module.scss";
-import { Button } from "@chakra-ui/react";
+import { Button, IconButton } from "@chakra-ui/react";
 import calculatePrice from "@/util/price";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -47,9 +47,14 @@ const CartSidebar = () => {
             exit={{ x: 50, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className={styles.close}>
-              <X onClick={handleCloseSidebar} />
-            </div>
+            <IconButton
+              variant="ghost"
+              size="md"
+              className={styles.close}
+              onClick={handleCloseSidebar}
+            >
+              <X />
+            </IconButton>
             {/* Load total details */}
             {state?.products?.length ? (
               <>

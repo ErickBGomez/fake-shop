@@ -6,6 +6,7 @@ import CartSidebarProduct from "../CartSidebarProduct/CartSidebarProduct";
 import styles from "./CartSidebar.module.scss";
 import { Button } from "@chakra-ui/react";
 import calculatePrice from "@/util/price";
+import { motion, AnimatePresence } from "motion/react";
 
 const CartSidebar = () => {
   const { state, dispatch } = useContext(CartContext);
@@ -28,11 +29,24 @@ const CartSidebar = () => {
   };
 
   return (
-    <>
+    <AnimatePresence>
       {state?.isOpen && (
         <>
-          <div className={styles.backdrop} onClick={handleCloseSidebar}></div>
-          <div className={styles.sidebarCart}>
+          <motion.div
+            className={styles.backdrop}
+            onClick={handleCloseSidebar}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          ></motion.div>
+          <motion.div
+            className={styles.sidebarCart}
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 50, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
             <div className={styles.close}>
               <X onClick={handleCloseSidebar} />
             </div>
@@ -68,10 +82,10 @@ const CartSidebar = () => {
                 </Link>
               </div>
             )}
-          </div>
+          </motion.div>
         </>
       )}
-    </>
+    </AnimatePresence>
   );
 };
 

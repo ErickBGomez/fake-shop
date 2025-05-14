@@ -69,7 +69,7 @@ const ResultsContainer = ({ fetchPath, queries = "" }) => {
                   title={product.title}
                   rating={product.rating}
                   price={product.price}
-                  discount={product.discount}
+                  discount={product.discountPercentage}
                 />
               ))}
             </div>

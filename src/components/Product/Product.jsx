@@ -4,7 +4,7 @@ import Rating from "../Rating/Rating";
 
 import styles from "./Product.module.scss";
 
-const Product = ({ id, image, title, rating, price, discount = 0 }) => {
+const Product = ({ id, image, title, rating, price, discount }) => {
   const navigate = useNavigate();
 
   return (

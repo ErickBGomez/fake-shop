@@ -17,6 +17,7 @@
     grid-template-areas: "img titleAndBrand";
     align-items: center;
     row-gap: 4px;
+    cursor: pointer;
 
     img {
       grid-area: img;

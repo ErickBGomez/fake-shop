@@ -5,13 +5,18 @@ import { Trash2 } from "lucide-react";
 import Image from "../Image/Image";
 import styles from "./CartPageProduct.module.scss";
 import calculatePrice from "@/util/price";
+import { useNavigate } from "react-router-dom";
 
 const CartPageProduct = ({ product }) => {
+  const navigate = useNavigate();
   const { dispatch } = useContext(CartContext);
 
   return (
     <div className={styles.product}>
-      <div className={styles.details}>
+      <div
+        className={styles.details}
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
         <Image src={product.images[0]} alt={product.name} />
         <div className={styles.titleAndBrand}>
           <p className={styles.title}>{product.title}</p>

@@ -6,11 +6,14 @@ import { useEffect, useState } from "react";
 import ErrorPage from "@/pages/ErrorPage/ErrorPage";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
-const ResultsContainer = ({ query }) => {
+const ResultsContainer = ({ fetchPath, queries = "" }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [showMoreEnabled, setShowMoreEnabled] = useState(true);
+
+  // Use join.(&) to append optional queries in the fetch
   const { data, loading, error } = useFetch(
-    `${query}?limit=8&skip=${currentPage * 8}`
+    fetchPath,
+    [...queries, `limit=8&skip=${currentPage * 8}`].join("&")
   );
   const [results, setResults] = useState([]);
 

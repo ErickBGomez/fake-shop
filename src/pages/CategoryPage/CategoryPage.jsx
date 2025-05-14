@@ -12,7 +12,7 @@ const CategoryPage = () => {
         <h1 className={styles.title}>{category}</h1>
       </div>
       <div className={styles.content}>
-        <ResultsContainer query={`products/category/${category}`} />
+        <ResultsContainer fetchPath={`products/category/${category}`} />
       </div>
     </div>
   );

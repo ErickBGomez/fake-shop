@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useFetch = (endpoint, query = "") => {
+const useFetch = (endpoint, queries = "") => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,7 +14,7 @@ const useFetch = (endpoint, query = "") => {
         setLoading(true);
         setError(null);
 
-        const path = query ? `${endpoint}?${query}` : endpoint;
+        const path = queries ? `${endpoint}?${queries}` : endpoint;
         const response = await axios.get(`${API_URL}/${path}`);
         setData(response.data);
       } catch (error) {
@@ -25,7 +25,7 @@ const useFetch = (endpoint, query = "") => {
     };
 
     fetchData();
-  }, [API_URL, endpoint, query]);
+  }, [API_URL, endpoint, queries]);
 
   return {
     data,

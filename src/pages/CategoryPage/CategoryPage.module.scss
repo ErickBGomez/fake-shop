@@ -13,6 +13,10 @@
     padding: 86px 0;
     text-align: center;
 
+    .subtitle {
+      margin-bottom: 4px;
+    }
+
     .title {
       @include text-styles.heading-1;
     }

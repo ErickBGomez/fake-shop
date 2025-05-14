@@ -76,6 +76,7 @@ const CategoryPage = () => {
   return (
     <div className={styles.categoryPage}>
       <div className={styles.titleContainer}>
+        <p className={styles.subtitle}>Exploring the best of:</p>
         <h1 className={styles.title}>{category}</h1>
       </div>
       <div className={styles.content}>

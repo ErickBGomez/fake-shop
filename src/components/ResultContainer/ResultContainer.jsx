@@ -15,7 +15,6 @@ const ResultContainer = ({ result }) => {
             title={product.title}
             rating={product.rating}
             price={product.price}
-            d
             discount={product.discount}
           />
         ))}

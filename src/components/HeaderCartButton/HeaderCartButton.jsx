@@ -27,7 +27,7 @@ const HeaderCartButton = () => {
     };
 
     playAnimation();
-  }, [animate, sizeScope]);
+  }, [animate, sizeScope, state.products.length]);
 
   return (
     <IconButton

@@ -54,6 +54,12 @@
       .title {
         @include text-styles.heading-1;
       }
+
+      .heroButton {
+        &:hover {
+          background-color: colors.$white-10;
+        }
+      }
     }
   }
 

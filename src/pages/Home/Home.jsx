@@ -186,8 +186,7 @@ const Home = () => {
           <p className={styles.subtitle}>
             Explore our products to see your next purchase
           </p>
-          {/* TODO: Set styles for outline button */}
-          <Button color="white" variant="outline">
+          <Button color="white" variant="outline" className={styles.heroButton}>
             SHOP NOW
           </Button>
         </div>

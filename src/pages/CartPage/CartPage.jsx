@@ -30,7 +30,7 @@ const CartPage = () => {
         {state?.products?.length > 0 ? (
           <div className={styles.cartContent}>
             <h1 className={styles.title}>Your cart</h1>
-            <div className={styles.products}>
+            <motion.div className={styles.products}>
               <AnimatePresence mode="sync">
                 {state?.products?.map((product) => (
                   <motion.div
@@ -45,7 +45,7 @@ const CartPage = () => {
                   </motion.div>
                 ))}
               </AnimatePresence>
-            </div>
+            </motion.div>
             <div className={styles.summary}>
               <div className={styles.summaryItems}>
                 <div className={styles.summaryItem}>

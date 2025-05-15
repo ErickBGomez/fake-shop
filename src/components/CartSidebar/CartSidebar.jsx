@@ -63,7 +63,7 @@ const CartSidebar = () => {
                   <p className={styles.total}>${subtotal.toFixed(2)}</p>
                   <Link to="/cart">
                     <Button colorPalette="brand" onClick={handleCloseSidebar}>
-                      View Cart
+                      VIEW CART
                     </Button>
                   </Link>
                 </div>
@@ -96,7 +96,7 @@ const CartSidebar = () => {
                 </p>
                 <Link to="/">
                   <Button colorPalette="brand" onClick={handleCloseSidebar}>
-                    Explore products
+                    EXPLORE
                   </Button>
                 </Link>
               </div>

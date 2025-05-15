@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Button } from "@chakra-ui/react";
+import { Button, IconButton } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { UserRound, ShoppingCart, Menu } from "lucide-react";
 import CartContext from "../../context/CartContext";
@@ -45,11 +45,14 @@ const Header = ({ landingVariant = false }) => {
         <div className={styles.content}>
           <nav className={styles.headerNav}>
             {/* Appear only when screen width < 768px */}
-            <div className={styles.menu}>
-              <Button variant="plain" onClick={handleOpenDialog}>
-                <Menu />
-              </Button>
-            </div>
+            <IconButton
+              className={styles.menu}
+              variant="ghost"
+              size="md"
+              onClick={handleOpenDialog}
+            >
+              <Menu />
+            </IconButton>
             <div className={styles.brand}>
               <Link to="/">BRAND</Link>
             </div>
@@ -66,22 +69,20 @@ const Header = ({ landingVariant = false }) => {
               active={searchBarActive}
               setActive={handleSearchBarState}
             />
-            <div className={styles.user}>
-              <Button variant="plain">
-                <UserRound />
-              </Button>
-            </div>
-            <div
+            <IconButton variant="ghost" size="md" className={styles.user}>
+              <UserRound />
+            </IconButton>
+            <IconButton
+              variant="ghost"
+              size="md"
               className={styles.cart}
               onClick={() => dispatch({ type: "openCart" })}
             >
-              <Button variant="plain">
-                <ShoppingCart />
-              </Button>
+              <ShoppingCart />
               {state?.products?.length > 0 && (
                 <span className={styles.size}>{state.products.length}</span>
               )}
-            </div>
+            </IconButton>
           </div>
         </div>
       </header>

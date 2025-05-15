@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
+import { Button, IconButton } from "@chakra-ui/react";
 import { Search } from "lucide-react";
 import { useRef } from "react";
 import Input from "../Input/Input";
@@ -53,9 +53,9 @@ const SearchBar = ({ active, setActive }) => {
           </button>
         </form>
       ) : (
-        <Button variant="plain" onClick={handleClickWhenInactive}>
+        <IconButton variant="ghost" size="md" onClick={handleClickWhenInactive}>
           <Search />
-        </Button>
+        </IconButton>
       )}
     </div>
   );

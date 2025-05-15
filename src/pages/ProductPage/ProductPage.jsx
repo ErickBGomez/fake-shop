@@ -16,8 +16,6 @@ const ProductPage = () => {
   const { id } = useParams();
   const { data: product, loading, error } = useFetch(`products/${id}`);
 
-  // TODO: Change into a proper loading page
-
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorPage variant="product-not-found" />;
 

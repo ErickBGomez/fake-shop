@@ -34,7 +34,7 @@ const SearchBar = ({ active, setActive }) => {
   const handleUnfocus = () => {
     setTimeout(() => {
       setActive(false);
-    }, 10);
+    }, 100);
   };
 
   return (

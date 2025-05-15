@@ -16,6 +16,10 @@
     top: 0;
     right: 0;
 
+    &:hover {
+      background-color: colors.$black-10;
+    }
+
     &.active {
       display: none;
     }
@@ -31,11 +35,17 @@
       padding: 8px;
       right: 2px;
       top: 2px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
 
       svg {
         // Active and inactive header from landing page
         // variant is overriding the default stroke color
         stroke: colors.$white !important;
+      }
+
+      &:hover {
+        background-color: colors.$primary-75;
       }
     }
   }

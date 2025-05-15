@@ -43,7 +43,7 @@ const Header = ({ landingVariant = false }) => {
       >
         <div className={styles.content}>
           <nav className={styles.headerNav}>
-            {/* Appear only when screen width < 768px */}
+            {/* Appears only when screen width < 768px */}
             <IconButton
               className={styles.menu}
               variant="ghost"

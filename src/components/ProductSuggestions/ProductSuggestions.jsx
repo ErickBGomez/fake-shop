@@ -1,5 +1,6 @@
 import useFetch from "@/hooks/useFetch";
 import ProductCarousel from "../ProductCarousel/ProductCarousel";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const ProductSuggestions = ({ category = "phone" }) => {
   const {
@@ -8,11 +9,7 @@ const ProductSuggestions = ({ category = "phone" }) => {
     error,
   } = useFetch("products/search", `q=${category}`);
 
-  console.log(category);
-  if (suggestions) console.log(suggestions);
-
-  // TODO: Change into a proper loading component
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingSpinner />;
   if (error) return <p>Error loading suggestions</p>;
 
   return <ProductCarousel products={suggestions.products} />;

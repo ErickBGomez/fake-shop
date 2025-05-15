@@ -73,7 +73,6 @@ const SearchBar = ({ active, setActive }) => {
                 onBlur={handleUnfocus}
                 placeholder="Find a item..."
               />
-              {/* TODO: This button is not submitting the form */}
               <button className={styles.activeSearchButton} type="submit">
                 <Search />
               </button>

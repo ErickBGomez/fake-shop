@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
-import { Button, IconButton } from "@chakra-ui/react";
+import { useState } from "react";
+import { IconButton } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { UserRound, ShoppingCart, Menu } from "lucide-react";
-import CartContext from "../../context/CartContext";
+import { UserRound, Menu } from "lucide-react";
 import styles from "./Header.module.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import useDisplayScroll from "@/hooks/useDisplayScroll";
 import HeaderDialog from "../HeaderDialog/HeaderDialog";
+import HeaderCartButton from "../HeaderCartButton/HeaderCartButton";
 
 const navLinks = [
   { label: "Categories", link: "/categories/test" },
@@ -15,7 +15,6 @@ const navLinks = [
 ];
 
 const Header = ({ landingVariant = false }) => {
-  const { state, dispatch } = useContext(CartContext);
   const [dialogActive, setDialogActive] = useState(false);
   const [searchBarActive, setSearchBarActive] = useState(false);
   const { scrollY } = useDisplayScroll();
@@ -72,17 +71,7 @@ const Header = ({ landingVariant = false }) => {
             <IconButton variant="ghost" size="md" className={styles.user}>
               <UserRound />
             </IconButton>
-            <IconButton
-              variant="ghost"
-              size="md"
-              className={styles.cart}
-              onClick={() => dispatch({ type: "openCart" })}
-            >
-              <ShoppingCart />
-              {state?.products?.length > 0 && (
-                <span className={styles.size}>{state.products.length}</span>
-              )}
-            </IconButton>
+            <HeaderCartButton />
           </div>
         </div>
       </header>

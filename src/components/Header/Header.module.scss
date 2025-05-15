@@ -58,26 +58,6 @@
           background-color: colors.$black-10;
         }
       }
-
-      .cart {
-        position: relative;
-
-        .size {
-          @include text-styles.small-text;
-          position: absolute;
-          top: 0;
-          right: -5px;
-          width: 24px;
-          height: 24px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: colors.$primary;
-          border-radius: 100%;
-          color: colors.$white;
-          cursor: pointer;
-        }
-      }
     }
   }
 

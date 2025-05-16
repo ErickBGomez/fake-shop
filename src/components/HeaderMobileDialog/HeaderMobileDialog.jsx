@@ -34,7 +34,12 @@ const HeaderMobileDialog = ({ navLinks, dialogState, closeDialog }) => {
             </IconButton>
             <div className={styles.navLinks}>
               {navLinks.map((element, index) => (
-                <Link key={index} to={element.link} className={styles.navLink}>
+                <Link
+                  key={index}
+                  to={element.link}
+                  className={styles.navLink}
+                  onClick={closeDialog}
+                >
                   {element.label}
                 </Link>
               ))}

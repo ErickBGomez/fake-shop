@@ -33,7 +33,10 @@ const Header = ({ landingVariant = false }) => {
 
   return (
     <>
-      {dialogActive && <HeaderDialog closeDialog={handleCloseDialog} />}
+      <HeaderDialog
+        dialogState={dialogActive}
+        closeDialog={handleCloseDialog}
+      />
       <header
         className={`${styles.mainHeader} ${
           landingVariant ? styles.landing : ""

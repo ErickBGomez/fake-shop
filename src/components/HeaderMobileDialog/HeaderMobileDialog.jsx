@@ -2,8 +2,9 @@ import { Button, IconButton } from "@chakra-ui/react";
 import { X } from "lucide-react";
 import styles from "./HeaderMobileDialog.module.scss";
 import { motion, AnimatePresence } from "motion/react";
+import { Link } from "react-router-dom";
 
-const HeaderMobileDialog = ({ dialogState, closeDialog }) => {
+const HeaderMobileDialog = ({ navLinks, dialogState, closeDialog }) => {
   return (
     <AnimatePresence>
       {dialogState && (
@@ -31,22 +32,12 @@ const HeaderMobileDialog = ({ dialogState, closeDialog }) => {
             >
               <X />
             </IconButton>
-            <div className={styles.links}>
-              <div className={styles.link}>
-                <Button variant="plain" onClick={closeDialog}>
-                  Categories
-                </Button>
-              </div>
-              <div className={styles.link}>
-                <Button variant="plain" onClick={closeDialog}>
-                  Sales
-                </Button>
-              </div>
-              <div className={styles.link}>
-                <Button variant="plain" onClick={closeDialog}>
-                  New
-                </Button>
-              </div>
+            <div className={styles.navLinks}>
+              {navLinks.map((element, index) => (
+                <Link key={index} to={element.link} className={styles.navLink}>
+                  {element.label}
+                </Link>
+              ))}
             </div>
 
             <div className={styles.account}>

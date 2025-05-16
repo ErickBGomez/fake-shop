@@ -34,6 +34,7 @@ const Header = ({ landingVariant = false }) => {
   return (
     <>
       <HeaderMobileDialog
+        navLinks={navLinks}
         dialogState={dialogActive}
         closeDialog={handleCloseDialog}
       />

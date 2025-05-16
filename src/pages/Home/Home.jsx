@@ -34,43 +34,13 @@ const Home = () => {
     <div className={styles.home}>
       <div className={styles.hero}>
         <div className={styles.content}>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.75, ease: [0.25, 1, 0.5, 1] }}
-          >
-            <h1 className={styles.title}>MAKE YOUR DREAMS COME TRUE</h1>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.75,
-              ease: [0.25, 1, 0.5, 1],
-              delay: 0.25,
-            }}
-          >
-            <p className={styles.subtitle}>
-              Explore our products to see your next purchase
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.75,
-              ease: [0.25, 1, 0.5, 1],
-              delay: 0.5,
-            }}
-          >
-            <Button
-              color="white"
-              variant="outline"
-              className={styles.heroButton}
-            >
-              SHOP NOW
-            </Button>
-          </motion.div>
+          <h1 className={styles.title}>MAKE YOUR DREAMS COME TRUE</h1>
+          <p className={styles.subtitle}>
+            Explore our products to see your next purchase
+          </p>
+          <Button color="white" variant="outline" className={styles.heroButton}>
+            SHOP NOW
+          </Button>
         </div>
       </div>
       <div className={styles.features}>

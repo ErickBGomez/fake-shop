@@ -51,8 +51,8 @@ const Home = () => {
       </div>
       <div className={styles.features}>
         <div className={styles.content}>
-          {features.map((feature) => (
-            <FeatureCard key={feature.title} {...feature} />
+          {features.map((feature, index) => (
+            <FeatureCard key={index} {...feature} />
           ))}
         </div>
       </div>

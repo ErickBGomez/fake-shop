@@ -40,10 +40,12 @@ const HeaderMobileDialog = ({ navLinks, dialogState, closeDialog }) => {
               ))}
             </div>
 
+            <div className={styles.divider}></div>
+
             <div className={styles.account}>
-              <Button colorPalette="brand">Create account</Button>
+              <Button colorPalette="brand">CREATE ACCOUNT</Button>
               <Button colorPalette="brand" variant="outline">
-                Log in
+                LOG IN
               </Button>
             </div>
           </motion.div>

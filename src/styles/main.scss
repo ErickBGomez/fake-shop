@@ -9,6 +9,7 @@
 
 :root {
   @include text-styles.body-text;
+  scroll-behavior: smooth;
 }
 
 body {

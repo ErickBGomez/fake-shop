@@ -7,6 +7,7 @@ import SectionCard from "@/components/SectionCard/SectionCard";
 import Input from "@/components/Input/Input";
 import { categories, products } from "@/data/home";
 import { motion } from "motion/react";
+import { useEffect } from "react";
 
 const features = [
   {
@@ -30,6 +31,11 @@ const features = [
 ];
 
 const Home = () => {
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.home}>
       <div className={styles.hero}>

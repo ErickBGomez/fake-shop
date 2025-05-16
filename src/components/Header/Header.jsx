@@ -5,7 +5,7 @@ import { UserRound, Menu } from "lucide-react";
 import styles from "./Header.module.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import useDisplayScroll from "@/hooks/useDisplayScroll";
-import HeaderDialog from "../HeaderDialog/HeaderDialog";
+import HeaderMobileDialog from "../HeaderMobileDialog/HeaderMobileDialog";
 import HeaderCartButton from "../HeaderCartButton/HeaderCartButton";
 
 const navLinks = [
@@ -33,7 +33,7 @@ const Header = ({ landingVariant = false }) => {
 
   return (
     <>
-      <HeaderDialog
+      <HeaderMobileDialog
         dialogState={dialogActive}
         closeDialog={handleCloseDialog}
       />

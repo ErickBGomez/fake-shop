@@ -1,9 +1,9 @@
 import { Button, IconButton } from "@chakra-ui/react";
 import { X } from "lucide-react";
-import styles from "./HeaderDialog.module.scss";
+import styles from "./HeaderMobileDialog.module.scss";
 import { motion, AnimatePresence } from "motion/react";
 
-const HeaderDialog = ({ dialogState, closeDialog }) => {
+const HeaderMobileDialog = ({ dialogState, closeDialog }) => {
   return (
     <AnimatePresence>
       {dialogState && (
@@ -17,7 +17,7 @@ const HeaderDialog = ({ dialogState, closeDialog }) => {
             transition={{ duration: 0.2 }}
           ></motion.div>
           <motion.div
-            className={styles.headerDialog}
+            className={styles.HeaderMobileDialog}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
@@ -62,4 +62,4 @@ const HeaderDialog = ({ dialogState, closeDialog }) => {
   );
 };
 
-export default HeaderDialog;
+export default HeaderMobileDialog;

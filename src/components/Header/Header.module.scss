@@ -8,7 +8,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 32px 24px;
+  padding: 0;
+  // Adjust right padding with brand text size
+  padding-right: 32px;
   // Avoid header to be behind the content (for example, chakra buttons)
   z-index: 2;
 
@@ -32,16 +34,16 @@
     .headerNav {
       display: flex;
       align-items: center;
-      gap: 91.76px;
+      gap: 48px;
 
       .brand {
         @include text-styles.brand-text;
+        display: flex;
       }
 
-      .navLinks {
-        display: flex;
-        align-items: center;
-        gap: 48px;
+      .brand,
+      .navLink {
+        padding: 40px 32px;
       }
     }
 
@@ -50,6 +52,7 @@
       gap: 16px;
       flex: 1;
       justify-content: end;
+      align-items: center;
 
       .search,
       .user,
@@ -93,11 +96,16 @@
 
 @media (max-width: 768px) {
   .mainHeader {
-    padding: 16px;
+    // padding: 16px;
+    padding: 0 16px;
 
     .content {
       .headerNav {
         gap: 16px;
+
+        .brand {
+          padding: 24px 16px;
+        }
 
         .navLinks {
           display: none;
@@ -118,7 +126,7 @@
 
 @media (max-width: 450px) {
   .mainHeader {
-    padding: 16px 8px;
+    padding: 0 8px;
 
     .content {
       gap: 0;

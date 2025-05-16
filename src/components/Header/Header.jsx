@@ -52,16 +52,16 @@ const Header = ({ landingVariant = false }) => {
             >
               <Menu />
             </IconButton>
-            <div className={styles.brand}>
-              <Link to="/">BRAND</Link>
-            </div>
-            <ul className={styles.navLinks}>
+            <Link className={styles.brand} to="/">
+              BRAND
+            </Link>
+            <div className={styles.navLinks}>
               {navLinks.map((element, index) => (
-                <li key={index} className={styles.navLink}>
-                  <Link to={element.link}>{element.label}</Link>
-                </li>
+                <Link key={index} className={styles.navLink} to={element.link}>
+                  {element.label}
+                </Link>
               ))}
-            </ul>
+            </div>
           </nav>
           <div className={styles.actions}>
             <SearchBar

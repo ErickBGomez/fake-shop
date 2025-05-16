@@ -6,38 +6,78 @@ import FeatureCard from "@/components/FeatureCard/FeatureCard";
 import SectionCard from "@/components/SectionCard/SectionCard";
 import Input from "@/components/Input/Input";
 import { categories, products } from "@/data/home";
+import { motion } from "motion/react";
+
+const features = [
+  {
+    icon: <SquareDashed />,
+    title: "Lorem ipsum",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
+  },
+  {
+    icon: <SquareDashed />,
+    title: "Lorem ipsum",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
+  },
+  {
+    icon: <SquareDashed />,
+    title: "Lorem ipsum",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
+  },
+];
 
 const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.hero}>
         <div className={styles.content}>
-          <h1 className={styles.title}>MAKE YOUR DREAMS COME TRUE</h1>
-          <p className={styles.subtitle}>
-            Explore our products to see your next purchase
-          </p>
-          <Button color="white" variant="outline" className={styles.heroButton}>
-            SHOP NOW
-          </Button>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.75, ease: [0.25, 1, 0.5, 1] }}
+          >
+            <h1 className={styles.title}>MAKE YOUR DREAMS COME TRUE</h1>
+          </motion.div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.75,
+              ease: [0.25, 1, 0.5, 1],
+              delay: 0.25,
+            }}
+          >
+            <p className={styles.subtitle}>
+              Explore our products to see your next purchase
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.75,
+              ease: [0.25, 1, 0.5, 1],
+              delay: 0.5,
+            }}
+          >
+            <Button
+              color="white"
+              variant="outline"
+              className={styles.heroButton}
+            >
+              SHOP NOW
+            </Button>
+          </motion.div>
         </div>
       </div>
       <div className={styles.features}>
         <div className={styles.content}>
-          <FeatureCard
-            icon={<SquareDashed />}
-            title="Lorem ipsum"
-            description="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi."
-          />
-          <FeatureCard
-            icon={<SquareDashed />}
-            title="Lorem ipsum"
-            description="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi."
-          />
-          <FeatureCard
-            icon={<SquareDashed />}
-            title="Lorem ipsum"
-            description="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi."
-          />
+          {features.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
         </div>
       </div>
       <div className={styles.categories}>
@@ -45,12 +85,7 @@ const Home = () => {
           <h2 className={styles.title}>Categories</h2>
           <div className={styles.grid}>
             {categories.map((category) => (
-              <SectionCard
-                key={category.id}
-                title={category.title}
-                url={category.url}
-                variant={category.variant}
-              />
+              <SectionCard key={category.id} {...category} />
             ))}
           </div>
         </div>

@@ -9,7 +9,7 @@
   z-index: 3;
 }
 
-.HeaderMobileDialog {
+.headerMobileDialog {
   @include effects.shadow;
   background-color: colors.$white;
   position: fixed;

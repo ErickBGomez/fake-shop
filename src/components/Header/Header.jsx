@@ -9,9 +9,9 @@ import HeaderDialog from "../HeaderDialog/HeaderDialog";
 import HeaderCartButton from "../HeaderCartButton/HeaderCartButton";
 
 const navLinks = [
-  { label: "Categories", link: "/categories/test" },
-  { label: "Sales", link: "/sales" },
-  { label: "New", link: "/new-products" },
+  { label: "CATEGORIES", link: "/categories/test" },
+  { label: "SALES", link: "/sales" },
+  { label: "NEW", link: "/new-products" },
 ];
 
 const Header = ({ landingVariant = false }) => {

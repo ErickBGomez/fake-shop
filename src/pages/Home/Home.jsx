@@ -107,6 +107,7 @@ const Home = () => {
             <Button
               color="white"
               variant="outline"
+              className={styles.subscribeButton}
               onClick={() => {
                 toaster.create({
                   title: "Success!",

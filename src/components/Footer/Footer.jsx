@@ -10,10 +10,10 @@ const socials = [
 ];
 
 const importantLinks = [
-  { label: "All Categories", link: "/categories" },
-  { label: "New Products", link: "/new-products" },
-  { label: "Contact Us", link: "/contact" },
-  { label: "Source Code", link: "https://github.com/ErickBGomez/fake-shop" },
+  { label: "ALL CATEGORIES", link: "/categories" },
+  { label: "NEW PRODUCTS", link: "/new-products" },
+  { label: "CONTACT US", link: "/contact" },
+  { label: "SOURCE CODE", link: "https://github.com/ErickBGomez/fake-shop" },
 ];
 
 const Footer = () => {

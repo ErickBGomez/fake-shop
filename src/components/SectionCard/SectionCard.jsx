@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import image from "../../assets/candles.png";
+import image from "../../assets/categories/thumbnails/candles.png";
 import styles from "./SectionCard.module.scss";
 
 // Variants: default, large, tall, wide

@@ -8,6 +8,7 @@ import Input from "@/components/Input/Input";
 import { categories, products } from "@/data/home";
 import { motion } from "motion/react";
 import { useEffect } from "react";
+import { Toaster, toaster } from "@/components/ui/toaster";
 
 const features = [
   {
@@ -38,6 +39,7 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
+      <Toaster />
       <div className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.title}>MAKE YOUR DREAMS COME TRUE</h1>
@@ -102,7 +104,19 @@ const Home = () => {
           </p>
           <div className={styles.form}>
             <Input placeholder="Enter your email here" variant="dark" />
-            <Button color="white" variant="outline">
+            <Button
+              color="white"
+              variant="outline"
+              onClick={() => {
+                toaster.create({
+                  title: "Success!",
+                  description:
+                    "You have been subscribed to BRXND newsletter successfully.",
+                  type: "success",
+                  duration: 5000,
+                });
+              }}
+            >
               SUBSCRIBE
             </Button>
           </div>

@@ -96,7 +96,7 @@ const CartSidebar = () => {
                 </p>
                 <Link to="/">
                   <Button colorPalette="brand" onClick={handleCloseSidebar}>
-                    EXPLORE
+                    EXPLORE PRODUCTS
                   </Button>
                 </Link>
               </div>

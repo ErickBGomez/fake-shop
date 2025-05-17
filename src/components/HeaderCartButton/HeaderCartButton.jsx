@@ -11,6 +11,9 @@ const HeaderCartButton = () => {
 
   useEffect(() => {
     const playAnimation = async () => {
+      // If there are no products, do not play the animation
+      if (state.products.length === 0) return;
+
       for (let i = 0; i < 3; i++) {
         await animate(
           sizeScope.current,

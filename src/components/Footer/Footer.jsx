@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <footer className={styles.mainFooter}>
       <div className={styles.content}>
-        <div className={styles.brand}>BRAND</div>
+        <div className={styles.brand}>BRXND</div>
         <ul className={styles.socials}>
           {socials.map((element, index) => (
             <li key={index}>
@@ -38,7 +38,7 @@ const Footer = () => {
           ))}
         </ul>
         <div className={styles.copyright}>
-          &copy; {new Date().getFullYear()} BRAND. All rights reserved.
+          &copy; {new Date().getFullYear()} BRXND. All rights reserved.
         </div>
       </div>
     </footer>

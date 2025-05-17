@@ -57,7 +57,7 @@ const Header = ({ landingVariant = false }) => {
               <Menu />
             </IconButton>
             <Link className={styles.brand} to="/">
-              BRAND
+              BRXND
             </Link>
             <div className={styles.navLinks}>
               {navLinks.map((element, index) => (

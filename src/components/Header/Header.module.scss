@@ -82,7 +82,7 @@
 
     .actions {
       display: flex;
-      gap: 16px;
+      gap: 32px;
       flex: 1;
       justify-content: end;
       align-items: center;
@@ -127,7 +127,7 @@
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 950px) {
   .mainHeader.searchActive {
     .content .navLinks {
       display: none;

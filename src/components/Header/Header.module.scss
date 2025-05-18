@@ -127,6 +127,14 @@
   }
 }
 
+@media (max-width: 920px) {
+  .mainHeader.searchActive {
+    .content .navLinks {
+      display: none;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .mainHeader {
     // padding: 16px;

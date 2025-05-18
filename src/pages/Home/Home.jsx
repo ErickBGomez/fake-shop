@@ -60,7 +60,7 @@ const Home = () => {
       </div>
       <div className={styles.categories}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Categories</h2>
+          <h2 className={styles.title}>Explore by Category</h2>
           <div className={styles.grid}>
             {categories.map((category) => (
               <SectionCard key={category.id} {...category} />
@@ -72,23 +72,21 @@ const Home = () => {
       <div className={styles.products}>
         <div className={styles.content}>
           <div className={styles.productsGroup}>
-            <h2 className={styles.title}>Best selling of the week</h2>
+            <h2 className={styles.title}>Featured Categories</h2>
             <div className={styles.sectionAndCarousel}>
-              <SectionCard title="Group" />
+              <SectionCard title="New Arrivals" />
               <ProductCarousel products={products} productsPerView={4} />
             </div>
           </div>
           <div className={styles.productsGroup}>
-            <h2 className={styles.title}>Best selling of the week</h2>
             <div className={`${styles.sectionAndCarousel} ${styles.inverted}`}>
-              <SectionCard title="Group" />
+              <SectionCard title="Week Sales" />
               <ProductCarousel products={products} productsPerView={4} />
             </div>
           </div>
           <div className={styles.productsGroup}>
-            <h2 className={styles.title}>Best selling of the week</h2>
             <div className={styles.sectionAndCarousel}>
-              <SectionCard title="Group" />
+              <SectionCard title="Best Tech" />
               <ProductCarousel products={products} productsPerView={4} />
             </div>
           </div>
@@ -97,7 +95,7 @@ const Home = () => {
 
       <div className={styles.newsletter}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Never miss any offer</h2>
+          <h2 className={styles.title}>Get the Best First</h2>
           <p>
             Subscribe to our newsletter to be in touch with the latest offers of
             your favorite products!

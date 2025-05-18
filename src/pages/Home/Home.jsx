@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react";
-import { SquareDashed } from "lucide-react";
+import { BadgeDollarSign, Car, Carrot, SquareDashed } from "lucide-react";
 import styles from "./Home.module.scss";
 import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 import FeatureCard from "@/components/FeatureCard/FeatureCard";
@@ -12,19 +12,19 @@ import { Toaster, toaster } from "@/components/ui/toaster";
 
 const features = [
   {
-    icon: <SquareDashed />,
+    icon: <Carrot width={75} height={75} strokeWidth={1.5} />,
     title: "Endless Variety",
     description:
       "Discover thousands of products across every category, from groceries to home essentials ",
   },
   {
-    icon: <SquareDashed />,
+    icon: <BadgeDollarSign width={75} height={75} strokeWidth={1.5} />,
     title: "Deals You’ll Love",
     description:
       "Enjoy exclusive discounts, weekly deals, and special offers that save you money.",
   },
   {
-    icon: <SquareDashed />,
+    icon: <Car width={75} height={75} strokeWidth={1.5} />,
     title: "Reliable Delivery",
     description:
       "Get your orders delivered quickly and securely, with real-time tracking updates.",

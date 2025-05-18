@@ -1,3 +1,26 @@
+import { BadgeDollarSign, Car, Carrot } from "lucide-react";
+
+export const features = [
+  {
+    icon: <Carrot width={75} height={75} strokeWidth={1.5} />,
+    title: "Endless Variety",
+    description:
+      "Discover thousands of products across every category, from groceries to home essentials ",
+  },
+  {
+    icon: <BadgeDollarSign width={75} height={75} strokeWidth={1.5} />,
+    title: "Deals You’ll Love",
+    description:
+      "Enjoy exclusive discounts, weekly deals, and special offers that save you money.",
+  },
+  {
+    icon: <Car width={75} height={75} strokeWidth={1.5} />,
+    title: "Reliable Delivery",
+    description:
+      "Get your orders delivered quickly and securely, with real-time tracking updates.",
+  },
+];
+
 export const products = [
   {
     id: 0,

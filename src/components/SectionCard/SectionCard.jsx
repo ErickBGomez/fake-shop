@@ -8,7 +8,7 @@ const SectionCard = ({
   img,
   url,
   variant = "default",
-  gradientVariant = "orange",
+  gradient = { start: "#ddb770", end: "#d9965b" },
 }) => {
   const navigate = useNavigate();
 
@@ -20,7 +20,10 @@ const SectionCard = ({
     <div
       className={`${styles.sectionCard} ${
         styles[variant] ? styles[variant] : " "
-      } ${styles[gradientVariant]}`}
+      }`}
+      style={{
+        background: `linear-gradient(180deg,  ${gradient.start} 0%,  ${gradient.end} 100%)`,
+      }}
       onClick={handleClick}
     >
       <div className={styles.text}>

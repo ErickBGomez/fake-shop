@@ -72,29 +72,31 @@
 
   .products {
     .content {
-      display: flex;
-      flex-direction: column;
-      gap: 96px;
-
       .title {
         margin-bottom: 32px;
       }
 
-      .sectionAndCarousel {
+      .productsGroup {
         display: flex;
-        gap: 64px;
+        flex-direction: column;
+        gap: 96px;
 
-        & > *:first-child {
-          width: 35%;
+        .sectionAndCarousel {
+          display: flex;
+          gap: 64px;
+
+          & > *:first-child {
+            width: 35%;
+          }
+
+          & > *:last-child {
+            width: calc(100% - 35%);
+          }
         }
 
-        & > *:last-child {
-          width: calc(100% - 35%);
+        .sectionAndCarousel.inverted {
+          flex-direction: row-reverse;
         }
-      }
-
-      .sectionAndCarousel.inverted {
-        flex-direction: row-reverse;
       }
     }
   }

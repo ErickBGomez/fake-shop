@@ -4,7 +4,12 @@ import ProductCarousel from "@/components/ProductCarousel/ProductCarousel";
 import FeatureCard from "@/components/FeatureCard/FeatureCard";
 import SectionCard from "@/components/SectionCard/SectionCard";
 import Input from "@/components/Input/Input";
-import { categories, features, products } from "@/data/home";
+import {
+  categories,
+  featuredCategories,
+  features,
+  products,
+} from "@/data/home";
 import { Toaster, toaster } from "@/components/ui/toaster";
 import { motion } from "motion/react";
 import styles from "./Home.module.scss";
@@ -49,24 +54,28 @@ const Home = () => {
 
       <div className={styles.products}>
         <div className={styles.content}>
+          <h2 className={styles.title}>Featured Categories</h2>
           <div className={styles.productsGroup}>
-            <h2 className={styles.title}>Featured Categories</h2>
-            <div className={styles.sectionAndCarousel}>
-              <SectionCard title="New Arrivals" />
-              <ProductCarousel products={products} productsPerView={4} />
-            </div>
-          </div>
-          <div className={styles.productsGroup}>
-            <div className={`${styles.sectionAndCarousel} ${styles.inverted}`}>
-              <SectionCard title="Week Sales" />
-              <ProductCarousel products={products} productsPerView={4} />
-            </div>
-          </div>
-          <div className={styles.productsGroup}>
-            <div className={styles.sectionAndCarousel}>
-              <SectionCard title="Best Tech" />
-              <ProductCarousel products={products} productsPerView={4} />
-            </div>
+            {featuredCategories.map((category, index) => (
+              // Apply inverted class to odd indexed categories
+              <div
+                className={`${styles.sectionAndCarousel} ${
+                  index % 2 === 1 ? styles.inverted : ""
+                }`}
+                key={index}
+              >
+                <SectionCard
+                  title={category.title}
+                  variant={category.variant}
+                  gradient={category.gradient}
+                />
+                <ProductCarousel
+                  products={products}
+                  productsPerView={4}
+                  variant={category.variant}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

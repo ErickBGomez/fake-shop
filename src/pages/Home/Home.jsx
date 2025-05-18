@@ -42,9 +42,9 @@ const Home = () => {
       <Toaster />
       <div className={styles.hero}>
         <div className={styles.content}>
-          <h1 className={styles.title}>MAKE YOUR DREAMS COME TRUE</h1>
+          <h1 className={styles.title}>EVERYTHING YOU NEED IN ONE PLACE</h1>
           <p className={styles.subtitle}>
-            Explore our products to see your next purchase
+            Shop top deals and discover new favorites across every category.
           </p>
           <Button color="white" variant="outline" className={styles.heroButton}>
             SHOP NOW

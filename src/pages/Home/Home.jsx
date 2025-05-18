@@ -13,21 +13,21 @@ import { Toaster, toaster } from "@/components/ui/toaster";
 const features = [
   {
     icon: <SquareDashed />,
-    title: "Lorem ipsum",
+    title: "Endless Variety",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
+      "Discover thousands of products across every category, from groceries to home essentials ",
   },
   {
     icon: <SquareDashed />,
-    title: "Lorem ipsum",
+    title: "Deals You’ll Love",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
+      "Enjoy exclusive discounts, weekly deals, and special offers that save you money.",
   },
   {
     icon: <SquareDashed />,
-    title: "Lorem ipsum",
+    title: "Reliable Delivery",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.",
+      "Get your orders delivered quickly and securely, with real-time tracking updates.",
   },
 ];
 

@@ -16,9 +16,9 @@ import styles from "./Home.module.scss";
 import { useParallax } from "react-scroll-parallax";
 
 const Home = () => {
-  // const newsletterParallax = useParallax({
-  //   speed: -20,
-  // });
+  const newsletterParallax = useParallax({
+    speed: -30,
+  });
 
   // Scroll to top on mount
   useEffect(() => {
@@ -86,7 +86,7 @@ const Home = () => {
       </div>
 
       <div className={styles.newsletter}>
-        <div className={styles.background} />
+        <div ref={newsletterParallax.ref} className={styles.background} />
         <div className={styles.content}>
           <h2 className={styles.title}>Get the Best First</h2>
           <p className={styles.description}>

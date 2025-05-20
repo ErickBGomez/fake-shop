@@ -151,7 +151,7 @@ export const categories = [
     image: null,
     url: "laptops",
     variant: "large",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#70B4DD", end: "#5B70D9" },
   },
   {
     id: 1,
@@ -165,7 +165,7 @@ export const categories = [
     title: "Kitchen",
     image: null,
     url: "kitchen-accessories",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#E48282", end: "#DB4E4E" },
   },
   {
     id: 3,
@@ -173,21 +173,21 @@ export const categories = [
     image: null,
     url: "smartphones",
     variant: "tall",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#70DDDD", end: "#5B9CD9" },
   },
   {
     id: 4,
     title: "Fragrances",
     image: null,
     url: "fragrances",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#E899CE", end: "#D95B91" },
   },
   {
     id: 5,
     title: "Skin care",
     image: null,
     url: "skin-care",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#A570DD", end: "#855BD9" },
   },
   {
     id: 6,
@@ -195,7 +195,7 @@ export const categories = [
     image: null,
     url: "mobile-accessories",
     variant: "wide",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#8CD7DC", end: "#2ED6B4" },
   },
 ];
 
@@ -205,20 +205,20 @@ export const featuredCategories = [
     title: "New Arrivals",
     image: null,
     url: "candles",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#E1CD8C", end: "#E7C141" },
   },
   {
     id: 1,
     title: "Week Sales",
     image: null,
     url: "candles",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#DD9E70", end: "#D9655B" },
   },
   {
     id: 2,
     title: "Best Tech",
     image: null,
     url: "candles",
-    gradient: { start: "#ddb770", end: "#d9965b" },
+    gradient: { start: "#94ADD2", end: "#6F7EC8" },
   },
 ];

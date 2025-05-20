@@ -13,8 +13,13 @@ import {
 import { Toaster, toaster } from "@/components/ui/toaster";
 import { motion } from "motion/react";
 import styles from "./Home.module.scss";
+import { useParallax } from "react-scroll-parallax";
 
 const Home = () => {
+  // const newsletterParallax = useParallax({
+  //   speed: -20,
+  // });
+
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -81,9 +86,10 @@ const Home = () => {
       </div>
 
       <div className={styles.newsletter}>
+        <div className={styles.background} />
         <div className={styles.content}>
           <h2 className={styles.title}>Get the Best First</h2>
-          <p>
+          <p className={styles.description}>
             Subscribe to our newsletter to be in touch with the latest offers of
             your favorite products!
           </p>

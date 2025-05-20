@@ -19,8 +19,8 @@
     padding: $content-vertical-padding $content-horizontal-padding;
   }
 
-  .hero,
-  .newsletter {
+  // TODO: Remove later
+  .hero {
     background-color: colors.$black-75;
     color: colors.$white;
   }
@@ -132,17 +132,40 @@
   }
 
   .newsletter {
-    .content .form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      max-width: 480px;
-      width: 100%;
+    position: relative;
+    overflow: hidden;
 
-      .subscribeButton {
-        &:hover {
-          background-color: colors.$white-10;
+    .background {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: url("../../assets/background/home/newsletter.jpg") no-repeat
+        center center;
+      aspect-ratio: 16 / 9;
+      z-index: 0;
+      filter: brightness(45%);
+    }
+
+    .content {
+      .title,
+      .description {
+        z-index: 1;
+        color: colors.$white;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        max-width: 480px;
+        width: 100%;
+
+        .subscribeButton {
+          &:hover {
+            background-color: colors.$white-10;
+          }
         }
       }
     }

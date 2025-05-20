@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router-dom";
 import routes from "./routes/routes.jsx";
 import CartContextProvider from "./context/CartContextProvider";
 import "./styles/main.scss";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 createRoot(document.getElementById("root")).render(
   // <StrictMode>
@@ -18,8 +19,10 @@ createRoot(document.getElementById("root")).render(
   // </StrictMode>
   // Removed StrictMode to avoid double rendering
   <ChakraProvider value={system}>
-    <CartContextProvider>
-      <RouterProvider router={routes} />
-    </CartContextProvider>
+    <ParallaxProvider>
+      <CartContextProvider>
+        <RouterProvider router={routes} />
+      </CartContextProvider>
+    </ParallaxProvider>
   </ChakraProvider>
 );
